@@ -1,0 +1,302 @@
+body{
+	width: 100%;
+	height:100%;
+	background-color: #eee;
+}
+#container{
+	width: 1000px;
+	height:100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+#leftbar{
+	position: fixed;
+	width: 220px;
+	height: 100%;
+	background-color: #fff;
+}
+#logo{
+	width: 200px;
+	padding: 10px;
+	font-weight: 900;
+	font-size: 50px;
+	color: #fff;
+	background-color: #00a702;
+transition: background-color 1s;
+-moz-transition: background-color 1s; /* Firefox 4 */
+-webkit-transition: background-color 1s; /* Safari and Chrome */
+-o-transition: background-color 1s; /* Opera */
+}
+#lefttable{
+	font-size: 30px;
+	font-weight: bold;
+	line-height: 35px;
+	color: grey;
+	padding: 20px;
+	text-align: center;
+}
+#lefttable td{
+	cursor: pointer;
+	min-width: 20px;
+}
+#lefttable img{
+	display: none;
+	height: 20px;
+}
+#lefttable .nav{
+transition: 0.7s;
+-moz-transition: 0.7s; /* Firefox 4 */
+-webkit-transition: 0.7s; /* Safari and Chrome */
+-o-transition: 0.7s; /* Opera */
+}
+#lefttable .nav:hover{
+	color: #fff;
+}
+#lefttable .small{
+	font-size: 20px;
+}
+
+#mainbar{
+	position: relative;
+	left: 220px;
+	width: 800px;
+	height: 1000px;
+	margin: 10px;
+	color: black;
+	background-color: #eee;
+}
+#mainbar #activities{
+	width: 100%;
+	position: relative;
+	top: 50px;
+	padding-left: 20px;
+}
+
+
+
+
+
+
+
+
+#mainbar #box1{
+	float: left;
+	width: 320px;
+	height: 300px;
+	background-color: #fff;
+	border: 10px solid #fff;
+	border-color: #00a702 #e1af00 #cd2b26 #02379d;
+}
+#mainbar #box1 #top{
+	position: relative;
+	height: 150px;
+}
+#mainbar #box1 #bottom{
+	position: absolute;
+	top: 160px;
+	height: 120px;
+	width: 320px;
+}
+#mainbar #box1 #bottom div{
+	position: relative;
+	bottom: 0px;
+	background-color:  #cd2b26;
+    transition: 0.5s;
+    -moz-transition: 0.5s; /* Firefox 4 */
+    -webkit-transition: 0.5s; /* Safari and Chrome */
+    -o-transition: 0.5s; /* Opera */
+}
+#mainbar #box1 #bottom:hover div{
+	height: 150px;
+}
+
+
+
+#mainbar #box2{
+	float: left;
+	margin: 10px;
+	width: 320px;
+	height: 260px;
+    transition: 0.5s;
+    -moz-transition: 0.5s; /* Firefox 4 */
+    -webkit-transition: 0.5s; /* Safari and Chrome */
+    -o-transition: 0.5s; /* Opera */
+}
+#mainbar #box2:hover{
+	background-color: #02379d;
+}
+#mainbar #box2 div{
+	position: relative;
+	width: 310px;
+	height: 250px;
+	margin: 5px;
+	margin-top: -15px;
+	background-color: #ddd;
+}
+#mainbar #box2 div p{
+	width: 280px;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 20px;
+	font-weight: bold;
+	font-family: "微软雅黑";
+	text-indent: 20px;
+}
+#mainbar #box2 div #bottom{
+	position: absolute;
+	bottom: 0;
+	margin: 0;
+	width: 310px;
+	height: 120px;
+	background-color: #fff;
+}
+
+
+
+#mainbar #box3{
+	float: left;
+	position: relative;
+	clear: left;
+	margin: 10px;
+	width: 320px;
+	height: 300px;
+	background-color: #ddd;
+}
+#mainbar #box3 #bottom3{
+	position: absolute;
+	bottom: 0;
+	width: 320px;
+	height: 10px;
+	background-color: #cd2b26;
+	opacity: 0.8;
+    transition: 0.5s;
+    -moz-transition: 0.5s; /* Firefox 4 */
+    -webkit-transition: 0.5s; /* Safari and Chrome */
+    -o-transition: 0.5s; /* Opera */
+}
+#mainbar #box3 #bottom3 p{
+	display: none;
+	font-size: 20px;
+	font-weight: bold;
+	font-family: "微软雅黑";
+	text-indent: 20px;
+	color: #fff;
+    transition: 0.5s;
+    -moz-transition: 0.5s; /* Firefox 4 */
+    -webkit-transition: 0.5s; /* Safari and Chrome */
+    -o-transition: 0.5s; /* Opera */
+}
+
+
+
+#mainbar #box4{
+	float: left;
+	position: relative;
+	margin: 10px;
+	width: 320px;
+	height: 300px;
+	background-color: #ddd;
+}
+#mainbar #box4 #bottom4{
+	display: none;
+	width: 10px;
+	height: 10px;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	background-color: #00a702;
+	opacity: 0.9;
+    transition: 0.5s;
+    -moz-transition: 0.5s; /* Firefox 4 */
+    -webkit-transition: 0.5s; /* Safari and Chrome */
+    -o-transition: 0.5s; /* Opera */
+}
+#mainbar #box4 img{
+	width: 80px;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+    transition: 0.8s;
+    -moz-transition: 0.8s; /* Firefox 4 */
+    -webkit-transition: 0.8s; /* Safari and Chrome */
+    -o-transition: 0.8s; /* Opera */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.bounce
+{
+	-webkit-animation: bounce 1s ;
+	-moz-animation: bounce 1s ;
+	-o-animation: bounce 1s ;
+	animation: bounce 1s ;
+}
+@-webkit-keyframes bounce
+{
+	0%   {margin-top: 0px}
+	10%  {margin-top: -45px}
+	20%  {margin-top: 0px}
+	30%  {margin-top: -35px}
+	40%  {margin-top: 0px}
+	50%  {margin-top: -25px}
+	60%  {margin-top: 0px}
+	70%  {margin-top: -15px}
+	80%  {margin-top: 0px}
+	90%  {margin-top: -5px}
+	100% {margin-top: 0px}
+}
+@-moz-keyframes bounce
+{
+	0%   {margin-top: 0px}
+	10%  {margin-top: -120px}
+	20%  {margin-top: 0px}
+	30%  {margin-top: -60px}
+	40%  {margin-top: 0px}
+	50%  {margin-top: -30px}
+	60%  {margin-top: 0px}
+	70%  {margin-top: -15px}
+	80%  {margin-top: 0px}
+	90%  {margin-top: -7px}
+	100% {margin-top: 0px}
+}
+@-o-keyframes bounce
+{
+	0%   {margin-top: 0px}
+	10%  {margin-top: -120px}
+	20%  {margin-top: 0px}
+	30%  {margin-top: -60px}
+	40%  {margin-top: 0px}
+	50%  {margin-top: -30px}
+	60%  {margin-top: 0px}
+	70%  {margin-top: -15px}
+	80%  {margin-top: 0px}
+	90%  {margin-top: -7px}
+	100% {margin-top: 0px}
+}
+@keyframes bounce
+{
+	0%   {margin-top: 0px}
+	10%  {margin-top: -120px}
+	20%  {margin-top: 0px}
+	30%  {margin-top: -60px}
+	40%  {margin-top: 0px}
+	50%  {margin-top: -30px}
+	60%  {margin-top: 0px}
+	70%  {margin-top: -15px}
+	80%  {margin-top: 0px}
+	90%  {margin-top: -7px}
+	100% {margin-top: 0px}
+}
