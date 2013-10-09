@@ -29,10 +29,9 @@ create table article(
 
 
 create table administrator(
-	id int,
+	id int primary key auto_increment,
 	name varchar(20) not null,
 	pwd varchar(100) not null,
 	lastLogTime varchar(20),
 	lastLogIP varchar(50)	
 )engine=innoDB default charset=utf8 collate=utf8_unicode_ci;
-insert into administrator(id,name, pwd) values(0,'admin','21232f297a57a5a743894a0e4a801fc3');
