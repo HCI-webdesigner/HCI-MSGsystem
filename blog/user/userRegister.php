@@ -4,8 +4,7 @@
 	$pwd = $_GET["pwd"];
 	$arr = array(); //传送json
 	//判断是否已存在
-	$connect = @mysql_connect("localhost","root","root");
-	mysql_select_db("blog",$connect);
+	include "../connectSql.php";
 	$query = "select * from user";
 	$result = mysql_query($query);
 	$rows = @mysql_num_rows($result);
@@ -21,15 +20,13 @@
 	}
 	if(!$isExist){ //注册成功
 		$pwd = md5($pwd); //加密
-		echo $pwd;
-		$query = "insert into user(name,pwd) values('$newName','$pwd')";
+		$query = "insert into user(name,pwd,isAdmin) values('$newName','$pwd',0)";
 		$result = mysql_query($query);
 		$arr['isSuccess'] = 'true';
 	}else{ //已存在
 		$arr['isSuccess'] = 'false';
 	}
 	mysql_close($connect);	 
-
-	$json_string = json_encode($arr); //$arr包括是否注册成功
-	echo "$json_string";
+	require "../lib/jsonEncode.php";
+	echo my_json($arr);
 ?>

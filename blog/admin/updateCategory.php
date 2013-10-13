@@ -4,8 +4,7 @@
 	$name = $_GET['name']; //新的类名
 	$id = $_GET['id'];
 	$arr = array(); //传送的json
-	$connect = @mysql_connect("localhost","root","root");
-	mysql_select_db("blog",$connect);
+	include "../connectSql.php";
 	$query = "select * from category where name='$name'";
 	$result = mysql_query($query);
 	$rows = @mysql_num_rows($result);
@@ -17,6 +16,6 @@
 		$arr['isSuccess'] = 'false';
 	}
 	mysql_close($connect);	
-	$json_string = json_encode($arr);
-	echo "$json_string";
+	require "../lib/jsonEncode.php";
+	echo my_json($arr);
 ?>

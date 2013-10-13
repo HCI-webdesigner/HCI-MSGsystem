@@ -8,19 +8,18 @@
 	}
 	$newCategory = $_GET["newCategory"]; //新的类名
 	//查找是否已存在此类名
-	$connect = @mysql_connect("localhost","root","root");
-	mysql_select_db("blog",$connect);
+	include "../connectSql.php";
 	$query = "select * from category where name='$newCategory'";
 	$result = mysql_query($query);
 	$rows = @mysql_num_rows($result);
 	if($rows == 0){ //插入新类名
-		$query = "insert into category(parent_id,name) values('$parentId','$newCategory')";
+		$query = "insert into category(parent_id,name) values($parentId,'$newCategory')";
 		$result = mysql_query($query);
 		$arr['isSuccess'] = 'true';
 	}else{ //已存在
 		$arr['isSuccess'] = 'false';
 	}
 	mysql_close($connect);	
-	$json_string = json_encode($arr);
-	echo "$json_string";
+	require "../lib/jsonEncode.php";
+	echo my_json($arr);
 ?>

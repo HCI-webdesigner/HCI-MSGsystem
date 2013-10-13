@@ -1,19 +1,23 @@
-<?php
+﻿<?php
 //我发表过的博文列表
 	session_start();
 	$userId = $_SESSION["userId"];
 	$arr = array(); //传送json,包括所有博文信息:标题，发表时间，类别以及部分内容
 	$pageSize = 10;//每页显示条数
 
-	$connect = @mysql_connect("localhost","root","root");
-	mysql_select_db("blog",$connect);
+	include "connectSql.php";
+	//查找作者名
+	$query = "select * from user where id='$userId'";
+	$result = mysql_query($query);
+	$data = @mysql_fetch_array($result);
+	$user_name = $data['name'];
+
 	$query = "select * from article where user_Id='$userId' and isDeleted=0";
 	$result = mysql_query($query);
 	$rows = @mysql_num_rows($result);
 	if($rows == 0){
 		$arr['isEmpty'] = 'true';//为空
 	}else{
-		$arr['isEmpty'] = 'false';//不为空
 		$pageNum = ($rows + $pageSize - 1) / $pageSize;//总页数
 		for($i=0;$i<$pageNum;$i++){
 			$articles = array(); //每页的所有文章
@@ -31,6 +35,6 @@
 		}
 	}
 	mysql_close($connect);  
-	$json_string = json_encode($arr);
-	echo "$json_string";
+	require "lib/jsonEncode.php";
+	echo my_json($arr);
 ?>

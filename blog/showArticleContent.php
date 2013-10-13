@@ -1,12 +1,11 @@
-<?php
+﻿<?php
 //显示文章内容
 	$id = $_GET["id"]; //文章id
 	session_start();
 	$userId = $_SESSION["userId"]; //用户id
 	$arr = array(); //传送的json
 
-	$connect = @mysql_connect("localhost","root","root");
-	mysql_select_db("blog",$connect);
+	include "connectSql.php";
 	$query = "select * from article where id='$id'"; //根据文章id查找
 	$result = mysql_query($query);
 	$data = @mysql_fetch_array($result);
@@ -26,6 +25,7 @@
 	$arr['publishDate'] = $publishDate; //发表时间
 	$arr['content'] = $content; //文章内容
 
-	$json_string = json_encode($arr);
-	echo "$json_string";
+	mysql_close($connect); 	
+	require "lib/jsonEncode.php";
+	echo my_json($arr);
 ?>

@@ -7,7 +7,8 @@ create table user(
 	name varchar(20) not null,
 	pwd varchar(100) not null,
 	lastLogTime varchar(20),
-	lastLogIP varchar(50)
+	lastLogIP varchar(50),
+	isAdmin int not null
 )engine=innoDB default charset=utf8 collate=utf8_unicode_ci;
 
 create table category(
@@ -24,14 +25,4 @@ create table article(
 	content text not null,
 	category_id int,
 	isDeleted int
-)engine=innoDB default charset=utf8 collate=utf8_unicode_ci;
-
-
-
-create table administrator(
-	id int primary key auto_increment,
-	name varchar(20) not null,
-	pwd varchar(100) not null,
-	lastLogTime varchar(20),
-	lastLogIP varchar(50)	
 )engine=innoDB default charset=utf8 collate=utf8_unicode_ci;

@@ -1,13 +1,9 @@
 ﻿<?php
 //搜索文章
-	$dbh =mysql_connect("localhost","root","root");  //连接数据库
+	include "connectSql.php";
 	$arr = array();
-	if(!$dbh) {
-    		$arr['isSuccess'] = 'false';	
-	}
-    mysql_select_db("Blog",$dbh);
     $sql ="SELECT * FROM article where isDeleted=0";
-    $rs = mysql_query($sql,$dbh);
+    $rs = mysql_query($sql,$connect);
     if(!$rs) {
     	$arr['isSuccess'] = 'false';
     }
@@ -20,8 +16,8 @@
 			Header("Location:showArticleContent.php?id=$id");
 		}
 	}
-	mysql_close($dbh);
+	mysql_close($connect);
 
-	$json_string = json_encode($arr);
-	echo "$json_string";
+	require "lib/jsonEncode.php";
+	echo my_json($arr);
 ?>

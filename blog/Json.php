@@ -4,6 +4,7 @@
 	$userName = $_SESSION["userName"]; //用户名
 	$lastLogTime = $_SESSION["lastLogTime"]; //上次登录时间
 	$lastLogIP = $_SESSION["lastLogIP"]; //上次登录IP
+	$isAdmin = $_SESSION["isAdmin"];//是否为管理员
 
 	$connect = @mysql_connect("localhost","root","root");
 	mysql_select_db("blog",$connect);
@@ -14,7 +15,8 @@
 	$arr = array(
 		'userName'=>$userName,  //用户名
 		'lastLogTime'=>$lastLogTime,  //上次登录时间
-		'lastLogIP'=>$lastLogIP  //上次登录IP
+		'lastLogIP'=>$lastLogIP，  //上次登录IP
+		'isAdmin'=>$isAdmin   //是否为管理员
 	);
 	for($i=0;$i<$rows;$i++){
 		@mysql_data_seek($result,$i);
