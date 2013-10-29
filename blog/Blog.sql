@@ -24,5 +24,6 @@ create table article(
 	publishDate varchar(20),
 	content text not null,
 	category_id int,
-	isDeleted int
+	isDeleted int,
+	r_number int
 )engine=innoDB default charset=utf8 collate=utf8_unicode_ci;
