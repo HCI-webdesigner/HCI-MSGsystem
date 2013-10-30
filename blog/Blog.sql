@@ -27,3 +27,11 @@ create table article(
 	isDeleted int,
 	r_number int
 )engine=innoDB default charset=utf8 collate=utf8_unicode_ci;
+
+
+create table comment(
+	id int primary key auto_increment,
+	content text not null,
+	commentator varchar(20), 
+	article_id int not null
+)engine=innoDB default charset=utf8 collate=utf8_unicode_ci;

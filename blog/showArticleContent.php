@@ -24,7 +24,21 @@
 	$arr['author'] = $author; //作者
 	$arr['publishDate'] = $publishDate; //发表时间
 	$arr['content'] = $content; //文章内容
-
+	//查找评论
+	$commentArr = array();
+	$query = "select * from comment where article_id=$id";
+	$result = mysql_query($query);
+	$row = @mysql_num_rows($result);
+	if($row==0){
+		$arr['comment']="无评论";
+	}else{
+		for($i=0;$i<$row;$i++){
+			@mysql_data_seek($result,$i);
+			$data = @mysql_fetch_array($result);
+			$commentArr['comment'.$i]=$data['content'];
+		}
+		$arr['comment']=$commentArr;
+	}
 	mysql_close($connect); 	
 	require "lib/jsonEncode.php";
 	echo my_json($arr);
