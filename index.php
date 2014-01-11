@@ -10,6 +10,6 @@ include_once('Controllers/index.php');
     <link rel="stylesheet" href="public/stylesheets/index.css">
 </head>
 <body>
-    <?='Hello World!' ?> 
+    <a href="register.php">注册</a>
 </body>
 </html>
