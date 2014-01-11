@@ -18,7 +18,7 @@ $db_pwd = '123';
 $db_name = 'hcimsg';
 
 try {
-    $db = new PDO("mysql:host=$db_url;port=$db_port",$db_user,$db_pwd);
+    $db = new PDO("mysql:host=$db_url;port=$db_port;name=$db_name",$db_user,$db_pwd);
 } catch(PDOException $e) {
     echo $e;
 }
