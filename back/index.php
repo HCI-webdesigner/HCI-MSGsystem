@@ -1,7 +1,10 @@
-<?php
-/*
- * index.php
- * 后台管理页面
- * Created By C860 at 2014-1-11
- */
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    
+</body>
+</html>
