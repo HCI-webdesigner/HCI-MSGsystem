@@ -1,5 +1,4 @@
 <?php
-include_once("../conf/config.php");
 
 class tag {
     /*
@@ -58,6 +57,24 @@ class tag {
             $rs->execute(array($name));
             $row = $rs->fetch();
             return $row['ID'];
+        } catch(PDOException $e) {
+            echo $e;
+        }
+    }
+
+    /*
+     * getNameById方法
+     * 根据标签ID获取标签名称
+     * @param $tagId int 标签id
+     * return string 标签名称
+     */
+    static function getNameById($tagId) {
+        global $db;
+        try {
+            $rs = $db->prepare('select name from tag where id=?');
+            $rs->execute(array($tagId));
+            $row = $rs->fetch();
+            return $row['name'];
         } catch(PDOException $e) {
             echo $e;
         }
