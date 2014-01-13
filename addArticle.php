@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 include_once('conf/config.php');
 include_once('Controllers/getAllFormalTag.php');
 ?>
@@ -10,15 +10,15 @@ include_once('Controllers/getAllFormalTag.php');
     </head>
     <body>
         <form method="post" action="Controllers/addArticle.php">
-            标题:<textarea rows="1" cols="80" name="title"></textarea><br/>
+            标题:<input type="text" size='91' name="title"/><br/>
             内容:<textarea rows="30" cols="80" name="content"></textarea><br/>
             选择标签:<br/>
             <?php
-            foreach($arr as $value){ 
+            foreach($arr as $row) {
             ?>
-            <input type="checkbox" name="formaltag[]" value="<?php echo $value?>">
+            <input type="checkbox" name="formaltag[]" value="<?php echo $row['name']?>">
             <?php 
-            echo $value;
+                echo $row['name'];
             }
             ?>
             <br/>自定义标签:<br/>

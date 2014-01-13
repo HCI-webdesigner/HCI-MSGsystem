@@ -39,13 +39,10 @@ class tag {
         try {
             $rs = $db->prepare('select name from tag where isFormal=1');
             $rs ->execute();
-            while($row = $rs->fetch()) {
-                array_push($arr, $row['name']);
-            }
+            return $rs->fetchAll();
         } catch(PDOException $e) {
             echo $e;
         }
-        return $arr;
     }
 
     /*
