@@ -1,15 +1,16 @@
 ﻿<?php
 /*
+ * 开启常规项
+ */
+session_start();
+header('Content-type:text/html; charset=utf-8');
+
+/*
  * 此处定义一些静态参数
  * 说明：请使用define函数
  */
 define('SYS_NAME','信息平台');
 define('SYS_POWER','HCI人机交互中心');
-
-/*
- * 全局变量
- */
-global $db;
 
 /*
  * 数据库连接
@@ -25,6 +26,7 @@ try {
     $db = new PDO("mysql:host=$db_url;port=$db_port;dbname=$db_name",$db_user,$db_pwd);
     //禁用仿真效果
     $db->setAttribute(PDO::ATTR_EMULATE_PREPARES,false);
+    $db->exec('SET NAMES UTF8');
 } catch(PDOException $e) {
     echo $e;
 }

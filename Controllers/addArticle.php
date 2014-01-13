@@ -17,7 +17,6 @@ if(!isset($_POST['title'])||empty($_POST['title'])
 }
 
 //插入article表
-session_start();
 $userId = $_SESSION["userId"]; //作者id
 
 //$userId = 6;
