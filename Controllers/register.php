@@ -23,9 +23,9 @@ if(preg_match("/^[0-9a-zA-Z]+@(([0-9a-zA-Z]+)[.])+[a-z]{2,4}$/i",$user)&&user_ba
 	$nickname = $_POST['nickname'];
 	$isAdmin = 0;
 	$registerTime = date('Y-m-d H:i:s',time());
-    user_basic::add($user,$pwd,$isAdmin);
+    user_basic::add($user,md5($pwd),$isAdmin);
     //获取用户ID
-	$user_id = user_basic::getIdByUser($user)['ID'];
+	$user_id = user_basic::getIdByUser($user);
     user_info::add($user_id,$nickname,$registerTime);
 }
 else{
