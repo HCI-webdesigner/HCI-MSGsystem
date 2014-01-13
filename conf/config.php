@@ -18,7 +18,7 @@ global $db;
 $db_url = '127.0.0.1';
 $db_port = '3306';
 $db_user = 'root';
-$db_pwd = '123';
+$db_pwd = 'root';
 $db_name = 'hcimsg';
 
 try {

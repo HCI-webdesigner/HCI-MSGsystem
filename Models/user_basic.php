@@ -1,6 +1,4 @@
 ﻿<?php
-include_once("../conf/config.php");
-
 class user_basic {
     /*
      * 构造函数
@@ -39,7 +37,8 @@ class user_basic {
         try {
             $rs = $db->prepare('select ID from user_basic where user=?');
             $rs->execute(array($user));
-            return $rs->fetch();
+            $row = $rs->fetch();
+            return $row;
         } catch(PDOException $e) {
             echo $e;
         }
@@ -66,5 +65,32 @@ class user_basic {
 
         }
     }
+
+
+
+	/*
+	*search方法
+	*查找表中的记录
+	*@param $user string 用户名
+	*@param $password string 密码
+	*@param $isAdmin int{0,1}是否为管理员
+	*@return boolean
+	*/
+	static function search($user,$password) {
+		global $db;
+		try {
+			$rs = $db->prepare('select user,password from user_basic 
+				where user=? and password=? and isAdmin=1');
+			$rs->execute(array($user,$password));
+			if($rs->fetch() != false) {
+				return true;
+			}else {
+				return false;
+			}
+		}catch(PDOException $e) {
+			echo $e;
+		}
+		
+	}
 }
 
