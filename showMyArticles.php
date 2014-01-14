@@ -23,7 +23,7 @@ include_once("Controllers/showMyArticles.php");
     			foreach($articleMsgs as $row) {   
     		?>
     		<tr>
-    			<td><a href="Controllers/showArticle.php?articleId=<?php echo $row['ID'
+    			<td><a href="showArticle.php?articleId=<?php echo $row['ID'
                 ]?>"><?php echo $row['ID']?></a></td>
     			<td><?php echo $row['title']?></td>
     			<td><?php echo $row['createTime']?></td>

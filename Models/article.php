@@ -1,5 +1,4 @@
 <?php
-include_once("../conf/config.php");
 class article {
     /*
      * 构造函数

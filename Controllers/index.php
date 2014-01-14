@@ -5,4 +5,3 @@
  * Created By C860 at 2013-12-22
  */
 include_once('conf/config.php');
-?>

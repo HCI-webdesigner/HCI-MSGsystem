@@ -6,6 +6,7 @@
  */
 
 //引入相关模型类
+include_once("../conf/config.php");
 include_once('../Models/article.php');
 include_once('../Models/tag.php');
 include_once('../Models/tag_relate_article.php');
