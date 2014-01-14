@@ -21,7 +21,7 @@ $password = $_POST['password'];
 if (user_basic::verify($user,$password) == true) {
 	$userId = user_basic::getIdByUser($user);
 	$_SESSION["userId"] = $userId; //将用户id放入session
-	include_once('../modifyArticle.php'); //进入修改文章页面
+	Header("Location:../userIndex.php");
 } else {
 	echo "fail";
 }

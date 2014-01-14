@@ -19,10 +19,6 @@ if(!isset($_POST['title'])||empty($_POST['title'])
 //插入article表
 $userId = $_SESSION["userId"]; //作者id
 
-<<<<<<< HEAD
-=======
-$userId = 3;
->>>>>>> a1dbd816deee9c3c2ce7605362e80a5fed5e231c
 $createTime = date('Y-m-d H:i:s',time()); 
 $title = $_POST['title']; 
 $content = $_POST['content'];
@@ -48,9 +44,14 @@ if ($formaltag != false) { //添加系统标签和文章的联系
 if ($customtag != false) { 
 	$list = split(",", $customtag);
 	foreach ($list as $value) {
-		if (tag::isExist($value) == true)
-			echo $value."标签已存在";
-		else {
+		$flag = true;
+		foreach($formaltag as $tag) {
+			if($value == $tag) { //判断是否已添加
+				$flag = false;
+				echo $value."标签已添加";
+			}
+		}
+		if($flag == true)
 			tag::add($value,0); //添加用户自定义标签
 			$tagId = tag::getIdByName($value); //标签id
 			tag_relate_article::add($articleId, $tagId); //添加自定义标签和文章的联系

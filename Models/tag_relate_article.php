@@ -1,5 +1,4 @@
 <?php
-include_once("../conf/config.php");
 
 class tag_relate_article {
     /*

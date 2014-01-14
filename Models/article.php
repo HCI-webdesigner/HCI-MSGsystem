@@ -1,6 +1,5 @@
 <?php
 include_once("../conf/config.php");
-
 class article {
     /*
      * 构造函数
@@ -21,9 +20,48 @@ class article {
     static function add($title, $content, $createTime, $userId) {
         global $db;
         try {
-            $rs = $db->prepare('insert into article(title, content, createTime, user_id) values(?,?,?,?)');
+            $rs = $db->prepare('insert into article(title,content,createTime,user_id) values(?,?,?,?)');
             $rs->execute(array($title, $content, $createTime, $userId));
             echo '添加文章成功！';
+        } catch(PDOException $e) {
+            echo $e;
+        }
+    }
+
+    /*
+     * getArticlesCount方法
+     * 获取某用户文章数目
+     * @param $userId int 作者id
+     * @return int 文章数目
+     */
+    static function getArticlesCount($userId) {
+        global $db;
+        try {
+            $rs = $db->prepare('select count(*) as count from article where user_id=?');
+            $rs->execute(array($userId));
+            $row = $rs->fetch();
+            return $row['count'];
+        } catch(PDOException $e) {
+            echo $e;
+        }
+    }
+
+    /*
+     * getSomeArticlesMsg方法
+     * 获取某用户部分文章记录
+     * @param $userId int 作者id
+     * @param $startNum int 从第startNum条记录开始
+     * @param $endNum int 到第endNum条记录结束
+     * @return array 文章记录
+     */
+    static function getSomeArticlesMsg($userId, $startNum, $num) {
+        global $db;
+        try {
+            $rs = $db->prepare('select ID,title,createTime,lastModifyTime,user_id from article where user_id=?');
+            $rs->execute(array($userId));
+            $arr = $rs->fetchAll();
+            $arr = array_slice($arr,$startNum,$num);
+            return $arr;
         } catch(PDOException $e) {
             echo $e;
         }

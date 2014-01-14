@@ -44,9 +44,14 @@ if ($tags != false) { //添加重设标签和文章的联系
 if ($customtag != false) { 
 	$list = split(",", $customtag);
 	foreach($list as $value) {
-		if (tag::isExist($value) == true)
-			echo $value."标签已存在";
-		else {
+		$flag = true;
+		foreach($tags as $tag) {
+			if($value == $tag) { //判断是否已添加
+				$flag = false;
+				echo $value."标签已添加";
+			}
+		}
+		if($flag == true) {
 			tag::add($value,0); //添加用户自定义标签
 			$tagId = tag::getIdByName($value); //标签id
 			echo "id=".$tagId;

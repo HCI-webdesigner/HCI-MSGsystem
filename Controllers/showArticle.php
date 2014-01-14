@@ -6,16 +6,17 @@
  */
 
 //引入相关模型类
+include_once("../conf/config.php");
 include_once('../Models/article.php');
 include_once('../Models/tag_relate_article.php');
 include_once('../Models/tag.php');
 
 //检查POST参数的完整性性
-if(!isset($_POST['articleId'])||empty($_POST['articleId'])) {
+if(!isset($_GET['articleId'])||empty($_GET['articleId'])) {
     echo '表单参数不完整！';
 }
 //获取文章信息
-$articleId = $_POST['articleId']; //获得文章id
+$articleId = $_GET['articleId']; //获得文章id
 $_SESSION["articleId"] = $articleId; //将文章id放入session
 $articleMsg = article::getOthersById($articleId); //获得文章信息
 $allMyTagId = tag_relate_article::getTagsByArticleId($articleId); //该文章所有标签id
@@ -34,6 +35,4 @@ for($i=0; $i<$num; $i++) {
 }
 
 include_once('../showArticle.php'); //回到显示文章页面
-
-//
 ?>
