@@ -1,3 +1,7 @@
+<?php
+include_once("conf/config.php");
+include_once("Controllers/showArticle.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -5,7 +9,7 @@
         <title></title>
     </head>
     <body>
-        <form method="post" action="modifyArticle.php">
+        <form method="post" action="Controllers/modifyArticle.php">
             标题:<input type="text" size='91' name="title" value="<?php echo $articleMsg['title']?>"/><br/>
             创建时间:<?php echo $articleMsg['createTime']?><br/>
             内容:<textarea rows="30" cols="80" name="content"><?php echo $articleMsg['content']?></textarea><br/>
@@ -26,7 +30,7 @@
             ?>
             <br/>自定义标签:<br/>
             <input type="text" name="customtag"/></br>
-            <input type="submit" value="submit"/>
+            <input type="submit" value="修改"/>
         </form>
 
     </body>

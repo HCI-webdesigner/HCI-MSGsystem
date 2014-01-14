@@ -6,10 +6,9 @@
  */
 
 //引入相关模型类
-include_once("../conf/config.php");
-include_once('../Models/article.php');
-include_once('../Models/tag_relate_article.php');
-include_once('../Models/tag.php');
+include_once('Models/article.php');
+include_once('Models/tag_relate_article.php');
+include_once('Models/tag.php');
 
 //检查POST参数的完整性性
 if(!isset($_GET['articleId'])||empty($_GET['articleId'])) {
@@ -33,6 +32,4 @@ for($i=0; $i<$num; $i++) {
 		}
 	}
 }
-
-include_once('../showArticle.php'); //回到显示文章页面
 ?>
