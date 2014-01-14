@@ -15,6 +15,9 @@ body {
     display: flex;
     flex-flow: column;
     background: rgb(179,238,58);
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
 }
 .sidebar > h1 {
     margin: 20px 0;
