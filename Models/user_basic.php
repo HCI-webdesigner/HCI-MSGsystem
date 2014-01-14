@@ -62,7 +62,29 @@ class user_basic {
                 return false;
             }
         } catch(PDOException $e) {
+            echo $e;
+        }
+    }
 
+    /*
+     *verify方法
+     *验证是否登陆成功
+     *@param $user string 用户名
+     *@param $password 密码
+     *@return boolean
+     */
+    static function verify($user, $password) {
+        global $db;
+        try{
+            $rs = $db->prepare('select * from user_basic where user=? and password=?');
+            $rs->execute(array($user, md5($password)));
+            if($rs->fetch() != false) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch(PDOException $e) {
+            echo $e;
         }
     }
 
