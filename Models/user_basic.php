@@ -183,6 +183,24 @@ class user_basic {
 		}
 		
 	}
+
+
+	/*
+	*addTag方法
+	*@param $name 标签名
+	*@return null
+	*/
+	static function addTag($name) {
+		global $db;
+		try {
+			$rs = $db->prepare('insert into tag(name,isFormal) values(?,?)');
+           		 $rs->execute(array($name,1));
+            		echo '添加标签成功！';
+		}catch(PDOException $e) {
+			echo $e;
+		}
+		
+	}
 }
 
 ?>
