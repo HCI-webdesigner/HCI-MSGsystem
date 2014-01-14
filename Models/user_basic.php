@@ -178,6 +178,7 @@ class user_basic {
         
     }
 
+<<<<<<< HEAD
     /*
     *modifyPower方法
     *@param $isAdmin int{0,1}是否为管理员
@@ -201,5 +202,48 @@ class user_basic {
         }
         
     }
+=======
+	/*
+	*modifyPower方法
+	*@param $isAdmin int{0,1}是否为管理员
+	*@return boolean
+	*/
+	static function modifyPower($isAdmin) {
+		global $db;
+		try {
+			if($isAdmin == 0) {
+				$rs = $db->prepare('update user_basic set isAdmin=1');
+				$rs->execute();
+				return true;
+			}else {
+				$rs = $db->prepare('update user_basic set isAdmin=0');
+				$rs->execute();		
+				return true;
+			}
+		}catch(PDOException $e) {
+			echo $e;
+			return false;
+		}
+		
+	}
+
+
+	/*
+	*addTag方法
+	*@param $name 标签名
+	*@return null
+	*/
+	static function addTag($name) {
+		global $db;
+		try {
+			$rs = $db->prepare('insert into tag(name,isFormal) values(?,?)');
+           		 $rs->execute(array($name,1));
+            		echo '添加标签成功！';
+		}catch(PDOException $e) {
+			echo $e;
+		}
+		
+	}
+>>>>>>> 01e78ec48deafa8c1540fbe39567f6bf25b5f095
 }
 

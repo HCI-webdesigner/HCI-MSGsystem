@@ -10,7 +10,7 @@
             <nav class="sidebar">
                 <h1>后台管理</h1>
                 <ul>
-                    <li>item1</li>
+                    <li>用户管理</li>
                 </ul>
             </nav>
             <div class="main">

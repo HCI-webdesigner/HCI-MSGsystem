@@ -32,7 +32,7 @@ foreach($articleMsgs as $row) { //将标签id转为标签名称
 	 $tagNames = tag_relate_article::getTagsByArticleId($row['ID']);
 	 $count = count($tagNames);
 	 for($i=0; $i<$count; $i++) {
-	 	$tagNames[$i]['tag_id'] = tag::getNameById($tagIds[$i]['tag_id']); 
+	 	$tagNames[$i]['tag_id'] = tag::getNameById($tagNames[$i]['tag_id']); 
 	 }
 	 $articleTags[$row['ID']] = $tagNames;
 }
