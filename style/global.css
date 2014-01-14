@@ -1,0 +1,185 @@
+body {font-size: 12px; margin: 0 0; font-family: "微软雅黑";background-color: rgb(248,248,248);}
+div {margin: 0 auto;} ul,li {list-style: none; margin: 0; padding: 0;}
+dl,dt,dd {margin: 0;padding: 0;}
+a {color: black;}
+a:link {text-decoration: none;}
+a:visited {text-decoration: none;}
+a:active {text-decoration: none;}
+a:hover {text-decoration: none;}
+
+
+
+#mainBox{
+	width:1000px;
+	padding: 100px 0 100px 350px;
+	position: center;
+}
+#nav{
+	width:240px;
+	height: 500px;
+	position: fixed;
+	margin-left: 50px;
+	background-color: rgb(255,255,255);
+}
+.menu{
+	width: 100%;
+	font-size: 14px;
+	padding-top: 27px;
+	position: relative;
+	z-index: 0;
+}
+#menuLabel{
+	top: 26px;
+	width: 250px;
+	height: 50px;
+	position: absolute;
+	z-index: -1;
+	left: -10px;
+	background-color: rgb(248,248,248);
+}
+#menuLabel span{
+	width:10px;
+	height: 100%;
+	float: left;
+	background-color: red;
+}
+#menuList{
+	padding: 0 32px;
+	overflow: hidden;
+}
+#menuList li{
+	padding: 5px;
+	float: left;
+	border-top: 1px solid rgb(248, 248, 248);
+}
+.menu a {
+    text-indent: 7px;
+    float: left;
+    line-height: 15px;
+    padding: 12px 0;
+    width: 156px;
+}
+
+#login {
+	left: 1156px;
+	right: auto !important;
+}
+
+#login {
+	position: absolute;
+	right: 158px;
+	top: 20px;
+	z-index: 100;
+	color: rgb(255, 255, 255);
+}
+
+#J_Login {
+	background: rgb(179, 179, 179);
+	padding: 4px 12px;
+	line-height: 14px;
+	color: rgb(255, 255, 255);
+	float: left;
+	width: 25px;
+	cursor: pointer;
+}
+
+#J_Login:hover{
+	background: #C0C0C0;
+}
+
+#J_FormWrapper {
+	position: absolute;
+	right: 0;
+	width: 220px;
+	overflow: hidden;
+	top: 37px;
+	background-position: 188px -793px;
+}
+
+#J_FormWrapper a :hover{
+	color: rgb(255,0,0);
+}
+
+#login form {
+	padding: 20px ;
+	background-color: rgb(255, 0, 0);
+}
+
+#login p {
+	padding: 5px 0;
+}
+#login .col-1 {
+	padding-bottom: 14px;
+}
+#login #rememberme {
+	vertical-align: text-bottom;
+	_vertical-align: middle;
+	margin: 5px 3px 0 36px;
+}
+#login .input {
+	outline: 0;
+	border: 0;
+	background: rgb(255, 255, 255);
+	width: 130px;
+	height: 14px;
+	padding: 4px 5px;
+	margin-left: 10px;
+}
+#wp-submit{
+	margin-left: 36px;
+}
+.btn-submit {
+	margin-top: 5px;
+	height: 23px;
+	width: 52px;
+	color: rgb(153, 153, 153);
+	border: 1px solid rgb(211,211,211);
+	cursor: pointer;
+	background-color: rgb(255, 255, 255);
+}
+#wp-reg{
+	margin-left: 33px;
+}
+
+.back-to-top {
+	display: none;
+    position: fixed;
+    bottom: 0px;
+    right: 15px;
+    z-index: 150;
+    height: 100%;
+}
+.back-to-top a {
+    height: 41px;
+    width: 41px;
+    bottom: 150px;
+    right: 0px;
+    cursor: pointer;
+    position: absolute;
+    background-color: #ccc;
+    background-image: url(../image/top.png);
+    background-position: 0 -189px;
+} 
+.back-to-top a:hover {
+	background-color: red;
+}
+
+#footer {
+	width: 900px;
+	padding-top: 30px;
+	padding-left: 350px;
+	padding-bottom: 50px;
+	background: white;
+}
+.footer-box {
+	padding-left: 300px;
+}
+#footer li{
+	float: left;
+}
+.footer-from {
+	padding-right: 50px;
+}
+.red {
+	color: red;
+}
