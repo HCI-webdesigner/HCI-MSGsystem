@@ -19,7 +19,7 @@ if(!isset($_POST['title'])||empty($_POST['title'])
 //插入article表
 $userId = $_SESSION["userId"]; //作者id
 
-//$userId = 6;
+$userId = 3;
 $createTime = date('Y-m-d H:i:s',time()); 
 $title = $_POST['title']; 
 $content = $_POST['content'];

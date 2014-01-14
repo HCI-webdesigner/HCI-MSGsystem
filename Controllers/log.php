@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /*
 *log.php
 *负责登录
@@ -6,7 +6,7 @@
 */
 
 //引用相关模块
-include_once('../Models/user_fit.php');
+include_once('../Models/user_basic.php');
 include_once('../Models/user_info.php');
 
 //检查POST参数的完整性
@@ -20,7 +20,7 @@ $user = $_POST['user'];
 $password = $_POST['password'];
 //$password = md5($password);
 
-if(user_fit::search($user,$password) == true ) {
+if(user_basic::search($user,$password) == true ) {
 	echo "登录成功！";
 }else {
 	echo "登录失败！";
