@@ -18,7 +18,7 @@
             .t1 {color: blue;}
             .t2 {color: red;}
             .t3 {color: green;}
-            .t4 {color: yellow;}
+            .t4 {color: rgb(255,215,0);}
             .t5 {color: grey;}
             .t6 {color: orange;}
             .t7 {color: brown;}
