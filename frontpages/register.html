@@ -3,27 +3,16 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>hci活动</title>
-	<link rel="stylesheet" type="text/css" href="style/global.css">
+
+   	<link rel="stylesheet" type="text/css" href="style/global.css">
 	<link rel="stylesheet" type="text/css" href="style/index.css">
 	<link rel="stylesheet" type="text/css" href="style/slideBox.css">
 	<link rel="stylesheet" type="text/css" href="style/register.css">
-	<link rel="stylesheet" type="text/css" href="style/info.css">
 	<script type="text/javascript" src="script/jquery-1.7.2.min.js"></script>
 	<script type="text/javascript" src="script/jquery.slideBox.min.js"></script>
+	<script type="text/javascript" src="script/navSlide.js"></script>//添加了这个文件后会报错，删除后才能正常运行我的js
 	<script type="text/javascript" src="script/log.js"></script>
 	<script type="text/javascript" src="script/register.js"></script>
-  <script type="text/javascript">
-	/*window.onload = function(){
-		//本页面对应栏，下标由0起始,首页为0
-        initSlide(0);
-
-        jQuery(function($){
-	        $("#slidebox").slideBox({
-	           	delay : 5
-	    	});
-	    });
-	};*/
-	</script>
 </head>
 <body>
 	<div id="nav">
@@ -81,38 +70,47 @@
 				</form>
 			</div>
 		</div>
-        <div id="register">
+        <div id="container">
             <h1 class="register-title">注册</h1>
             <div class="separate-line"></div>
             <form action="" method="">
                 <ul> 
                     <li>
                         <label for="user">邮箱：</label>
-                        <input id="user" name="user" type="text" placeholder="请输入邮箱">
+                        <input id="user" name="user" type="text" placeholder="请输入正确格式的邮箱">
+                        <span>*</span>
                     </li>
      
                     <li>
                         <label for="password1">密码：</label>
                         <input id="password1" name="password1" type="password" placeholder="至少输入6个数字、字符">
+                        <span>*</span>
                     </li>
 
                     <li>
-                        <label for="password2">确认密码：</label>
+                        <label for="password2">重复密码：</label>
                         <input id="password2" name="password2" type="password">
-                    </li>
+                        <span>*</span>
+                   </li>
 
                     <li>
                         <label for="nickname">昵称：</label>
                         <input id="nickname" name="nickname" type="text">
-                    </li>
+                        <span>*</span>
+                  </li>
 
                     <li>
                         <label for="signature">个人签名：</label>
-												<textarea name="signature" clos="60" rows="4" id="signature" placeholder="个人介绍"></textarea>
+						<textarea name="signature" clos="60" rows="4" id="signature" placeholder="个人介绍"></textarea>
                     </li>
                     <li>
+                        <label for="attention"></label>
+                        <strong>输入框后有红色"*"为必填项</strong>
+                    </li>
+
+                    <li>
                         <label for="register"></label>
-												<button id="submit" type="submit" name="submit" disabled>注册</button>
+						<button id="reg-submit" type="reg-submit" name="reg-submit" disabled>注册</button>
                     </li>
                 </ul>
              </form>

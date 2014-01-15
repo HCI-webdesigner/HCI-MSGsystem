@@ -1,19 +1,9 @@
 window.onload = init;
 var userFlag = passwordFlag = nicknameFlage = false;
 function init(){
-		//本页面对应栏，下标由0起始,首页为0
-        initSlide(0);
-
-        jQuery(function($){
-	        $("#slidebox").slideBox({
-	           	delay : 5
-	    	});
-	    });
     document.getElementById("user").onblur = checkUser;
     document.getElementById("password1").onblur = checkPassword1;
-    document.getElementById("password2").onblur = checkPassword2;
-    document.getElementById("nickname").onblur = checkNickname;
-    document.getElementById("nickname").disabled = false;
+    document.getElementById("login").disabled = false;
     document.getElementById("reg-submit").onclick = registerUser;
     
 }
