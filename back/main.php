@@ -8,9 +8,9 @@
     <body>
         <div class="board" id="board">
             <nav class="sidebar">
-                <h1>后台管理</h1>
-                <ul>
-                    <li>用户管理</li>
+                <h1><a href="main.php">后台管理</a></h1>
+                <ul class="control-list">
+                    <li><a href="userControl.php" target="framepage">用户管理</a></li>
                 </ul>
             </nav>
             <div class="main">
