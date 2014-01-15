@@ -1,5 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <?php
+=======
+﻿<?php
+>>>>>>> fb8a0b816cdef39f6955b4c6dae43822ccbbe9d7
 =======
 ﻿<?php
 >>>>>>> fb8a0b816cdef39f6955b4c6dae43822ccbbe9d7
@@ -51,6 +55,7 @@ class article {
 
     /*
 <<<<<<< HEAD
+<<<<<<< HEAD
      * getAllArticlesCount方法
      * 获取所有文章的数目
      * @return int 文章数目
@@ -80,6 +85,8 @@ class article {
         try {
             $rs = $db->prepare('select * from article where user_id=?');
 =======
+=======
+>>>>>>> fb8a0b816cdef39f6955b4c6dae43822ccbbe9d7
      * getSomeArticlesMsg方法
      * 获取某用户部分文章记录
      * @param $userId int 作者id
@@ -91,6 +98,9 @@ class article {
         global $db;
         try {
             $rs = $db->prepare('select ID,title,createTime,lastModifyTime,user_id from article where user_id=?');
+<<<<<<< HEAD
+>>>>>>> fb8a0b816cdef39f6955b4c6dae43822ccbbe9d7
+=======
 >>>>>>> fb8a0b816cdef39f6955b4c6dae43822ccbbe9d7
             $rs->execute(array($userId));
             $arr = $rs->fetchAll();
@@ -102,6 +112,7 @@ class article {
     }
 
     /*
+<<<<<<< HEAD
 <<<<<<< HEAD
      * getArticlesMsg方法
      * 获取部分文章记录
@@ -123,6 +134,8 @@ class article {
     }
 
     /*
+=======
+>>>>>>> fb8a0b816cdef39f6955b4c6dae43822ccbbe9d7
 =======
 >>>>>>> fb8a0b816cdef39f6955b4c6dae43822ccbbe9d7
      * modify方法
@@ -181,7 +194,10 @@ class article {
         }
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> fb8a0b816cdef39f6955b4c6dae43822ccbbe9d7
 
 	/*
 	*deleteArticle方法
@@ -199,6 +215,9 @@ class article {
 		}
 		
 	}
+<<<<<<< HEAD
+>>>>>>> fb8a0b816cdef39f6955b4c6dae43822ccbbe9d7
+=======
 >>>>>>> fb8a0b816cdef39f6955b4c6dae43822ccbbe9d7
 }
 

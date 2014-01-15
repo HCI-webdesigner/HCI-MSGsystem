@@ -27,7 +27,11 @@ if($endNum > $num)
 	$endNum = $num;
 //articleMsgs存取指定条目的所有文章信息
 <<<<<<< HEAD
+<<<<<<< HEAD
 $articleMsgs = article::getArticlesMsgById($userId, $startNum, $endNum-$startNum);
+=======
+$articleMsgs = article::getSomeArticlesMsg($userId, $startNum, $endNum-$startNum);
+>>>>>>> fb8a0b816cdef39f6955b4c6dae43822ccbbe9d7
 =======
 $articleMsgs = article::getSomeArticlesMsg($userId, $startNum, $endNum-$startNum);
 >>>>>>> fb8a0b816cdef39f6955b4c6dae43822ccbbe9d7

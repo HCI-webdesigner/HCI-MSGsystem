@@ -8,6 +8,10 @@
 //引用相关模块
 include_once('../Models/user_basic.php');
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+include_once('../Models/user_info.php');
+>>>>>>> fb8a0b816cdef39f6955b4c6dae43822ccbbe9d7
 =======
 include_once('../Models/user_info.php');
 >>>>>>> fb8a0b816cdef39f6955b4c6dae43822ccbbe9d7
@@ -24,7 +28,11 @@ $password = $_POST['password'];
 //$password = md5($password);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 if(user_basic::search($user,$password,1) == true ) {
+=======
+if(user_basic::search($user,$password) == true ) {
+>>>>>>> fb8a0b816cdef39f6955b4c6dae43822ccbbe9d7
 =======
 if(user_basic::search($user,$password) == true ) {
 >>>>>>> fb8a0b816cdef39f6955b4c6dae43822ccbbe9d7

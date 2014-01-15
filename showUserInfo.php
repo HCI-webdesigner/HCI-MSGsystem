@@ -1,5 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <?php
+=======
+﻿<?php
+>>>>>>> fb8a0b816cdef39f6955b4c6dae43822ccbbe9d7
 =======
 ﻿<?php
 >>>>>>> fb8a0b816cdef39f6955b4c6dae43822ccbbe9d7

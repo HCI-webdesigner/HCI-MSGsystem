@@ -8,7 +8,11 @@ $user_id=$_GET['user_id'];
 
 //根据user_id得到数据库对应的数组
 <<<<<<< HEAD
+<<<<<<< HEAD
 $array=user_info::getOthersById($user_id);
+=======
+$array=user_info::searchId($user_id);
+>>>>>>> fb8a0b816cdef39f6955b4c6dae43822ccbbe9d7
 =======
 $array=user_info::searchId($user_id);
 >>>>>>> fb8a0b816cdef39f6955b4c6dae43822ccbbe9d7
@@ -33,6 +37,7 @@ $array=user_info::searchId($user_id);
 		</tr>
 		<tr >
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<td><input name="user_id" readonly="readonly" type="text" value="<?php echo $array['user_id'] ?>" />
 			</td>
 			<td><input name="nickname" type="text" value="<?php echo $array['nickname'] ?>" />
@@ -45,6 +50,8 @@ $array=user_info::searchId($user_id);
 			</td>
 			<td><input name="article_count" readonly="readonly" type="text" value="<?php echo $array['article_count'] ?>" />
 =======
+=======
+>>>>>>> fb8a0b816cdef39f6955b4c6dae43822ccbbe9d7
 			<td><input name="user_id" readonly="readonly" type="text" value="<?php echo $array[0]['user_id'] ?>" />
 			</td>
 			<td><input name="nickname" type="text" value="<?php echo $array[0]['nickname'] ?>" />
@@ -56,6 +63,9 @@ $array=user_info::searchId($user_id);
 			<td><input name="signature" type="text" value="<?php echo $array[0]['signature'] ?>" />
 			</td>
 			<td><input name="article_count" readonly="readonly" type="text" value="<?php echo $array[0]['article_count'] ?>" />
+<<<<<<< HEAD
+>>>>>>> fb8a0b816cdef39f6955b4c6dae43822ccbbe9d7
+=======
 >>>>>>> fb8a0b816cdef39f6955b4c6dae43822ccbbe9d7
 			</td>
 		</tr>	

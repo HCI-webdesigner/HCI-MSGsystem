@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ﻿<?php
 
 class user_basic {
@@ -204,6 +205,8 @@ class user_basic {
 }
 
 =======
+=======
+>>>>>>> fb8a0b816cdef39f6955b4c6dae43822ccbbe9d7
 <?php
 class user_basic {
     /*
@@ -380,4 +383,7 @@ class user_basic {
 
 ?>
 
+<<<<<<< HEAD
+>>>>>>> fb8a0b816cdef39f6955b4c6dae43822ccbbe9d7
+=======
 >>>>>>> fb8a0b816cdef39f6955b4c6dae43822ccbbe9d7

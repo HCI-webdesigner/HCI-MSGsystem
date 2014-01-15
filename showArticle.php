@@ -42,8 +42,13 @@ include_once("Controllers/showArticle.php");
             </form>
             <?php
 <<<<<<< HEAD
+<<<<<<< HEAD
                     if(count($row['reply'])!=0)
                         ff($row['reply'],$row['nickName']);
+=======
+                          if(count($row['reply'])!=0)
+                            ff($row['reply'],$row['nickName']);
+>>>>>>> fb8a0b816cdef39f6955b4c6dae43822ccbbe9d7
 =======
                           if(count($row['reply'])!=0)
                             ff($row['reply'],$row['nickName']);

@@ -21,9 +21,15 @@ if(!isset($_POST['name'])||empty($_POST['name'])
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 if(user_basic::search($user,$password,1) == true) {
 	try {
 		tag::add($name, 1);
+=======
+if(user_basic::search($user,$password) == true) {
+	try {
+		tag::addTag($name);
+>>>>>>> fb8a0b816cdef39f6955b4c6dae43822ccbbe9d7
 =======
 if(user_basic::search($user,$password) == true) {
 	try {

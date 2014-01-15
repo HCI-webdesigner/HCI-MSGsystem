@@ -46,6 +46,7 @@ class user_info {
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
      /*
      * getAllInfo方法
      * 获取所有个人信息
@@ -118,6 +119,8 @@ class user_info {
         }
     }
 
+=======
+>>>>>>> fb8a0b816cdef39f6955b4c6dae43822ccbbe9d7
 =======
 >>>>>>> fb8a0b816cdef39f6955b4c6dae43822ccbbe9d7
     /*

@@ -22,7 +22,11 @@ foreach($allMyTagId as $row) {
 	array_push($allMyTags, tag::getNameById($row['tag_id']));
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 $otherTags = tag::getNameByType(1); //其他未添加的系统标签
+=======
+$otherTags = tag::getAllFormalName(); //其他未添加的系统标签
+>>>>>>> fb8a0b816cdef39f6955b4c6dae43822ccbbe9d7
 =======
 $otherTags = tag::getAllFormalName(); //其他未添加的系统标签
 >>>>>>> fb8a0b816cdef39f6955b4c6dae43822ccbbe9d7
