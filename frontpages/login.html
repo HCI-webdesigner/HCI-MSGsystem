@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>hci活动</title>
+	<link rel="stylesheet" type="text/css" href="style/global.css">
+	<link rel="stylesheet" type="text/css" href="style/index.css">
+	<link rel="stylesheet" type="text/css" href="style/slideBox.css">
+	<link rel="stylesheet" type="text/css" href="style/register.css">
+	<script type="text/javascript" src="script/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="script/jquery.slideBox.min.js"></script>
+	<script type="text/javascript" src="script/navSlide.js"></script>
+	<script type="text/javascript" src="script/log.js"></script>
+    <script type="text/javascript">
+	window.onload = function(){
+		//本页面对应栏，下标由0起始,首页为0
+        initSlide(0);
+
+        jQuery(function($){
+	        $("#slidebox").slideBox({
+	           	delay : 5
+	    	});
+	    });
+	};
+	</script>
+</head>
+<body>
+	<div id="nav">
+		<a href="index.html" title="hci活动首页">
+			<img width="240" height="100" src="image/box4.png"id="imgIndex">
+		</a>
+		<div class="menu">
+			<div id="menuLabel" style="display:block; ">
+				<span></span>
+			</div>
+			<ul id="menuList">
+				<li>
+					<a href="index.html">首页</a>
+				</li>
+				<li>
+					<a href="index.html">活动</a>
+				</li>
+				<li>
+					<a href="index.html">活动首页</a>
+				</li>
+				<li>
+					<a href="index.html">首页活动</a>
+				</li>
+				<li>
+					<a href="index.html">活动</a>
+				</li>
+				<li>
+					<a href="index.html">首页</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+    <div id="mainBox">
+		<div id="login">
+			<a onmouseup="f_s('J_FormWrapper')" onmouseout="closeW('J_FormWrapper')"  class="btn-login" id="J_Login" title="登入">登入</a>
+			<div onmouseover="showDiv('J_FormWrapper')" onmouseout="closeW('J_FormWrapper')" id="J_FormWrapper" class="form-wrapper sprites" style="overflow:hidden;display: none;">
+				<form name="loginform" id="loginform" action="" method="post">
+					<p class="col-1">
+						<label for="user-login">
+							账户
+							<input type="text" name="log" id="user-login" class="input" value="" size="20" tabindex="1"></label>
+					</p>
+					<p>
+						<label for="user-pass">
+							密码
+							<input type="password" name="pwd" id="user-pass" class="input" value="" size="20" tabindex="2"></label>
+					</p>
+					<p>
+						<label for="rememberme">
+							<input name="rememberme" type="checkbox" id="rememberme" value="forever" tabindex="3">记住我</label>
+					</p>
+					<p>
+						<input type="submit" name="wp-submit" id="wp-submit" class="btn-submit" value="登入" tabindex="4">
+						<input type="button" name="wp-submit"  id="wp-reg"class="btn-submit" value="注册" tabindex="5"></p>
+				</form>
+			</div>
+		</div>
+    </div>
+	<div id="footer">
+		<ul class="footer-box">
+			<li class="footer-from">Powered By - HCI人机交互中心</li>
+			<li class="footer-info">
+				联系我们&nbsp;|&nbsp;网站地图&nbsp;|&nbsp;返回首页&nbsp;|&nbsp;投诉举报&nbsp;|&nbsp;意见建议<br>
+			</li>
+		</ul>
+	</div>
+    <div id="goTopBtn" class="back-to-top">
+		<a id="J_BackToTop" href="javascript:void(0)"></a>
+	</div>
+
+</body>
+</html>
+
