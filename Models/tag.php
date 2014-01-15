@@ -1,5 +1,4 @@
 <?php
-include_once("../conf/config.php");
 
 class tag {
     /*
@@ -28,24 +27,21 @@ class tag {
     }
 
     /*
-     * getAllFormalName方法
-     * 获取所有系统标签
-     * 无参数
+     * getNameByType方法
+     * 获取某类型所有标签
+     * $isFormal int 标签类型
      * return array 所有标签名称组成的数组
      */
-    static function getAllFormalName() {
+    static function getNameByType($isFormal) {
         global $db;
         $arr = array();
         try {
-            $rs = $db->prepare('select name from tag where isFormal=1');
-            $rs ->execute();
-            while($row = $rs->fetch()) {
-                array_push($arr, $row['name']);
-            }
+            $rs = $db->prepare('select name from tag where isFormal=?');
+            $rs ->execute(array($isFormal));
+            return $rs->fetchAll();
         } catch(PDOException $e) {
             echo $e;
         }
-        return $arr;
     }
 
     /*
@@ -61,6 +57,24 @@ class tag {
             $rs->execute(array($name));
             $row = $rs->fetch();
             return $row['ID'];
+        } catch(PDOException $e) {
+            echo $e;
+        }
+    }
+
+    /*
+     * getNameById方法
+     * 根据标签ID获取标签名称
+     * @param $tagId int 标签id
+     * return string 标签名称
+     */
+    static function getNameById($tagId) {
+        global $db;
+        try {
+            $rs = $db->prepare('select name from tag where id=?');
+            $rs->execute(array($tagId));
+            $row = $rs->fetch();
+            return $row['name'];
         } catch(PDOException $e) {
             echo $e;
         }

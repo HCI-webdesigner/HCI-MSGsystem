@@ -1,5 +1,4 @@
 ﻿<?php
-include_once("../conf/config.php");
 
 class user_basic {
     /*
@@ -39,11 +38,30 @@ class user_basic {
         try {
             $rs = $db->prepare('select ID from user_basic where user=?');
             $rs->execute(array($user));
-            return $rs->fetch();
+            $row = $rs->fetch();
+            return $row['ID'];
         } catch(PDOException $e) {
             echo $e;
         }
     }
+
+    /*
+     * getUserById方法
+     * 根据用户ID获取用户名
+     * @param $userId int 用户id
+     * @return string 用户名
+     */
+     static function getUserById($userId) {
+        global $db;
+        try {
+            $rs = $db->prepare('select user from user_basic where ID=?');
+            $rs->execute(array($userId));
+            $row = $rs->fetch();
+            return $row['user'];
+        } catch(PDOException $e) {
+            echo $e;
+        }
+     } 
 
     /*
      * isExist方法
@@ -63,8 +81,124 @@ class user_basic {
                 return false;
             }
         } catch(PDOException $e) {
-
+            echo $e;
         }
+    }
+
+    /*
+     *verify方法
+     *验证是否登陆成功
+     *@param $user string 用户名
+     *@param $password 密码
+     *@return boolean
+     */
+    static function verify($user, $password) {
+        global $db;
+        try{
+            $rs = $db->prepare('select * from user_basic where user=? and password=?');
+            $rs->execute(array($user, md5($password)));
+            if($rs->fetch() != false) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch(PDOException $e) {
+            echo $e;
+        }
+    }
+    
+    /*
+    *search方法
+    *查找表中的记录
+    *@param $user string 用户名
+    *@param $password string 密码
+    *@param $isAdmin int{0,1}是否为管理员
+    *@return boolean
+    */
+    static function search($user,$password,$isAdmin) {
+        global $db;
+        try {
+            $rs = $db->prepare('select * from user_basic where user=? 
+                and password=? and isAdmin=? ');
+            $rs->execute(array($user,$password,$isAdmin));
+            if($rs->fetch() != false) {
+                return true;
+            }else {
+                return false;
+            }
+        }catch(PDOException $e) {
+            echo $e;
+        }
+        
+    }
+
+    /*
+    *searchUser方法
+    *查找表中的记录
+    *@param $user string 用户名
+    *@param $password string 密码
+    *@param $isAdmin int{0,1}是否为管理员
+    *@return boolean
+    */
+    static function searchUser($user,$password) {
+        global $db;
+        try {
+            $rs = $db->prepare('select * from user_basic where user=? and password=? ');
+            $rs->execute(array($user,$password));
+            if($rs->fetch() != false) {
+                return true;
+            }else {
+                return false;
+            }
+        }catch(PDOException $e) {
+            echo $e;
+        }
+        
+    }
+
+
+    /*
+    *getIsAdmin方法
+    *查找表中的记录
+    *@param $id int 
+    *@return isAdmin==0或1
+    */
+    static function getIsAdmin($id) {
+        global $db;
+        try {
+            $rs = $db->prepare('select isAdmin from user_basic 
+                where id=? ');
+            $rs->execute(array($id));
+            $row = $rs->fetch();
+            return $row['isAdmin'];
+        }catch(PDOException $e) {
+            echo $e;
+        }
+        
+    }
+
+    /*
+    *modifyPower方法
+    *@param $isAdmin int{0,1}是否为管理员
+    *@return boolean
+    */
+    static function modifyPower($isAdmin) {
+        global $db;
+        try {
+            if($isAdmin == 0) {
+                $rs = $db->prepare('update user_basic set isAdmin=1');
+                $rs->execute();
+                return true;
+            }else {
+                $rs = $db->prepare('update user_basic set isAdmin=0');
+                $rs->execute();     
+                return true;
+            }
+        }catch(PDOException $e) {
+            echo $e;
+            return false;
+        }
+        
     }
 }
 

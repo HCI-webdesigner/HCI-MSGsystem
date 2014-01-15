@@ -6,6 +6,7 @@
  */
 
 //引入相关模型类
+include_once("../conf/config.php");
 include_once('../Models/user_basic.php');
 include_once('../Models/user_info.php');
 
@@ -18,7 +19,8 @@ if(!isset($_POST['user'])||empty($_POST['user'])
 
 //检查用户名的合法性
 $user = $_POST['user'];
-if(preg_match("/^[0-9a-zA-Z]+@(([0-9a-zA-Z]+)[.])+[a-z]{2,4}$/i",$user)&&user_basic::isExist($user)==false) {
+$nickname = $_POST['nickname'];
+if(preg_match("/^[0-9a-zA-Z]+@(([0-9a-zA-Z]+)[.])+[a-z]{2,4}$/i",$user)&&user_basic::isExist($user)==false&&user_info::isExist($nickname)==false) {
 	$pwd = $_POST['password'];
 	$nickname = $_POST['nickname'];
 	$isAdmin = 0;

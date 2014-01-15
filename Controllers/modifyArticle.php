@@ -1,14 +1,14 @@
 <?php
 /*
- * addArticle.php
- * 负责处理发表文章业务
- * Created By 郑俊燕 at 2014-1-12
+ * modifyArticle.php
+ * 负责处理修改文章
+ * Created By 郑俊燕 at 2014-1-13
  */
 
 //引入相关模型类
 include_once("../conf/config.php");
-include_once('../Models/tag.php');
 include_once('../Models/article.php');
+include_once('../Models/tag.php');
 include_once('../Models/tag_relate_article.php');
 
 //检查POST参数的完整性性
@@ -17,26 +17,26 @@ if(!isset($_POST['title'])||empty($_POST['title'])
     echo '表单参数不完整！';
 }
 
-//插入article表
+//修改article表
 $userId = $_SESSION["userId"]; //作者id
+$lastModifyTime = date('Y-m-d H:i:s',time()); //修改时间
+$title = $_POST['title']; //标题
+$content = $_POST['content']; //内容
+$articleId = $_SESSION["articleId"]; //文章id
+article::modify($articleId, $title, $content, $lastModifyTime); //修改文章
 
-$createTime = date('Y-m-d H:i:s',time()); 
-$title = $_POST['title']; 
-$content = $_POST['content'];
-article::add($title, $content, $createTime, $userId);
-$articleId = article::getIDByOthers($title, $content, $createTime, $userId);//文章id
-
-//处理标签
-$formaltag = false;
+//修改文章标签
+tag_relate_article::delete($articleId);//删除原来的联系
+$tags = false;
 $customtag = false;
-if (isset($_POST['formaltag'])) {  //系统标签
-	$formaltag = $_POST['formaltag'];
+if (isset($_POST['tags'])) {  //已有标签
+	$tags = $_POST['tags'];
 }
 if (isset($_POST['customtag']))   //自定义标签
 	$customtag = $_POST['customtag'];
 //系统标签
-if ($formaltag != false) { //添加系统标签和文章的联系
-	foreach($formaltag as $value) {
+if ($tags != false) { //添加重设标签和文章的联系
+	foreach($tags as $value) {
 		$tagId = tag::getIdByName($value);
 		tag_relate_article::add($articleId, $tagId);
 	}
@@ -44,9 +44,9 @@ if ($formaltag != false) { //添加系统标签和文章的联系
 //自定义标签
 if ($customtag != false) { 
 	$list = split(",", $customtag);
-	foreach ($list as $value) {
+	foreach($list as $value) {
 		$flag = true;
-		foreach($formaltag as $tag) {
+		foreach($tags as $tag) {
 			if($value == $tag) { //判断是否已添加
 				$flag = false;
 				echo $value."标签已添加";
@@ -60,3 +60,4 @@ if ($customtag != false) {
 	}
 }
 ?>
+

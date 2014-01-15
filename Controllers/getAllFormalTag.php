@@ -8,5 +8,5 @@
 //引入相关模型类
 include_once('Models/tag.php');
 //获取所有系统标签
-$arr = tag::getAllFormalName(); 
+$arr = tag::getNameByType(1); 
 ?>
