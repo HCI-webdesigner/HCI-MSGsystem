@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php
+=======
+﻿<?php
+>>>>>>> fb8a0b816cdef39f6955b4c6dae43822ccbbe9d7
 class article {
     /*
      * 构造函数
@@ -46,6 +50,7 @@ class article {
     }
 
     /*
+<<<<<<< HEAD
      * getAllArticlesCount方法
      * 获取所有文章的数目
      * @return int 文章数目
@@ -74,6 +79,19 @@ class article {
         global $db;
         try {
             $rs = $db->prepare('select * from article where user_id=?');
+=======
+     * getSomeArticlesMsg方法
+     * 获取某用户部分文章记录
+     * @param $userId int 作者id
+     * @param $startNum int 从第startNum条记录开始
+     * @param $endNum int 到第endNum条记录结束
+     * @return array 文章记录
+     */
+    static function getSomeArticlesMsg($userId, $startNum, $num) {
+        global $db;
+        try {
+            $rs = $db->prepare('select ID,title,createTime,lastModifyTime,user_id from article where user_id=?');
+>>>>>>> fb8a0b816cdef39f6955b4c6dae43822ccbbe9d7
             $rs->execute(array($userId));
             $arr = $rs->fetchAll();
             $arr = array_slice($arr,$startNum,$num);
@@ -84,6 +102,7 @@ class article {
     }
 
     /*
+<<<<<<< HEAD
      * getArticlesMsg方法
      * 获取部分文章记录
      * @param $startNum 从第startNum条记录开始
@@ -104,6 +123,8 @@ class article {
     }
 
     /*
+=======
+>>>>>>> fb8a0b816cdef39f6955b4c6dae43822ccbbe9d7
      * modify方法
      * 修改文章信息
      * @param $articleId int 文章id
@@ -159,5 +180,25 @@ class article {
             echo $e;
         }
     }
+<<<<<<< HEAD
+=======
+
+	/*
+	*deleteArticle方法
+	*@param $id 标识符
+	*@return null
+	*/
+	static function deleteArticle($id) {
+		global $db;
+		try {
+			$rs = $db->prepare('delete from article where id=?');
+           	$rs->execute(array($id));
+            echo '删除文章成功！';
+		}catch(PDOException $e) {
+			echo $e;
+		}
+		
+	}
+>>>>>>> fb8a0b816cdef39f6955b4c6dae43822ccbbe9d7
 }
 

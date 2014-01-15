@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php
+=======
+﻿<?php
+>>>>>>> fb8a0b816cdef39f6955b4c6dae43822ccbbe9d7
 /*
 *负责修改个人信息
 *Create By 关丽莎 at 2014-1-14

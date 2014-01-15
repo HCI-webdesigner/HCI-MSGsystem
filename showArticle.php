@@ -41,8 +41,13 @@ include_once("Controllers/showArticle.php");
             <input type="submit" value="提交回复"/>
             </form>
             <?php
+<<<<<<< HEAD
                     if(count($row['reply'])!=0)
                         ff($row['reply'],$row['nickName']);
+=======
+                          if(count($row['reply'])!=0)
+                            ff($row['reply'],$row['nickName']);
+>>>>>>> fb8a0b816cdef39f6955b4c6dae43822ccbbe9d7
                     }
                 }
                 $beReplyed = "";

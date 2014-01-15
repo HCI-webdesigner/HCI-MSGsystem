@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php
+=======
+﻿<?php
+>>>>>>> fb8a0b816cdef39f6955b4c6dae43822ccbbe9d7
 
 class tag {
     /*
@@ -36,8 +40,13 @@ class tag {
         global $db;
         $arr = array();
         try {
+<<<<<<< HEAD
             $rs = $db->prepare('select name from tag where isFormal=?');
             $rs ->execute(array($isFormal));
+=======
+            $rs = $db->prepare('select name from tag where isFormal=1');
+            $rs ->execute();
+>>>>>>> fb8a0b816cdef39f6955b4c6dae43822ccbbe9d7
             return $rs->fetchAll();
         } catch(PDOException $e) {
             echo $e;
@@ -100,6 +109,24 @@ class tag {
         } catch(PDOException $e) {
             echo $e;
         }
+    }
+
+
+    /*
+     *addTag方法
+     *@param $name 标签名
+     *@return null
+     */
+    static function addTag($name) {
+        global $db;
+        try {
+            $rs = $db->prepare('insert into tag(name,isFormal) values(?,?)');
+            $rs->execute(array($name,1));
+            echo '添加标签成功！';
+        }catch(PDOException $e) {
+            echo $e;
+        }
+
     }
 }
 

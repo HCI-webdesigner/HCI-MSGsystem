@@ -20,7 +20,11 @@ if(!isset($_POST['id'])||empty($_POST['id'])
     echo '参数不完整！';
 }
 
+<<<<<<< HEAD
 if(user_basic::search($user,$password,1) == true) {
+=======
+if(user_basic::search($user,$password) == true) {
+>>>>>>> fb8a0b816cdef39f6955b4c6dae43822ccbbe9d7
 	try {
 		article::deleteArticle($id);
 	}catch(PDOException $e) {
