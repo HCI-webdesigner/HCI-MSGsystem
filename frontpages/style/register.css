@@ -1,8 +1,7 @@
 #container{
     position: relative;
-    height: 410px;
+    height: 450px;
     padding-right: 0px;
-    margin: 0 auto;
     background-color: rgb(255, 255, 255);
     border: 3px solid rgb(248,248,248);
 }
@@ -86,10 +85,11 @@
 }
 
 #container button{
-    width: 63px;
+    width: 212px;
     height: 30px;
     padding: 4px 12px;
     margin: 10px 0;
+    font-weight: 600;
     text-align: center;
     text-shadow: 0 1px 1px rgba(255,255,255,0.75);
     vertical-align: middle;
@@ -100,8 +100,12 @@
     border-bottom-color: #b3b3b3;
 }
 
+.enable{
+    color: #000;
+}
+
 .disable{
-    color: #8A8A8;
+    color: #919090;
 }
 
 #container button:active{
@@ -123,10 +127,10 @@
     transition: background-position .1s linear;
 }
 
-.thingking{
+.thinking{
     background: #fff url("../image/think.gif") 185px 2px no-repeat;
     background-size: 22px 22px;
-    background-position: 185px -19px;
+    background-position: 185px;
 }
 
 

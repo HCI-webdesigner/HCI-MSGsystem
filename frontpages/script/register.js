@@ -1,5 +1,5 @@
 window.onload = init;
-var userFlag = passwordFlag = nicknameFlage = false;
+var userFlag = passwordFlag = nicknameFlag = false;
 function init(){
 		//本页面对应栏，下标由0起始,首页为0
         initSlide(0);
@@ -13,12 +13,12 @@ function init(){
     document.getElementById("password1").onblur = checkPassword1;
     document.getElementById("password2").onblur = checkPassword2;
     document.getElementById("nickname").onblur = checkNickname;
-    document.getElementById("nickname").disabled = false;
+    document.getElementById("reg-submit").disabled = true;
     document.getElementById("reg-submit").onclick = registerUser;
     
 }
 
-function checkUser(){
+function checkUser(){//只检查了邮箱格式，没有检查邮箱是否唯一
 	var user = document.getElementById("user");
     user.className = "thinking";
     userFlag = false;
@@ -33,7 +33,7 @@ function checkUser(){
     checkFormStatus();
 }
 
-function checkPassword1(e){
+function checkPassword1(){
     var password = document.getElementById("password1");
     if(password.value.length <6){
         password.className = "error";
@@ -41,10 +41,10 @@ function checkPassword1(e){
     checkFormStatus();
 }
 
-function checkPassword2(e){
+function checkPassword2(){
     var password1 = document.getElementById("password1");
     var password2 = document.getElementById("password2");
-    if(password2.value != "" && password1.value == password2.value){
+    if(password2.value != "" && password1.className == "correct" && password1.value == password2.value){
         password2.className = "correct";
         passwordFlag = true;
     }else{
@@ -57,7 +57,7 @@ function checkPassword2(e){
 function checkNickname(){//检查nickname是否唯一
     var nickname = document.getElementById("nickname");
     nickname.className = "thinking";
-    if(true){
+    if(1){
         nickname.className = "correct";//如果nickname唯一
         nicknameFlage = true;
     }else {
@@ -69,14 +69,15 @@ function checkNickname(){//检查nickname是否唯一
 
 function checkFormStatus(){
     var button = document.getElementById("reg-submit");
-    if(userFlag && passwordFlag && passwordFlag){
-        button.className = "disable";
+    if(userFlag && passwordFlag && nicknameFlag){
+        button.className = "enable";
         button.disabled = false;
     }else{
         button.disabled = true;
+        button.className = "disable";
     }
 }
 
-function registerUser(){
+function registerUser(){//提交form
     
 }

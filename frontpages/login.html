@@ -2,29 +2,18 @@
 <html lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>hci活动</title>
+	<title>登录</title>
 	<link rel="stylesheet" type="text/css" href="style/global.css">
 	<link rel="stylesheet" type="text/css" href="style/index.css">
 	<link rel="stylesheet" type="text/css" href="style/slideBox.css">
-	<link rel="stylesheet" type="text/css" href="style/login.css">
 	<link rel="stylesheet" type="text/css" href="style/info.css">
+	<link rel="stylesheet" type="text/css" href="style/login.css">
 	<script type="text/javascript" src="script/jquery-1.7.2.min.js"></script>
 	<script type="text/javascript" src="script/jquery.slideBox.min.js"></script>
-	<script type="text/javascript" src="script/log.js"></script>
-	<script type="text/javascript" src="script/register.js"></script>
-  <script type="text/javascript">
-	/*window.onload = function(){
-		//本页面对应栏，下标由0起始,首页为0
-        initSlide(0);
-
-        jQuery(function($){
-	        $("#slidebox").slideBox({
-	           	delay : 5
-	    	});
-	    });
-	};*/
-	</script>
-</head>
+	<script type="text/javascript" src="script/navSlide.js"></script>
+    <script type="text/javascript" src="script/log.js"></script>
+    <script type="text/javascript" src="script/login.js"></script>
+   </head>
 <body>
 	<div id="nav">
 		<a href="index.html" title="hci活动首页">
@@ -57,14 +46,18 @@
 		</div>
 	</div>
     <div id="mainBox">
-        <div id="login-module">
-            <h1 class="login-module-title">登录</h1>
+        <div id="login">
+			<a  href="register.html" class="btn-login" id="J_Login" title="注册">注册</a>
+		</div>
+
+        <div id="container">
+            <h1 class="login-title">登录</h1>
             <div class="separate-line"></div>
             <form action="" method="">
                 <ul> 
                     <li>
                         <label for="user">邮箱：</label>
-                        <input id="user" name="user" type="text">
+                        <input id="user" name="user" type="text" >
                     </li>
 
                     <li>
@@ -72,8 +65,8 @@
                         <input id="password" name="password" type="password">
                     </li>
                     <li>
-                        <label for="login"></label>
-						<button id="login" type="button" name="login">登录</button>
+                        <label for="login-button"></label>
+						<button id="login-button" type="button" name="login-button">登录</button>
                     </li>
                 </ul>
              </form>
