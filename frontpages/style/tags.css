@@ -1,8 +1,12 @@
-.body {
-	background-color: white;
+.mainBox {
+	width: 1000px;
+	padding: 100px 0 100px 300px;
 }
 .content {
-	width: 1000px;
+	width: 800px;
+	padding: 50px;
+	background-color: white;
+	overflow: hidden;
 }
 .content-title {
 	padding: 5px 0px 5px 20px;
