@@ -1,5 +1,6 @@
 <?php
 include_once('../Controllers/back_userControl.php');
+$rs = paging(20);   //每页显示二十条
 ?>
 <!DOCTYPE html>
 <html lang="en">

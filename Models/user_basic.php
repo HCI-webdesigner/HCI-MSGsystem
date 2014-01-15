@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 class user_basic {
     /*
      * 构造函数
