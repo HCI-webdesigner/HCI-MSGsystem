@@ -1,6 +1,11 @@
+.user {
+	background: white;	
+}
+
 .user-box {
 	font-size: 1.2em;
 	line-height: 26px;
+
 }
 .user-info {
 	color: #888;
@@ -41,7 +46,7 @@
 	margin-left: 50px;
 	margin-bottom: 10px;
 	padding: 15px;
-	background: #e8ecea;
+	background: #f3f5f4;
 }
 
 .article {
@@ -70,7 +75,7 @@ article {
 	width: 20px;
 	display: inline-block;
 	float: left;
-	padding: 15px; 
+	padding: 13px 13px 13px 22px; 
 	background: #f3f3f3;
 }
 .item-num span {
@@ -82,6 +87,7 @@ article {
 	float: left;
 	display: inline-block;
 	overflow: hidden;
+	padding-left: 15px;
 }
 .article-title {
 	font-weight: bold;
