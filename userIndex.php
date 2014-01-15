@@ -9,6 +9,7 @@ include_once("conf/config.php");
     <link rel="stylesheet" href="public/stylesheets/index.css">
 </head>
 <body>
+	<a href="showAllArticles.php">所有博文</a>
     <a href="showMyArticles.php">我的博文</a>
     <a href="addArticle.php">写博文</a>
 </body>

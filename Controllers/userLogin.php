@@ -6,6 +6,7 @@
  */
 
 //引入相关模型类
+include_once("../conf/config.php");
 include_once('../Models/user_basic.php');
 include_once('../Models/user_info.php');
 

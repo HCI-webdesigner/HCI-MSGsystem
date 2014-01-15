@@ -55,7 +55,6 @@ if ($customtag != false) {
 		if($flag == true) {
 			tag::add($value,0); //添加用户自定义标签
 			$tagId = tag::getIdByName($value); //标签id
-			echo "id=".$tagId;
 			tag_relate_article::add($articleId, $tagId); //添加自定义标签和文章的联系
 		}
 	}

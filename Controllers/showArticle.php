@@ -9,11 +9,9 @@
 include_once('Models/article.php');
 include_once('Models/tag_relate_article.php');
 include_once('Models/tag.php');
+include_once('Models/comment.php');
+include_once('Models/user_info.php');
 
-//检查POST参数的完整性性
-if(!isset($_GET['articleId'])||empty($_GET['articleId'])) {
-    echo '表单参数不完整！';
-}
 //获取文章信息
 $articleId = $_GET['articleId']; //获得文章id
 $_SESSION["articleId"] = $articleId; //将文章id放入session
@@ -32,4 +30,17 @@ for($i=0; $i<$num; $i++) {
 		}
 	}
 }
+$allComment = comment::getOriginalCommentByArticleId($articleId);//该文章所有评论信息
+function f(& $array) { //递归将评论链存到数组中
+	$count = count($array);
+	if($count == 0)
+		return $array;
+	for($i=0; $i<$count; $i++) {
+		$array[$i]['nickName'] = user_info::getNickNameById($array[$i]['user_id']);
+		$reply = comment::getReplyCommentId($array[$i]['ID']);
+		f($reply);
+		$array[$i]['reply'] = $reply;
+	}
+}
+f($allComment);
 ?>

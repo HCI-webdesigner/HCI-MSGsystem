@@ -6,6 +6,7 @@
  */
 
 //引入相关模型类
+include_once("../conf/config.php");
 include_once('../Models/tag.php');
 include_once('../Models/article.php');
 include_once('../Models/tag_relate_article.php');
@@ -51,7 +52,7 @@ if ($customtag != false) {
 				echo $value."标签已添加";
 			}
 		}
-		if($flag == true)
+		if($flag == true) {
 			tag::add($value,0); //添加用户自定义标签
 			$tagId = tag::getIdByName($value); //标签id
 			tag_relate_article::add($articleId, $tagId); //添加自定义标签和文章的联系
