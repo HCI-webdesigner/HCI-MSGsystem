@@ -1,0 +1,34 @@
+.mainBox {
+	width: 1000px;
+	padding: 100px 0 100px 300px;
+}
+.content {
+	width: 800px;
+	padding: 50px;
+	background-color: white;
+	overflow: hidden;
+}
+.content-title {
+	padding: 5px 0px 5px 20px;
+	border-bottom: 1px solid #ccc;
+}
+.tag-tree h3 {
+	clear: both;
+}
+.tag-list {
+	overflow: hidden;
+}
+.tag-list li {
+	float: left;
+	margin-left: 10px;
+	overflow: hidden;
+}
+.tag-list li a {
+	padding: 4px 8px;
+	border: 1px solid #ccc;
+	display: block;
+}
+.tag-list li a:hover {
+	color: #aaa;
+	border: 1px solid #aaa;
+}
