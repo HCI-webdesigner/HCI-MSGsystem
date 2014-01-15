@@ -19,7 +19,7 @@ define('SYS_POWER','HCI人机交互中心');
 $db_url = '127.0.0.1';
 $db_port = '3306';
 $db_user = 'root';
-$db_pwd = 'root';
+$db_pwd = '123';
 $db_name = 'hcimsg';
 
 try {
@@ -29,4 +29,29 @@ try {
     $db->exec('SET NAMES UTF8');
 } catch(PDOException $e) {
     echo $e;
+}
+
+/*
+ * 常用函数
+ */
+
+/*
+ * redirect方法
+ * 跳转到指定页面
+ * @param $url string 跳转地址
+ * return NULL
+ */
+function redirect($url) {
+    echo '<script type="text/javascript">location.href="'.$url.'";</script>';
+    exit(0);
+}
+
+/*
+ * alert方法
+ * 弹出提示框提示信息
+ * @param $msg string 提示信息
+ * @return NULL
+ */
+function alert($msg) {
+    echo '<script type="text/javascript">alert("'.$msg.'");</script>';
 }
