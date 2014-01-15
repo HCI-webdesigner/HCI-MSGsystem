@@ -7,13 +7,14 @@
 //引用相关模块
 include_once('../conf/config.php');
 include_once('../Models/user_basic.php');
+include_once('../Models/article.php');
 
-//传来3个参数，name为添加的标签名
-$name=$_POST['name'];
+//传来3个参数，id为文章的主码
+$id=$_POST['id'];
 $user=$_POST['user'];
 $password=$_POST['password'];
 
-if(!isset($_POST['name'])||empty($_POST['name'])
+if(!isset($_POST['id'])||empty($_POST['id'])
 	|| !isset($_POST['user'])||empty($_POST['user'])
 	||!isset($_POST['password'])||empty($_POST['password'])) {
     echo '参数不完整！';
@@ -21,7 +22,7 @@ if(!isset($_POST['name'])||empty($_POST['name'])
 
 if(user_basic::search($user,$password) == true) {
 	try {
-		user_basic::addTag($name);
+		article::deleteArticle($id);
 	}catch(PDOException $e) {
 		echo $e;
 	}

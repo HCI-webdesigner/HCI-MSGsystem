@@ -21,7 +21,7 @@ if(user_basic::searchUser($user,$password) == true ) {
 	try {
 		$id = user_basic::getIdByUser($user);
 		$isAdmin= user_basic::getIsAdmin($id);
-		if(user_basic::modifyPower($isAdmin)==true) {
+		if(user_basic::modifyPower($id,$isAdmin)==true) {
 			echo "修改权限成功!";
 		}else {
 			echo "修改权限失败!";

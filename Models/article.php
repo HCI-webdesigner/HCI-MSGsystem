@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 class article {
     /*
      * 构造函数
@@ -122,5 +122,22 @@ class article {
             echo $e;
         }
     }
+
+	/*
+	*deleteArticle方法
+	*@param $id 标识符
+	*@return null
+	*/
+	static function deleteArticle($id) {
+		global $db;
+		try {
+			$rs = $db->prepare('delete from article where id=?');
+           	$rs->execute(array($id));
+            echo '删除文章成功！';
+		}catch(PDOException $e) {
+			echo $e;
+		}
+		
+	}
 }
 
