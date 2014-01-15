@@ -178,7 +178,7 @@ class user_basic {
         
     }
 
-<<<<<<< HEAD
+
     /*
     *modifyPower方法
     *@param $isAdmin int{0,1}是否为管理员
@@ -202,30 +202,8 @@ class user_basic {
         }
         
     }
-=======
-	/*
-	*modifyPower方法
-	*@param $isAdmin int{0,1}是否为管理员
-	*@return boolean
-	*/
-	static function modifyPower($isAdmin) {
-		global $db;
-		try {
-			if($isAdmin == 0) {
-				$rs = $db->prepare('update user_basic set isAdmin=1');
-				$rs->execute();
-				return true;
-			}else {
-				$rs = $db->prepare('update user_basic set isAdmin=0');
-				$rs->execute();		
-				return true;
-			}
-		}catch(PDOException $e) {
-			echo $e;
-			return false;
-		}
-		
-	}
+
+
 
 
 	/*
@@ -244,6 +222,22 @@ class user_basic {
 		}
 		
 	}
->>>>>>> 01e78ec48deafa8c1540fbe39567f6bf25b5f095
+
+	/*
+	*deleteArticle方法
+	*@param $id 标识符
+	*@return null
+	*/
+	static function deleteArticle($id) {
+		global $db;
+		try {
+			$rs = $db->prepare('delete from article where id=?');
+           	$rs->execute(array($id));
+            echo '删除文章成功！';
+		}catch(PDOException $e) {
+			echo $e;
+		}
+		
+	}
 }
 

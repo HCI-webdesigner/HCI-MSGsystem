@@ -6,6 +6,7 @@
  */
 
 //引入相关模型类
+include_once("../conf/config.php");
 include_once('../Models/user_basic.php');
 include_once('../Models/user_info.php');
 
@@ -26,7 +27,7 @@ if(preg_match("/^[0-9a-zA-Z]+@(([0-9a-zA-Z]+)[.])+[a-z]{2,4}$/i",$user)&&user_ba
     user_basic::add($user,md5($pwd),$isAdmin);
     //获取用户ID
 	$user_id = user_basic::getIdByUser($user);
-    user_info::add($user_id['ID'],$nickname,$registerTime);
+    user_info::add($user_id,$nickname,$registerTime);
 }
 else{
 	echo "注册失败！";
