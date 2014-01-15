@@ -1,41 +1,44 @@
-.body {
-	background-color: white;
-}
-.content {
+.mainBox {
 	width: 1000px;
+	padding: 100px 0 100px 300px;
+}
+.editor-content {
+	width: 800px;
+	padding: 50px;
+	background-color: white;
 	overflow: hidden;
 }
 .editor-header {
 	margin-bottom: 10px;
 }
-.title {
+.editor-header span {
+	float: left;
+	width: 8px;
+	height: 20px;
+	background-color: #ff6600;
+}
+.editor-title {
 	font-size: 16px;
 	padding: 0 5px;
 }
 .issue-title {
-	width: 670px;
+	width: 790px;
 	height: 25px;
 	padding-left: 6px;
 	border: 1px solid #ccc;
 	line-height: 20px;
 }
-#editor-content {
-	float: left;
-	width: 680px;
+.tags-title {
+	font-size: 14px;
+	padding: 0 5px;
 }
-.content-tags {
-	float: left;
-	width: 300px;
-	margin-left: 20px;
-	border-top: 1px solid #ccc;
-}
-.content-tags .title:before {
+.tags-title:before {
 	content: "* ";
 	color: #e20000;
 }
 .tag {
-	width: 200px;
-	height: 25px;
+	width: 300px;
+	height: 28px;
 	padding-left: 6px;
 	border: 1px solid #ccc;
 	line-height: 20px;
@@ -56,8 +59,8 @@
 	color: #aaa;
 }
 .tags-list {
+	width: 400px;
 	margin-top: 10px;
-	border: 1px solid #ccc;
 	overflow: hidden;
 }
 .tags-list-item{

@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>hci-user</title>
+	<link rel="stylesheet" type="text/css" href="style/global.css">
+	<link rel="stylesheet" type="text/css" href="style/user.css">
+	<script type="text/javascript" src="script/navSlide.js"></script>
+	<script type="text/javascript">
+	window.onload = function(){
+		//本页面对应栏，下标由0起始,首页为0
+        initSlide(0);
+
+        jQuery(function($){
+	        $("#slidebox").slideBox({
+	           	delay : 5
+	    	});
+	    });
+	};
+	</script>
+</head>
+<body>
+	<div id="nav">
+		<a href="index.html" title="hci活动首页">
+			<img width="240" height="100" src="image/box4.png"id="imgIndex">
+		</a>
+		<div class="menu">
+			<div id="menuLabel" style="display:block; ">
+				<span></span>
+			</div>
+			<ul id="menuList">
+				<li>
+					<a href="index.html">首页</a>
+				</li>
+				<li>
+					<a href="index.html">活动</a>
+				</li>
+				<li>
+					<a href="index.html">活动首页</a>
+				</li>
+				<li>
+					<a href="index.html">首页活动</a>
+				</li>
+				<li>
+					<a href="index.html">活动</a>
+				</li>
+				<li>
+					<a href="index.html">首页</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div id="mainBox">
+		<div id="container">
+			<div class="user-box">
+				<h2 class="nickname">屌丝</h2>
+				<div class="user-info">
+					<img src="image/1.jpg" alt="">
+					<ul class="info">
+						<li>2014年01月01日加入</li>
+						<li>邮箱: xxx@qq.com</li>
+					</ul>
+					<ul class="status">
+						<li><strong>100</strong>声望值</li>
+						<li><strong class="red">10</strong>篇文章</li>
+					</ul>
+					<div class="signature">华农HCI屌丝一枚</div>
+				</div>
+			</div>
+			<div class="tag-score"></div>
+			<div class="article">
+				<div class="article-num"><strong>10</strong>篇文章</div>
+				<article>
+					<div class="item-num">
+						<span>1</span>
+					</div>
+					<div class="item-content">
+						<a href=""><div class="article-title">html、css</div></a>
+						<a class="article-content" href="">Codeigniter有没有处理http请求的类</a>
+					</div>
+				</article>
+				<article>
+					<div class="item-num">
+						<span>2</span>
+					</div>
+					<div class="item-content">
+						<a href=""><div class="article-title">html、css</div></a>
+						<a class="article-content" href="">Codeigniter有没有处理http请求的类</a>
+					</div>
+				</article>
+				<article>
+					<div class="item-num">
+						<span>3</span>
+					</div>
+					<div class="item-content">
+						<a href=""><div class="article-title">html、css</div></a>
+						<a class="article-content" href="">Codeigniter有没有处理http请求的类</a>
+					</div>
+				</article>
+			</div>
+		</div>
+	</div>
+	<div id="footer">
+		<ul class="footer-box">
+			<li class="footer-from">Powered By - HCI人机交互中心</li>
+			<li class="footer-info">
+				联系我们&nbsp;|&nbsp;网站地图&nbsp;|&nbsp;返回首页&nbsp;|&nbsp;投诉举报&nbsp;|&nbsp;意见建议<br>
+			</li>
+		</ul>
+	</div>
+	<div id="goTopBtn" class="back-to-top">
+		<a id="J_BackToTop" href="javascript:void(0)"></a>
+	</div>
+</body>
+</html>

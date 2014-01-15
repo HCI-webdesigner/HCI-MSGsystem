@@ -13,6 +13,7 @@ a:hover {text-decoration: none;}
 	width:1000px;
 	padding: 100px 0 100px 350px;
 	position: center;
+	overflow: hidden;
 }
 #nav{
 	width:240px;
