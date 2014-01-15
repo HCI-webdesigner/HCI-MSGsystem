@@ -1,0 +1,91 @@
+.body {
+	background-color: white;
+}
+.content {
+	width: 1000px;
+	overflow: hidden;
+}
+.editor-header {
+	margin-bottom: 10px;
+}
+.title {
+	font-size: 16px;
+	padding: 0 5px;
+}
+.issue-title {
+	width: 670px;
+	height: 25px;
+	padding-left: 6px;
+	border: 1px solid #ccc;
+	line-height: 20px;
+}
+#editor-content {
+	float: left;
+	width: 680px;
+}
+.content-tags {
+	float: left;
+	width: 300px;
+	margin-left: 20px;
+	border-top: 1px solid #ccc;
+}
+.content-tags .title:before {
+	content: "* ";
+	color: #e20000;
+}
+.tag {
+	width: 200px;
+	height: 25px;
+	padding-left: 6px;
+	border: 1px solid #ccc;
+	line-height: 20px;
+}
+.add-btn {
+	width: 85px;
+	height: 32px;
+	font-size: 14px;
+	background-color: white;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	cursor: pointer;
+}
+.add-btn:hover {
+	border-color: #aaa;
+	color: #aaa;
+}
+.tags-list {
+	margin-top: 10px;
+	border: 1px solid #ccc;
+	overflow: hidden;
+}
+.tags-list-item{
+	float: left;
+	margin: 5px 3px;
+}
+.tags-list-item a {
+	padding: 4px 8px;
+	border: 1px solid #aaa;
+	display: block;
+}
+.tags-list-item a:hover {
+	color: #aaa;
+	border: 1px solid #ccc;
+}
+.submit-btn {
+	width: 120px;
+	height: 35px;
+	margin-top: 10px;
+	font-size: 16px;
+	color: #eeeeee;
+	background-color: #ff6600;
+	border: 1px solid #ff6600;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	cursor: pointer;
+}
+.submit-btn:hover {
+	background-color: #ff4400;
+}
