@@ -1,5 +1,4 @@
 <?php
-
 class user_info {
     /*
      * 构造函数

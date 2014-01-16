@@ -32,26 +32,37 @@ try {
 }
 
 /*
- * 常用函数
+ * 系统类
  */
+class sys {
+    /*
+     * 构造函数
+     */
+    function __construct() {
+        //@todo 初始化系统
+    }
 
-/*
- * redirect方法
- * 跳转到指定页面
- * @param $url string 跳转地址
- * return NULL
- */
-function redirect($url) {
-    echo '<script type="text/javascript">location.href="'.$url.'";</script>';
-    exit(0);
+    /*
+     * redirect方法
+     * 跳转到指定页面
+     * @author C860
+     * @param $url string 跳转地址
+     * return NULL
+     */
+    static function redirect($url) {
+        echo '<script type="text/javascript">location.href="'.$url.'";</script>';
+        exit(0);
+    }
+
+    /*
+     * alert方法
+     * 弹出提示框提示信息
+     * @author C860
+     * @param $msg string 提示信息
+     * @return NULL
+     */
+    static function alert($msg) {
+        echo '<script type="text/javascript">alert("'.$msg.'");</script>';
+    }
 }
 
-/*
- * alert方法
- * 弹出提示框提示信息
- * @param $msg string 提示信息
- * @return NULL
- */
-function alert($msg) {
-    echo '<script type="text/javascript">alert("'.$msg.'");</script>';
-}

@@ -13,6 +13,7 @@ include_once('../Models/user_basic.php');
 /*
  * paging方法
  * 获取用户信息并分页
+ * @author C860
  * @param $perpage int 每页显示条数
  * @return array
  */
@@ -26,11 +27,13 @@ function paging($perpage) {
     $rs = user_basic::getTotalInfo($perpage,$curpage);
     return $rs;
 }
-//分页
+//设置或取消管理员权限
 if(isset($_GET['uid'])) {
-    $query = $db->prepare('update user_basic set isAdmin=isAdmin^1 where ID=?');
-    if($query->execute(array($_GET['uid']))!=false) {
-        alert('操作成功！');
-        redirect('../back/userControl.php');
-    } 
+    if(user_basic::setIsAdmin($_GET['uid'])) {
+        sys::alert('操作成功！');
+        sys::redirect('../back/userControl.php');    
+    }
+    else {
+        alert('操作失败！');
+    }
 }
