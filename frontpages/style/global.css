@@ -11,8 +11,7 @@ a:hover {text-decoration: none;}
 
 #mainBox{
 	width:1000px;
-	padding: 100px 0 100px 350px;
-	position: center;
+	padding: 0 0 100px 350px;  /*padding-top的值由每个页面决定*/
 	overflow: hidden;
 }
 #nav{
@@ -62,84 +61,17 @@ a:hover {text-decoration: none;}
 }
 
 #login {
-	left: 1156px;
-	right: auto !important;
-}
-
-#login {
+	width: 25px;
+	padding: 4px 12px;
 	position: absolute;
 	right: 158px;
 	top: 20px;
 	z-index: 100;
 	color: rgb(255, 255, 255);
-}
-
-#J_Login {
 	background: rgb(179, 179, 179);
-	padding: 4px 12px;
-	line-height: 14px;
-	color: rgb(255, 255, 255);
-	float: left;
-	width: 25px;
-	cursor: pointer;
 }
-
-#J_Login:hover{
-	background: #C0C0C0;
-}
-
-#J_FormWrapper {
-	position: absolute;
-	right: 0;
-	width: 220px;
-	overflow: hidden;
-	top: 37px;
-	background-position: 188px -793px;
-}
-
-#J_FormWrapper a :hover{
-	color: rgb(255,0,0);
-}
-
-#login form {
-	padding: 20px ;
-	background-color: rgb(255, 0, 0);
-}
-
-#login p {
-	padding: 5px 0;
-}
-#login .col-1 {
-	padding-bottom: 14px;
-}
-#login #rememberme {
-	vertical-align: text-bottom;
-	_vertical-align: middle;
-	margin: 5px 3px 0 36px;
-}
-#login .input {
-	outline: 0;
-	border: 0;
-	background: rgb(255, 255, 255);
-	width: 130px;
-	height: 14px;
-	padding: 4px 5px;
-	margin-left: 10px;
-}
-#wp-submit{
-	margin-left: 36px;
-}
-.btn-submit {
-	margin-top: 5px;
-	height: 23px;
-	width: 52px;
-	color: rgb(153, 153, 153);
-	border: 1px solid rgb(211,211,211);
-	cursor: pointer;
-	background-color: rgb(255, 255, 255);
-}
-#wp-reg{
-	margin-left: 33px;
+#login:hover {
+	background: red;
 }
 
 .back-to-top {

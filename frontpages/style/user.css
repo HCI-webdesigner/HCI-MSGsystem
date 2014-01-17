@@ -1,6 +1,5 @@
-#container {
-	background: white;	
-	padding: 10px 20px 0 10px;
+#mainBox{
+	padding-top: 20px; 
 }
 
 .user-box {
