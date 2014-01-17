@@ -38,7 +38,7 @@ $sort = sortTags($rs);
                 visibility: hidden;
                 flex-flow: column;
                 justify-content: center;
-                width: 400px;
+                width: 500px;
                 height: 100px;
                 border: 1px solid #BEBEBE;
                 text-align: center;
@@ -58,21 +58,34 @@ $sort = sortTags($rs);
                 margin-top: 20px;
                 padding-left: 25px;
             }
+            .formal {
+                border: 1px solid #FF3030;
+            }
         </style>
     </head>
     <body>
         <form class="newForm" action="../Controllers/back_tagControl.php" method="post">
             <input type="text" name="name">
             <input type="hidden" name="type" value="add">
+            <select name="isFormal">
+                <option value="0">非正式</option>
+                <option value="1">正式</option>
+            </select>
             <input type="submit" class="btn" value="新  增">
         </form>
         <?php
         $keys = array_keys($sort);
         for($i=0;$i<count($sort);++$i) {
         if(count($sort[$keys[$i]])>0) {
-        echo '<div class="block"><h2>'.$keys[$i].'</h2>';
+            echo '<div class="block"><h2>'.$keys[$i].'</h2>';
             for($j=0;$j<count($sort[$keys[$i]]);++$j) {
-            echo '<a class="tag" data-id="'.$sort[$keys[$i]][$j]['ID'].'">'.$sort[$keys[$i]][$j]['name'].'</a>';
+                if($sort[$keys[$i]][$j]['isFormal']==1) {
+                    echo '<a class="tag formal" data-id="'.$sort[$keys[$i]][$j]['ID'].'" data-isformal="'.$sort[$keys[$i]][$j]['isFormal'].'">'.$sort[$keys[$i]][$j]['name'].'</a>';
+                }
+                else {
+                    echo '<a class="tag" data-id="'.$sort[$keys[$i]][$j]['ID'].'" data-isformal="'.$sort[$keys[$i]][$j]['isFormal'].'">'.$sort[$keys[$i]][$j]['name'].'</a>';
+                }
+                
             }
             echo '</div>';
         }
@@ -83,6 +96,10 @@ $sort = sortTags($rs);
         <div id="box" class="box">
             <form action="../Controllers/back_tagControl.php" method="post">
                 <input id="tagname" type="text" name="name">
+                <select id="isFormal" name="isFormal">
+                    <option value="0">非正式</option>
+                    <option value="1">正式</option>
+                </select>
                 <input id="tagid" type="hidden" name="tag_id">
                 <input type="hidden" name="type" value="modify">
                 <input type="submit" class="btn" value="修  改">
@@ -99,6 +116,7 @@ $sort = sortTags($rs);
                     $('#bg').show();
                     $('#tagname').val($(obj).html());
                     $('#tagid').val($(obj).attr('data-id'));
+                    $('#isFormal').val($(obj).attr('data-isformal'));
                 });
             });
             //绑定删除按钮点击事件
@@ -123,3 +141,4 @@ $sort = sortTags($rs);
         </script>
     </body>
 </html>
+

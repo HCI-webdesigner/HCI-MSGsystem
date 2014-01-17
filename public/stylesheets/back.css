@@ -18,7 +18,7 @@ body {
     max-width: 500px;
     display: flex;
     flex-flow: column;
-    background: rgb(179,238,58);
+    background: #B3EE3A;
     color: white;
     font-weight: bold;
 }
@@ -29,7 +29,7 @@ body {
     margin: 20px 0;
     padding-left: 20px;
     color: white;
-    text-shadow: 0 0 5px rgb(0,0,139);
+    text-shadow: 0 0 5px #00008B;
 }
 .control-list {
     list-style: none;
@@ -51,12 +51,18 @@ body {
 }
 .btn {
     cursor: pointer;
-    border: 1px solid rgb(179,238,58);
+    border: 1px solid #B3EE3A;
     padding: 5px;
     color: white;
     font-weight: bold;
-    background: rgb(179,238,58);
+    background: #B3EE3A;
 }
 input[type='text'] {
     padding: 5px;
+}
+select {
+    border: none;
+    height: 26px;
+    background: #CAFF70;
+    color: #696969;
 }

@@ -10,6 +10,35 @@ include_once('../conf/config.php');
 //引入相关模型类
 include_once('../Models/tag.php');
 
+if(isset($_POST['type'])) {
+    if($_POST['type']=='modify') {
+        if(isset($_POST['tag_id']) && is_numeric($_POST['tag_id'])
+            && isset($_POST['name']) && !empty($_POST['name'])
+            && isset($_POST['isFormal']) && is_numeric($_POST['isFormal'])
+        ) {
+            $query = $db->prepare('update tag set name=?,isFormal=? where ID=?');
+            $query->execute(array($_POST['name'],$_POST['isFormal'],$_POST['tag_id']));
+            sys::alert('修改成功！');
+            sys::redirect('../back/tagControl.php');
+        }
+
+    }
+    else if($_POST['type']=='add') {
+        if(isset($_POST['name']) && !empty($_POST['name'])
+            && isset($_POST['isFormal']) && is_numeric($_POST['isFormal'])
+        ) {
+            $query = $db->prepare('insert into tag (name,isFormal)values(?,?)');
+            $query->execute(array($_POST['name'],$_POST['isFormal']));
+            sys::alert('新增标签成功！');
+            sys::redirect('../back/tagControl.php');
+        }
+
+    }
+}
+else if(isset($_GET['type'])&&$_GET['type']=='delete') {
+
+}
+
 /*
  * getAllTags方法
  * 获得所有分类
@@ -104,3 +133,4 @@ function getFirstLetter($str){
     if($asc>=-11055&&$asc<=-10247) return 'Z';
     return null;
 }
+
