@@ -2,7 +2,7 @@
 /*
  * tagControl.php
  * 负责处理管理员管理系统标签的逻辑
- * Create By C860 at 2014-1-15
+ * Created By C860 at 2014-1-15
  */
 
 include_once('../conf/config.php');
@@ -16,9 +16,12 @@ if(isset($_POST['type'])) {
             && isset($_POST['name']) && !empty($_POST['name'])
             && isset($_POST['isFormal']) && is_numeric($_POST['isFormal'])
         ) {
-            $query = $db->prepare('update tag set name=?,isFormal=? where ID=?');
-            $query->execute(array($_POST['name'],$_POST['isFormal'],$_POST['tag_id']));
-            sys::alert('修改成功！');
+            if(tag::update($_POST['tag_id'],$_POST['name'],$_POST['isFormal'])) {
+                sys::alert('修改成功！');
+            }
+            else {
+                sys::alert('出现未知错误！');
+            }
             sys::redirect('../back/tagControl.php');
         }
 
@@ -27,16 +30,27 @@ if(isset($_POST['type'])) {
         if(isset($_POST['name']) && !empty($_POST['name'])
             && isset($_POST['isFormal']) && is_numeric($_POST['isFormal'])
         ) {
-            $query = $db->prepare('insert into tag (name,isFormal)values(?,?)');
-            $query->execute(array($_POST['name'],$_POST['isFormal']));
-            sys::alert('新增标签成功！');
+            if(tag::add($_POST['name'],$_POST['isFormal'])) {
+                sys::alert('新增标签成功！');
+            }
+            else {
+                sys::alert('出现未知错误！');
+            }
             sys::redirect('../back/tagControl.php');
         }
 
     }
 }
-else if(isset($_GET['type'])&&$_GET['type']=='delete') {
-
+else if(isset($_GET['type']) && $_GET['type']=='delete') {
+    if(isset($_GET['id']) && is_numeric($_GET['id'])) {
+        if(tag::delete($_GET['id'])) {
+            sys::alert('删除标签成功！');
+        }
+        else {
+            sys::alert('出现未知错误！');
+        }
+        sys::redirect('../back/tagControl.php');
+    }
 }
 
 /*

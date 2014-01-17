@@ -35,5 +35,65 @@ class tag {
             return $rs;
         }
     }
+
+    /*
+     * update方法
+     * 更新一条数据
+     * @author C860
+     * @param $ID int 标签ID
+     * @param $name string 标签名
+     * @param $isFormal int{0,1} 是否正式
+     * @return boolean
+     */
+    static function update($ID,$name,$isFormal) {
+        global $db;
+        try {
+            $query = $db->prepare('update tag set name=?,isFormal=? where ID=?');
+            $query->execute(array($name,$isFormal,$ID));
+            return true;
+        } catch(PDOException $e) {
+            echo $e;
+            return false;
+        }
+    }
+
+    /*
+     * add方法
+     * 新增一条数据
+     * @author C860
+     * @param $name string 标签名
+     * @param $isFormal int{0,1} 是否正式
+     * @return boolean
+     */
+    static function add($name,$isFormal) {
+        global $db;
+        try {
+            $query = $db->prepare('insert into tag (name,isFormal)values(?,?)');
+            $query->execute(array($name,$isFormal));
+            return true;
+        } catch(PDOException $e) {
+            echo $e;
+            return false;
+        }
+    }
+
+    /*
+     * delete方法
+     * 删除一条数据
+     * @author C860
+     * @param $ID int 标签ID
+     * @return boolean
+     */
+    static function delete($ID) {
+        global $db;
+        try {
+            $query = $db->prepare('delete from tag where ID=?');
+            $query->execute(array($ID));
+            return true;
+        } catch(PDOException $e) {
+            echo $e;
+            return false;
+        }
+    }
 }
 

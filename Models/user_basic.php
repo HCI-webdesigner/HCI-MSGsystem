@@ -8,6 +8,33 @@ class user_basic {
     }
 
     /*
+     * check方法
+     * 检索表中是否存在符合条件的记录
+     * @author C860
+     * @param $user string 用户名
+     * @param $pwd string 密码
+     * @return boolean
+     */
+    static function check($user,$pwd) {
+        global $db;
+        try {
+            $query = $db->prepare('select * from user_basic where user=? and password=?');
+            $query->execute(array($user,$pwd));
+            if(count($query->fetchAll())>0) {
+                $query = $db->prepare('update user_basic set lastLogTime=? where user=?');
+                $query->execute(array(date('Y-m-d H:i:s'),$user));
+                return true;
+            }
+            else {
+                return false;
+            }
+        } catch(PDOException $e) {
+            echo $e;
+            return false;
+        }
+    }
+
+    /*
      * getTotalInfo方法
      * 获取所有用户的所有信息（联查user_info表，带分页）
      * @author C860

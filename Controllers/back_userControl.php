@@ -2,7 +2,7 @@
 /*
  * userControl.php
  * 负责后台管理员对用户的管理逻辑
- * Create By C860 at 2014-1-15
+ * Created By C860 at 2014-1-15
  */
 
 include_once('../conf/config.php');
