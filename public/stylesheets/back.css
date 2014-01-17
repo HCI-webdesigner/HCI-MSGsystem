@@ -57,6 +57,14 @@ body {
     font-weight: bold;
     background: #B3EE3A;
 }
+.btn a {
+    cursor: pointer;
+    border: 1px solid #B3EE3A;
+    padding: 5px;
+    color: white;
+    font-weight: bold;
+    background: #B3EE3A;
+}
 input[type='text'] {
     padding: 5px;
 }

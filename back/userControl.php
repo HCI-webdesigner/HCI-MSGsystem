@@ -7,9 +7,10 @@ $rs = paging(20);   //每页显示二十条
     <head>
         <meta charset="UTF-8">
         <title></title>
+        <link rel="stylesheet" href="../public/stylesheets/back.css">
         <style>
             .list-table {
-                margin: 0 auto;
+                margin: 20px auto;
                 width: 80%;
                 border: 1px solid #F5F5F5;
             }
@@ -47,12 +48,12 @@ $rs = paging(20);   //每页显示二十条
                         <?php
                         if($row['isAdmin']==0) {
                         ?>
-                        <a href="../Controllers/back_userControl.php?uid=<?=$row['ID'] ?>">【设为管理员】</a>
+                        <a href="../Controllers/back_userControl.php?uid=<?=$row['ID'] ?>">设为管理员</a>
                         <?php
                         }
                         else if($row['isAdmin']==1) {
                         ?>
-                        <a href="../Controllers/back_userControl.php?uid=<?=$row['ID'] ?>">【取消管理员】</a>
+                        <a href="../Controllers/back_userControl.php?uid=<?=$row['ID'] ?>">取消管理员</a>
                         <?php
                         }
                         ?>
