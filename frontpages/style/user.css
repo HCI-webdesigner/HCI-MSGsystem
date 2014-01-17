@@ -1,11 +1,11 @@
-#mainBox{
-	padding-top: 20px; 
+#container {
+	padding: 50px;
+	background: white;
 }
 
 .user-box {
 	font-size: 1.2em;
 	line-height: 26px;
-
 }
 .user-info {
 	color: #888;
