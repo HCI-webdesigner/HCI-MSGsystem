@@ -49,3 +49,14 @@ body {
 .main > iframe {
     width: 100%;
 }
+.btn {
+    cursor: pointer;
+    border: 1px solid rgb(179,238,58);
+    padding: 5px;
+    color: white;
+    font-weight: bold;
+    background: rgb(179,238,58);
+}
+input[type='text'] {
+    padding: 5px;
+}
