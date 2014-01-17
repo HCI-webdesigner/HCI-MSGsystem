@@ -1,6 +1,6 @@
-.mainBox {
+#container {
 	width: 1000px;
-	padding: 100px 0 100px 300px;
+	padding: 20px 0 100px 300px;
 }
 .editor-content {
 	width: 800px;
