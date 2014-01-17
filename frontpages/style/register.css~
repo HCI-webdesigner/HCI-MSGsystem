@@ -1,0 +1,147 @@
+#register{
+    position: relative;
+    height: 400px;
+    padding-right: 0px;
+    margin: 0 auto;
+    background-color: rgb(255, 255, 255);
+    background-shadow: 0px 1px 1px rgb(238, 238, 238);
+    border: 3px solid rgb(248,248,248);
+}
+
+#register .register-title{
+    color: rgb(51,51,51);
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 24px;
+    font-family: "Microsoft YaHei";
+    padding-left: 10px;
+}
+
+#register form{
+    padding-top: 10px;
+}
+
+#register ul{
+    margin: 0 auto;
+}
+
+#register li{
+    font-size: 14px;
+    list-style: none;
+    margin: 0 0 4px 0;
+}
+
+#register label{
+    float: left;
+    margin: 4px 6px 0 0;
+    text-align: right;
+    width: 160px;
+}
+
+#register input,textarea,button{
+    display: inline-block;
+    height: 20px;
+    width: 198px;
+    padding: 4px 6px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #555;
+    border: 1px solid #ccc;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);
+    -webkit-transition: border linear .2s,box-shadow linear .2s;
+    -moz-transition: border linear .2s,box-shadow linear .2s;
+    -o-transition: border linear .2s,box-shadow linear .2s;
+    transition: border linear .2s,box-shadow linear .2s;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+#register input:focus,textarea:focus{
+    border-color: rgba(172, 162, 166, 0.8);
+    outline: 0;
+    outline: line dotted \9;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(172, 162, 166, 0.6);
+    -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(172, 162, 166, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(172, 162, 166, 0.6);
+}
+
+
+#register span{
+    color: red;
+    font-size: 14px;
+    margin: 0 5px;
+}
+
+#register textarea{
+    height: 60px;
+}
+
+#register strong{
+    font-style: italic;
+    color: red;
+    font-weight: 100;
+    margin-bottom: 10px;
+}
+
+#register button{
+    color: #333;
+    width: 63px;
+    height: 30px;
+    padding: 4px 12px;
+    margin: 10px 0;
+    text-align: center;
+    text-shadow: 0 1px 1px rgba(255,255,255,0.75);
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: linear-gradient(to bottom,#fff,#e6e6e6);
+    background-repeat: repeat-x;
+    border-color:rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+    border-bottom-color: #b3b3b3;
+}
+
+.disable{
+
+}
+
+#register button:active{
+    background-image: none;
+    outline: 0;
+    -webkit-box-shadow: inset 0 2px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.05);
+    -moz-box-shadow: inset 0 2px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.05);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.15),0 1px 2px rgba(0,0,0,0.05);
+}
+
+#register button:focus, button:hover{
+    color: #333;
+    background-color: #e6e6e6;
+    text-decoration: none;
+    background-position: 0 -15px;
+    -webkit-transition: background-position .1s linear;
+    -moz-transition: background-position .1s linear;
+    -o-transition: background-position .1s linear;
+    transition: background-position .1s linear;
+}
+
+#user.thingking, #nickname.thingking{
+    background: #fff url("../image/think.gif") 185px 2px no-repeat;
+    background-size: 22px 22px;
+    background-position: 185px -19px;
+}
+
+
+#user.error, #password1.error, #password2.error, #nickname.error{
+    background: #FF8282 url("../image/error.png") 185px 2px no-repeat;
+    background-position: 185px 5px;
+}
+
+#user.correct, #password1.correct, #password2.correct, #nickname.correct{
+    background: #fff url("../image/correct.png") 185px 2px no-repeat;
+    background-position: 185px 5px;
+}
+
+
+
