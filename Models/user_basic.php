@@ -8,6 +8,51 @@ class user_basic {
     }
 
     /*
+     * add方法
+     * 向数据库添加一条记录
+     * @author C860
+     * @param $user string 用户名
+     * @param $pwd string 密码
+     * @return boolean
+     */
+    static function add($user,$pwd) {
+        global $db;
+        try {
+            $query = $db->prepare('insert into user_basic (user,password)values(?,?)');
+            $query->execute(array($user,$pwd));
+            return true;
+        } catch(PDOException $e) {
+            echo $e;
+            return false;
+        }
+    }
+
+    /*
+     * getUserId方法
+     * 根据用户名获取用户ID
+     * @author C860
+     * @param $user string 用户名
+     * @return int|false
+     */
+    static function getUserId($user) {
+        global $db;
+        try {
+            $query = $db->prepare('select ID from user_basic where user=?');
+            $query->execute(array($user));
+            $rs = $query->fetch();
+            if(count($rs)>0) {
+                return $rs[0];
+            }
+            else {
+                return false;
+            }
+        } catch(PDOException $e) {
+            echo $e;
+            return false;
+        }
+    }
+
+    /*
      * check方法
      * 检索表中是否存在符合条件的记录
      * @author C860
@@ -84,4 +129,29 @@ class user_basic {
             return false;
         }
     }
+
+    /*
+     * userExist方法
+     * 判断相应用户名是否已存在
+     * @author C860
+     * @param $user string 用户名
+     * @return boolean
+     */
+    static function userExist($user) {
+        global $db;
+        try {
+            $query = $db->prepare('select * from user_basic where user=?');
+            $query->execute(array($user));
+            if($query->rowCount()>0) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        } catch(PDOException $e) {
+            echo $e;
+            return false;
+        }
+    }
 }
+

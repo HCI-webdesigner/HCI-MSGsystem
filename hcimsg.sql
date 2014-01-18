@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2014 年 01 月 17 日 20:36
+-- 生成日期: 2014 年 01 月 18 日 22:25
 -- 服务器版本: 5.5.34-0ubuntu0.13.04.1
 -- PHP 版本: 5.4.9-4ubuntu2.4
 
@@ -64,7 +64,7 @@ CREATE TABLE IF NOT EXISTS `tag` (
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `isFormal` int(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
 
 --
 -- 转存表中的数据 `tag`
@@ -75,7 +75,8 @@ INSERT INTO `tag` (`ID`, `name`, `isFormal`) VALUES
 (2, 'TCP/IP', 0),
 (3, 'Apache', 0),
 (4, 'HTML5', 0),
-(5, 'CSS', 0);
+(5, 'CSS3', 0),
+(6, 'Javascript', 0);
 
 -- --------------------------------------------------------
 
@@ -99,19 +100,19 @@ CREATE TABLE IF NOT EXISTS `user_basic` (
   `ID` int(10) NOT NULL AUTO_INCREMENT,
   `user` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `password` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `isAdmin` int(11) NOT NULL DEFAULT '1',
+  `isAdmin` int(11) NOT NULL DEFAULT '0',
   `lastLogTime` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`ID`),
   UNIQUE KEY `user` (`user`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=15 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=17 ;
 
 --
 -- 转存表中的数据 `user_basic`
 --
 
 INSERT INTO `user_basic` (`ID`, `user`, `password`, `isAdmin`, `lastLogTime`) VALUES
-(13, 'test@qq.com', 'test', 0, NULL),
-(14, 'hello@qq.com', 'test', 0, NULL);
+(13, 'test@qq.com', 'test', 0, '2014-01-18 01:59:11'),
+(16, 'test2@qq.com', 'test2', 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -135,7 +136,7 @@ CREATE TABLE IF NOT EXISTS `user_info` (
 
 INSERT INTO `user_info` (`user_id`, `nickname`, `popularity`, `registerTime`, `signature`, `article_count`) VALUES
 (13, 'test', 0, '2014-01-12 19:27:08', NULL, 0),
-(14, 'test', 0, '2014-01-13 15:14:11', NULL, 0);
+(16, 'test2', 0, '2014-01-18 22:24:11', 'test2', 0);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
