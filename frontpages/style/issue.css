@@ -1,10 +1,9 @@
 #container {
-	width: 1000px;
-	padding: 20px 0 100px 300px;
+	padding: 50px;
+	background: white;
 }
 .editor-content {
 	width: 800px;
-	padding: 50px;
 	background-color: white;
 	overflow: hidden;
 }
@@ -66,15 +65,13 @@
 .tags-list-item{
 	float: left;
 	margin: 5px 3px;
-}
-.tags-list-item a {
+	cursor: pointer;
 	padding: 4px 8px;
 	border: 1px solid #aaa;
-	display: block;
 }
-.tags-list-item a:hover {
+.tags-list-item:hover {
 	color: #aaa;
-	border: 1px solid #ccc;
+	border: 1px solid #ccc;	
 }
 .submit-btn {
 	width: 120px;

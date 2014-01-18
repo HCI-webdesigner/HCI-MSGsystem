@@ -5,7 +5,6 @@
 	<title>发表文章</title>
 	<link rel="stylesheet" type="text/css" href="style/global.css"/>
 	<link rel="stylesheet" type="text/css" href="style/issue.css"/>
-	<link rel="stylesheet" type="text/css" href="ueditor/themes/default/css/ueditor.css"/>
 	<script type="text/javascript" src="script/navSlide.js"></script>
 	<script type="text/javascript" src="ueditor/ueditor.config.js"></script>
 	<script type="text/javascript" src="ueditor/ueditor.all.min.js"></script>
@@ -47,39 +46,41 @@
 			</ul>
 		</div>
 	</div>
-	<div id="container">
-		<form class="editor-content" action="" method="">
-			<div class="editor-header">
-				<span></span>
-				<h2 class="editor-title">&nbsp;发表文章</h2>
-				<input class="issue-title" type="text" />
-			</div>
-			<textarea name="editor" id="editor" cols="30" rows="10"></textarea>
-			<div class="tags-content">
-				<h2 class="tags-title">添加标签</h2>
-				<div>
-					<input class="tag" type="text" />
-					<button class="add-btn" type="button">添加</button>
+	<div id="mainBox">
+		<div id="container">
+			<form class="editor-content" action="" method="">
+				<div class="editor-header">
+					<span></span>
+					<h2 class="editor-title">&nbsp;发表文章</h2>
+					<input class="issue-title" type="text" />
 				</div>
-				<ul class="tags-list">
-					<li class="tags-list-item"><a href="">javascript</a></li>
-					<li class="tags-list-item"><a href="">css</a></li>
-					<li class="tags-list-item"><a href="">html</a></li>
-					<li class="tags-list-item"><a href="">php</a></li>
-					<li class="tags-list-item"><a href="">javascript</a></li>
-					<li class="tags-list-item"><a href="">css</a></li>
-					<li class="tags-list-item"><a href="">html</a></li>
-					<li class="tags-list-item"><a href="">php</a></li>
-					<li class="tags-list-item"><a href="">css</a></li>
-					<li class="tags-list-item"><a href="">html</a></li>
-					<li class="tags-list-item"><a href="">php</a></li>
-					<li class="tags-list-item"><a href="">php</a></li>
-					<li class="tags-list-item"><a href="">javascript</a></li>
-					<li class="tags-list-item"><a href="">css</a></li>
-				</ul>
-				<button class="submit-btn" type="button">提交</button>
-			</div>
-		</form>
+				<textarea name="editor" id="editor" cols="30" rows="10"></textarea>
+				<div class="tags-content">
+					<h2 class="tags-title">添加标签</h2>
+					<div>
+						<input class="tag" type="text" />
+						<button class="add-btn" type="button">添加</button>
+					</div>
+					<ul id="test" class="tags-list">
+						<li class="tags-list-item">javascript</li>
+						<li class="tags-list-item">css</li>
+						<li class="tags-list-item">html</li>
+						<li class="tags-list-item">php</li>
+						<li class="tags-list-item">javascript</li>
+						<li class="tags-list-item">css</li>
+						<li class="tags-list-item">html</li>
+						<li class="tags-list-item">php</li>
+						<li class="tags-list-item">css</li>
+						<li class="tags-list-item">html</li>
+						<li class="tags-list-item">php</li>
+						<li class="tags-list-item">php</li>
+						<li class="tags-list-item">javascript</li>
+						<li class="tags-list-item">css</li>
+					</ul>
+					<button class="submit-btn" type="button">提交</button>
+				</div>
+			</form>
+		</div>
 	</div>
 	<div id="footer">
 		<ul class="footer-box">
