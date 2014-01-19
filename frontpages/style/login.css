@@ -1,9 +1,6 @@
 #container{
-    position: relative;
-    height: 310px;
-    padding-right: 0px;
+    padding: 50px;
     background-color: rgb(255, 255, 255);
-    border: 3px solid rgb(248,248,248);
 }
 
 #container .login-title{
@@ -115,3 +112,7 @@
     background-position: 185px 5px;
 }
 
+#footer{
+    top: 200px;
+    position: relative;
+}

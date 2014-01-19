@@ -1,9 +1,6 @@
 #container{
-    position: relative;
-    height: 450px;
-    padding-right: 0px;
+    padding: 50px;
     background-color: rgb(255, 255, 255);
-    border: 3px solid rgb(248,248,248);
 }
 
 #container .register-title{
