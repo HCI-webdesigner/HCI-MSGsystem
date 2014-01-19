@@ -1,3 +1,9 @@
+<?php
+include_once('conf/config.php');
+if(sys::hasLogged()) {
+    sys::redirect('index.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -52,5 +52,29 @@ class user_info {
             return false;
         }
     }
+
+    /*
+     * getNickname方法
+     * 根据用户ID获取用户昵称
+     * @author C860
+     * @param $ID int 用户ID
+     * @return string|false
+     */
+    static function getNickname($ID) {
+        global $db;
+        try {
+            $query = $db->prepare('select nickname from user_info where user_id=?');
+            $query->execute(array($ID));
+            if($query->rowCount()>0) {
+                return $query->fetch()[0];
+            }
+            else {
+                return false;
+            }
+        } catch(PDOException $e) {
+            echo $e;
+            return false;
+        }
+    }
 }
 

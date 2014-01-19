@@ -64,5 +64,52 @@ class sys {
     static function alert($msg) {
         echo '<script type="text/javascript">alert("'.$msg.'");</script>';
     }
+
+    /*
+     * hasLogged方法
+     * 检测用户是否已登录
+     * @author C860
+     * @return boolean
+     */
+    static function hasLogged() {
+        if(isset($_SESSION['userId']) && is_numeric($_SESSION['userId'])
+            && isset($_SESSION['nickname']) && !empty($_SESSION['nickname'])
+        ) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    /*
+     * needLog方法
+     * 若用户没有登录，则指导用户登录
+     * @author C860
+     * @param $url string 指向页面地址
+     * @return NULL
+     */
+    static function needLog($url) {
+        if(!sys::hasLogged()) {
+            sys::redirect($url);
+        }
+    }
+
+    /*
+     * logout方法
+     * 注销用户
+     * @author C860
+     * @return boolean
+     */
+    static function logout() {
+        if(sys::hasLogged()) {
+            unset($_SESSION['userId']);
+            unset($_SESSION['nickname']);
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 }
 
