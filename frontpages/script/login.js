@@ -2,11 +2,6 @@ window.onload = init;
 function init(){
         initSlide(0);
 
-        jQuery(function($){
-	        $("#slidebox").slideBox({
-	           	delay : 5
-	    	});
-	    });
     document.getElementById("user").onblur = checkUser;
     document.getElementById("login-button").onclick = registerUser;
     

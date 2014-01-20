@@ -1,16 +1,11 @@
 #container {
 	padding: 50px;
-	background: white;
-}
-.editor-content {
-	width: 800px;
 	background-color: white;
-	overflow: hidden;
 }
 .editor-header {
 	margin-bottom: 10px;
 }
-.editor-header span {
+.line {
 	float: left;
 	width: 8px;
 	height: 20px;
@@ -21,7 +16,7 @@
 	padding: 0 5px;
 }
 .issue-title {
-	width: 790px;
+	width: 795px;
 	height: 25px;
 	padding-left: 6px;
 	border: 1px solid #ccc;

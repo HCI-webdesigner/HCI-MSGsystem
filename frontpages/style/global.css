@@ -10,7 +10,7 @@ a:hover {text-decoration: none;}
 
 
 #mainBox{
-	width:1000px;
+	width: 900px;
 	padding: 0 0 100px 350px;  /*padding-top的值由每个页面决定*/
 	overflow: hidden;
 }
