@@ -96,5 +96,49 @@ class user_info {
             return false;
         }
     }
+
+    /*
+     * getUserInfo方法
+     * 返回指定用户的信息
+     * @author C860
+     * @param $ID int 用户ID
+     * @return array|false
+     */
+    static function getUserInfo($ID) {
+        global $db;
+        try {
+            $query = $db->prepare('select * from user_info where user_id=?');
+            $query->execute(array($ID));
+            if($query->rowCount()>0) {
+                return $query->fetch();
+            }
+            else {
+                return false;
+            }
+        } catch(PDOException $e) {
+            echo $e;
+            return false;
+        }
+    }
+
+    /*
+     * updateUserInfo方法
+     * 更新指定用户的信息
+     * @author C860
+     * @param $ID int 用户ID
+     * @param $signature string 用户个性签名
+     * @return boolean
+     */
+    static function updateUserInfo($ID,$signature) {
+        global $db;
+        try {
+            $query = $db->prepare('update user_info set signature=? where user_id=?');
+            $query->execute(array($signature,$ID));
+            return true;
+        } catch(PDOException $e) {
+            echo $e;
+            return false;
+        }
+    }
 }
 
