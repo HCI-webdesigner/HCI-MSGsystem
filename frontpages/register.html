@@ -1,16 +1,11 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>注册</title>
-
    	<link rel="stylesheet" type="text/css" href="style/global.css">
-	<link rel="stylesheet" type="text/css" href="style/info.css">
 	<link rel="stylesheet" type="text/css" href="style/register.css">
-	<script type="text/javascript" src="script/jquery-1.7.2.min.js"></script>
-	<script type="text/javascript" src="script/jquery.slideBox.min.js"></script>
     <script type="text/javascript" src="script/navSlide.js"></script>
-    <script type="text/javascript" src="script/log.js"></script>
 	<script type="text/javascript" src="script/register.js"></script>
 </head>
 <body>
@@ -46,34 +41,32 @@
 	</div>
     <div id="mainBox">
 	    <div id="container">
-            <h1 class="register-title">注册</h1>
-            <div class="separate-line"></div>
             <form action="" method="">
+            	<div class="form-header">
+					<span class="line"></span>
+					<h2 class="register-title">&nbsp;注册</h2>
+				</div>
                 <ul> 
                     <li>
                         <label for="user">邮箱：</label>
                         <input id="user" name="user" type="text" placeholder="请输入正确格式的邮箱">
-                        <span>*</span>
+                        <span class="prefix">*</span>
                     </li>
-     
                     <li>
                         <label for="password1">密码：</label>
                         <input id="password1" name="password1" type="password" placeholder="至少输入6个数字、字符">
-                        <span>*</span>
+                        <span class="prefix">*</span>
                     </li>
-
                     <li>
                         <label for="password2">重复密码：</label>
                         <input id="password2" name="password2" type="password">
-                        <span>*</span>
-                   </li>
-
+                        <span class="prefix">*</span>
+                   	</li>
                     <li>
                         <label for="nickname">昵称：</label>
                         <input id="nickname" name="nickname" type="text">
-                        <span>*</span>
-                  </li>
-
+                        <span class="prefix">*</span>
+                  	</li>
                     <li>
                         <label for="signature">个人签名：</label>
 						<textarea name="signature" clos="60" rows="4" id="signature" placeholder="个人介绍"></textarea>
@@ -82,7 +75,6 @@
                         <label for="attention"></label>
                         <strong>输入框后有红色"*"为必填项</strong>
                     </li>
-
                     <li>
                         <label for="register"></label>
 						<button id="reg-submit" type="reg-submit" name="reg-submit" class="disable" disabled>注册</button>
