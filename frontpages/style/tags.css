@@ -2,11 +2,25 @@
 	padding: 50px;
 	background: white;
 }
-.content-title {
-	padding: 5px 0px 5px 20px;
-	border-bottom: 1px solid #ccc;
+.container-header {
+	margin-bottom: 10px;
+}
+.line {
+    float: left;
+    width: 8px;
+    height: 20px;
+    background-color: #ff6600;
+}
+.content-title{
+    font-size: 16px;
+    padding: 0 5px;
+    border-bottom: 1px solid #ccc;
+}
+.tag-tree {
+	margin: 20px;
 }
 .tag-tree h3 {
+	font-size: 12px;
 	clear: both;
 }
 .tag-list {
