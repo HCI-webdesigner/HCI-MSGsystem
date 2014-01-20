@@ -153,5 +153,25 @@ class user_basic {
             return false;
         }
     }
+
+    /*
+     * changePassword方法
+     * 更改用户密码
+     * @author C860
+     * @param $ID int 用户ID
+     * @param $password string 用户新密码
+     * @return boolean
+     */
+    static function changePassword($ID,$password) {
+        global $db;
+        try {
+            $query = $db->prepare('update user_basic set password=? where ID=?');
+            $query->execute(array($password,$ID));
+            return true;
+        } catch(PDOException $e) {
+            echo $e;
+            return false;
+        }
+    }
 }
 

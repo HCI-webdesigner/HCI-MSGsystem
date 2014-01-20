@@ -20,6 +20,7 @@ if(isset($_POST['user']) && !empty($_POST['user'])
         $nickname = user_info::getNickname($uid);
         //设置SESSION
         $_SESSION['userId'] = $uid;
+        $_SESSION['user'] = $_POST['user'];
         $_SESSION['nickname'] = $nickname;
         sys::redirect('../index.php');
     }

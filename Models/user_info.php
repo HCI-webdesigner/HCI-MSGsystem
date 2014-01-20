@@ -76,5 +76,25 @@ class user_info {
             return false;
         }
     }
+
+    /*
+     * increaseArticleCount方法
+     * 用户发表文章数目自增
+     * @author C860
+     * @param $ID int 用户ID
+     * @return boolean
+     */
+    static function increaseArticleCount($ID) {
+        global $db;
+        try {
+            //发表一篇文章积分+5
+            $query = $db->prepare('update user_info set article_count=article_count+1,popularity=popularity+5 where user_id=?');
+            $query->execute(array($ID));
+            return true;
+        } catch(PDOException $e) {
+            echo $e;
+            return false;
+        }
+    }
 }
 

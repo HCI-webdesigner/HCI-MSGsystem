@@ -74,6 +74,7 @@ class sys {
     static function hasLogged() {
         if(isset($_SESSION['userId']) && is_numeric($_SESSION['userId'])
             && isset($_SESSION['nickname']) && !empty($_SESSION['nickname'])
+            && isset($_SESSION['user']) && !empty($_SESSION['user'])
         ) {
             return true;
         }
