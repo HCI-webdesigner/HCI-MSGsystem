@@ -54,5 +54,28 @@ class article {
             return false;
         }
     }
+
+    /*getArticleInfo方法
+    根据参数获取文章信息
+    @author sini
+    @param $user_id int 用户ID
+    @return array|false 
+    */
+
+    static function getArticleInfo($user_id){
+        global $db;
+        try{
+            $query = $db->prepare("select * from article where user_id=?");
+            $query->execute(array($user_id));
+            if($query->rowCount()>0){
+                return $query->fetchAll(PDO::FETCH_ASSOC);
+            }else{
+                return false;
+            }
+        }catch(PDOException $e){
+            echo $e;
+            return false;
+        }
+    }
 }
 

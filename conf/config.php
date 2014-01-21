@@ -16,14 +16,14 @@ define('SYS_POWER','HCI人机交互中心');
  * 数据库连接
  * 说明：请使用PDO进行数据库操作
  */
-$db_url = '127.0.0.1';
+$db_url = 'localhost';
 $db_port = '3306';
 $db_user = 'root';
-$db_pwd = '123';
+$db_pwd = 'root';
 $db_name = 'hcimsg';
 
 try {
-    $db = new PDO("mysql:host=$db_url;port=$db_port;dbname=$db_name",$db_user,$db_pwd);
+    $db = new PDO("mysql:host=$db_url;dbname=$db_name",$db_user,$db_pwd);
     //禁用仿真效果
     $db->setAttribute(PDO::ATTR_EMULATE_PREPARES,false);
     $db->exec('SET NAMES UTF8');
