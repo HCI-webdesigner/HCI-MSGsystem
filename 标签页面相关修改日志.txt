@@ -1,6 +1,14 @@
-2014/1/21
+第一次修改2014/1/21 白天
 1.在back目录下新建tagsShow.php，实现显示标签的功能
 2.在public目录下的stylesheets文件夹下添加global.css与tags.css
 3.在public目录下的javascripts文件夹下添加navSlide.js
 4.在public目录下新建名为image的文件夹，并添加左侧导航栏的box4.png
+  以及返回顶部的top.png;
+=======================================
+第二次修改2014/1/21 23:00之后
+1.将back目录下的tagsShow.php放在存放前端页面的根目录下
+2.在Controllers目录下新建tagsShow.php，控制标签显示的逻辑
+3.在public目录下的stylesheets文件夹下添加global.css与tags.css
+4.在public目录下的javascripts文件夹下添加navSlide.js
+5.在public目录下新建名为image的文件夹，并添加左侧导航栏的box4.png
   以及返回顶部的top.png;
