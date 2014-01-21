@@ -28,7 +28,7 @@
 <body>
 	<div id="nav">
 		<a href="index.html" title="hci活动首页">
-			<img width="240" height="100" src="image/box4.png"id="imgIndex">
+			<img width="240" height="100" src="public/images/box4.png"id="imgIndex">
 		</a>
 		<div class="menu">
 			<div id="menuLabel" style="display:block; ">

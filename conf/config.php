@@ -19,7 +19,7 @@ define('SYS_POWER','HCI人机交互中心');
 $db_url = 'localhost';
 $db_port = '3306';
 $db_user = 'root';
-$db_pwd = 'root';
+$db_pwd = '123';
 $db_name = 'hcimsg';
 
 try {
