@@ -12,6 +12,7 @@
                 <ul class="control-list">
                     <li><a href="userControl.php" target="framepage">用户管理</a></li>
                     <li><a href="tagControl.php" target="framepage">标签管理</a></li>
+                    <li><a href="sliderControl.php" target="framepage">图片轮播管理</a></li>
                 </ul>
             </nav>
             <div class="main">

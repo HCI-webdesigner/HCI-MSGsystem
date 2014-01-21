@@ -1,6 +1,6 @@
 /* CSS Document */
-a:link {text-decoration: none; color: blue;}
-a:visited {text-decoration: none; color: blue;}
+a:link {text-decoration: none;}
+a:visited {text-decoration: none;}
 a:hover {text-decoration: none;}
 a:active {text-decoration: none;}
 body {
@@ -57,9 +57,10 @@ body {
     font-weight: bold;
     background: #B3EE3A;
 }
-.btn a {
+.abtn {
     cursor: pointer;
     border: 1px solid #B3EE3A;
+    font-size: 13px;
     padding: 5px;
     color: white;
     font-weight: bold;
