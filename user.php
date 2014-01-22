@@ -5,9 +5,15 @@
 	include_once "Models/user_info.php";
 	include_once "Models/article.php";
 
+	if(!$_GET['id']){
+		die("出错");
+	}
 	$ID = $_GET['id'];
 	list($ID,$nickname,$popularity,$registerTime,$signature,$article_count) = user_info::getUserInfo($ID);
 	$allrows = article::getArticleInfo($ID);
+	if(!$allrows){
+		$allrows = array();
+	}
 
 ?>
 <!DOCTYPE html>
