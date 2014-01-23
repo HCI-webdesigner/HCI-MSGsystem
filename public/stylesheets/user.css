@@ -1,0 +1,102 @@
+#container {
+	padding: 50px;
+	background: white;
+}
+
+.user-box {
+	font-size: 1.2em;
+	line-height: 26px;
+}
+.user-info {
+	color: #888;
+	overflow: hidden;
+	padding-bottom: 20px;
+	border-bottom: 1px dashed #ddd;
+}
+.nickname {
+	font-size: 1.6em;
+	padding-bottom: 14px;
+	border-bottom: 1px dashed #ddd;
+}
+.user-info img {
+	width: 128px;
+	height: 128px;
+	float: left;
+}
+.info {
+	float: left;
+	padding-left: 50px;
+}
+.status {
+	float: left;
+	padding-left: 120px; 
+}
+.status strong {
+	font-size: 1.4em;
+	display: block;
+	color: #333;
+}
+.status .red {
+	color: red;
+}
+.signature {
+	width: 280px;
+	height: 100px;
+	float: left;
+	margin-left: 50px;
+	margin-bottom: 10px;
+	padding: 15px;
+	background: #f3f5f4;
+}
+
+.article {
+	width: 700px;
+	font-size: 1.4em;
+	padding-top: 20px;
+	margin-left: 0;
+	overflow: hidden;
+}
+
+.article-num {
+	padding-bottom: 20px;
+}
+
+.article-num strong {
+	color: red;
+}
+
+article {
+	width: 700px;
+	margin-bottom: 10px;
+	overflow: hidden;
+}
+
+.item-num {
+	width: 20px;
+	display: inline-block;
+	float: left;
+	padding: 13px 13px 13px 22px; 
+	background: #f3f3f3;
+}
+.item-num span {
+	color: #888;
+}
+.item-content {
+	width: 600px;
+	height: 47px;
+	float: left;
+	display: inline-block;
+	overflow: hidden;
+	padding-left: 15px;
+}
+.article-title {
+	font-weight: bold;
+}
+.article-title:hover {
+	color: red;
+	text-decoration: underline;
+}
+.article-content {
+	font-size: 0.9em;
+	color: #999;
+}

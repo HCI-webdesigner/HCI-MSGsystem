@@ -112,5 +112,21 @@ class sys {
             return false;
         }
     }
+
+    /*
+     * needAdmin方法
+     * 若用户不是管理员，则指导用户登录管理员帐号
+     * @author C860
+     * @param $url string 指向页面地址
+     * @return NULL
+     */
+    static function needAdmin($url) {
+        if(isset($_SESSION['admin']) && is_numeric($_SESSION['admin'])) {
+            return;  
+        }
+        else {
+            sys::redirect($url);
+        }
+    }
 }
 

@@ -1,2 +1,87 @@
-/** CSS Document */
+#mainBox{
+	padding-top: 100px;
+}
+#container{
+	width: 900px;
+	padding-right: 20px;
+}
 
+#topArea{
+	height: 350px;
+	margin-bottom: 50px;
+	position: relative;
+}
+
+#mainArea{
+	overflow: hidden;
+}
+
+.imgTag{
+	width: 280px;
+	height: 320px;
+	float: left;
+	margin-left: 20px;
+}
+.post-title {
+	padding: 15px 15px 10px;
+	width: 250px;
+	font-size: 14px;
+	line-height: 18px;
+	font-family: arial;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.postboxUsual{
+	width: 280px;
+	height: 230px;
+	margin: 0px 10px 40px 0px;
+	float: left;
+	background-color: rgb(255, 255, 255);
+	position: relative;
+	box-shadow: 0px 1px 1px rgb(238, 238, 238);
+	border: 3px solid rgb(248,248,248);
+}
+
+.postboxUsual:hover {
+	border-color: rgb(255,0,0);
+}
+
+.post-extra {
+	padding: 5px 16px 0;
+	color: rgb(153, 153, 153);
+	line-height: 10px;
+	font-size: 11px;
+}
+.post-extra a {
+	height: 12px;
+	line-height: 10px;
+	padding-left: 14px;
+	color: rgb(153, 153, 153);
+}
+.post-extra a:hover{
+	color: rgb(255,0,0);
+}
+.post-extra .col-left {
+	float: left;
+}
+.post-extra .col-right {
+	float: right;
+}
+#imgIndex{
+	width: 50;
+	height: 100;
+}
+
+.pages {
+	float: right;
+	margin-top: 30px;
+	margin-right: 200px;
+}
+.pages .page-item {
+	text-decoration: underline;
+}
+.page-item {
+	float: left;
+	margin-right: 30px;
+}

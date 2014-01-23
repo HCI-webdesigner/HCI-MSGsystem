@@ -15,7 +15,7 @@ include_once('../Models/user_info.php');
 if(isset($_POST['user']) && !empty($_POST['user'])
     && isset($_POST['password']) && !empty($_POST['password'])
 ) {
-    if(user_basic::check($_POST['user'],$_POST['password'])) {
+    if(user_basic::check($_POST['user'],$_POST['password'],0)) {
         $uid = user_basic::getUserId($_POST['user']);
         $nickname = user_info::getNickname($uid);
         //设置SESSION

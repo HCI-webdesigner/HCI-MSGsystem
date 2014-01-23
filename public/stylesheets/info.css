@@ -1,0 +1,165 @@
+#content {
+	padding: 30px;
+	position: relative;
+	background-color: rgb(255, 255, 255);
+}
+.entry-header {
+	padding-top: 40px;
+}
+.entry-header .author-icon {
+	padding: 10px; 
+	left: 30px;
+	top: 70px;
+	position: absolute;
+}
+.entry-header .author-icon img {
+	width: 50px;
+	height: 50px;
+}
+.title-author-time-tags {
+	padding: 0 0 0 65px;
+	float: left;
+	max-width: 750px;
+	min-width: 450px;
+}
+.entry-header .entry-title {
+	color: rgb(51, 51, 51);
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 24px;
+	font-family: "Microsoft YaHei";
+	padding-left: 10px;
+}
+.entry-header .author-time {
+	color: rgb(170, 170, 170);
+	padding: 4px 0;
+	line-height: 14px;
+}
+.entry-content{
+	padding: 0 10px 0 10px;
+	font-size: 14px;
+}
+
+.entry-content ul, .entry-content ol {
+	margin: 10px 0 10px 30px;
+	list-style: disc;
+}
+.entry-content p {
+	font-size: 14px;
+	margin: 12px 0;
+}
+.comment-pop {
+	float: right;
+}
+
+.separate-line {
+	height: 1px;
+	width: 100%;
+	font-size: 0;
+	background-color: #DDD;
+	margin: 10px 0;
+}
+.post-op {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+.op-wrapper {
+	color: rgb(51, 51, 51);
+	padding: 16px 25px;
+	font-size: 12px;
+	min-width: 650px;
+	background-color: rgb(239, 239, 239);
+	border-top: 2px solid rgb(231, 231, 231);
+}
+.op-wrapper .common {
+	float: left;
+}
+.clearfix {
+	overflow: hidden;
+	_zoom: 1;
+}
+#contain em{
+	font-style: normal;
+}
+.op-wrapper .separate {
+	color: rgb(153, 153, 153);
+	padding: 0 20px;
+}
+.op-wrapper a {
+	color: rgb(51, 51, 51);
+	float: left;
+	padding-left: 15px;
+	line-height: 13px;
+}
+.op-wrapper .like a {
+	background-position: 0 1px;
+}
+
+/*comment*/
+#respond {
+	font-size: 12px;
+	padding-top: 40px;
+}
+.btn-submit {
+	float: right;
+	width: 120px;
+	height: 35px;
+	margin: 10px;
+	font-size: 16px;
+	color: #eeeeee;
+	background-color: #ff6600;
+	border: 1px solid #ff6600;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	cursor: pointer;
+}
+.btn-submit:hover {
+	background-color: #ff4400;
+}
+#comments {
+	color: rgb(170, 170, 170);
+	font-size: 12px;
+	line-height: 18px;
+	position: relative;
+	overflow: hidden;
+}
+#respond .input-container {
+	position: relative;
+}
+#respond .comment {
+	margin: 0 auto;
+	width: 99%;
+	height: 100px;
+	color: rgb(51, 51, 51);
+}
+#respond .op-container {
+	padding-top: 10px;
+}
+.commentboard{
+	margin: 10px 0;
+	padding: 10px;
+	background-color: #fff;
+	clear: both;
+}
+.commentboard p{
+	margin: 10px;
+}
+.comment_list {
+	padding: 18px 0;
+	margin: 1px ;
+	border-bottom: 1px solid rgb(211,211,211);
+}
+.comment_list dl {
+	padding: 5px;
+}
+.comment_list dt {
+	float: left;
+	margin: -5px 5px 5px;
+	display: inline;
+}
+.comment_list dd {
+	margin: 0 0 0 40px;
+	line-height: 21px;
+}

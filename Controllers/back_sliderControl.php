@@ -7,6 +7,9 @@
 
 include_once('../conf/config.php');
 
+//需要管理员权限
+sys::needAdmin('index.php');
+
 //引入相关模型类
 include_once('../Models/slider.php');
 

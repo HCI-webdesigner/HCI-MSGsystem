@@ -58,13 +58,14 @@ class user_basic {
      * @author C860
      * @param $user string 用户名
      * @param $pwd string 密码
+     * @param $isAdmin int{0,1} 是否为管理员
      * @return boolean
      */
-    static function check($user,$pwd) {
+    static function check($user,$pwd,$isAdmin) {
         global $db;
         try {
-            $query = $db->prepare('select * from user_basic where user=? and password=?');
-            $query->execute(array($user,$pwd));
+            $query = $db->prepare('select * from user_basic where user=? and password=? and isAdmin=?');
+            $query->execute(array($user,$pwd,$isAdmin));
             if(count($query->fetchAll())>0) {
                 $query = $db->prepare('update user_basic set lastLogTime=? where user=?');
                 $query->execute(array(date('Y-m-d H:i:s'),$user));

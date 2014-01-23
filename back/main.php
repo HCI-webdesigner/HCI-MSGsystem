@@ -1,3 +1,8 @@
+<?php
+include_once('../conf/config.php');
+//需要管理员权限
+sys::needAdmin('index.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>

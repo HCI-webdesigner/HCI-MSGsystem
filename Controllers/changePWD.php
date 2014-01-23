@@ -15,7 +15,7 @@ if(isset($_POST['oldpwd']) && !empty($_POST['oldpwd'])
     && isset($_POST['newpwd']) && !empty($_POST['newpwd'])
 ) {
     //检测旧密码是否正确
-    if(user_basic::check($_SESSION['user'],$_POST['oldpwd'])) {
+    if(user_basic::check($_SESSION['user'],$_POST['oldpwd'],0)) {
         //替换旧密码为新密码
         if(user_basic::changePassword($_SESSION['userId'],$_POST['newpwd'])) {
             sys::alert('修改密码成功！请重新登录！');
