@@ -38,7 +38,7 @@ $sort = sortTags($rs);
                 visibility: hidden;
                 flex-flow: column;
                 justify-content: center;
-                width: 500px;
+                width: 650px;
                 height: 100px;
                 border: 1px solid #BEBEBE;
                 text-align: center;
@@ -71,6 +71,7 @@ $sort = sortTags($rs);
                 <option value="0">非正式</option>
                 <option value="1">正式</option>
             </select>
+            <input type="text" name="img">
             <input type="submit" class="btn" value="新  增">
         </form>
         <?php
@@ -80,10 +81,10 @@ $sort = sortTags($rs);
             echo '<div class="block"><h2>'.$keys[$i].'</h2>';
             for($j=0;$j<count($sort[$keys[$i]]);++$j) {
                 if($sort[$keys[$i]][$j]['isFormal']==1) {
-                    echo '<a class="tag formal" data-id="'.$sort[$keys[$i]][$j]['ID'].'" data-isformal="'.$sort[$keys[$i]][$j]['isFormal'].'">'.$sort[$keys[$i]][$j]['name'].'</a>';
+                    echo '<a class="tag formal" data-id="'.$sort[$keys[$i]][$j]['ID'].'" data-img="'.$sort[$keys[$i]][$j]['img'].'" data-isformal="'.$sort[$keys[$i]][$j]['isFormal'].'">'.$sort[$keys[$i]][$j]['name'].'</a>';
                 }
                 else {
-                    echo '<a class="tag" data-id="'.$sort[$keys[$i]][$j]['ID'].'" data-isformal="'.$sort[$keys[$i]][$j]['isFormal'].'">'.$sort[$keys[$i]][$j]['name'].'</a>';
+                    echo '<a class="tag" data-id="'.$sort[$keys[$i]][$j]['ID'].'" data-img="'.$sort[$keys[$i]][$j]['img'].'" data-isformal="'.$sort[$keys[$i]][$j]['isFormal'].'">'.$sort[$keys[$i]][$j]['name'].'</a>';
                 }
                 
             }
@@ -100,7 +101,8 @@ $sort = sortTags($rs);
                     <option value="0">非正式</option>
                     <option value="1">正式</option>
                 </select>
-                <input id="tagid" type="hidden" name="tag_id">
+                <input type="text" id="tagimg" name="img">
+                <input type="hidden" id="tagid" name="tag_id">
                 <input type="hidden" name="type" value="modify">
                 <input type="submit" class="btn" value="修  改">
                 <input id="delbtn" type="button" class="btn" value="删  除">
@@ -117,6 +119,7 @@ $sort = sortTags($rs);
                     $('#tagname').val($(obj).html());
                     $('#tagid').val($(obj).attr('data-id'));
                     $('#isFormal').val($(obj).attr('data-isformal'));
+                    $('#tagimg').val($(obj).attr('data-img'));
                 });
             });
             //绑定删除按钮点击事件

@@ -43,13 +43,14 @@ class tag {
      * @param $ID int 标签ID
      * @param $name string 标签名
      * @param $isFormal int{0,1} 是否正式
+     * @param $img string 标签标识
      * @return boolean
      */
-    static function update($ID,$name,$isFormal) {
+    static function update($ID,$name,$isFormal,$img) {
         global $db;
         try {
-            $query = $db->prepare('update tag set name=?,isFormal=? where ID=?');
-            $query->execute(array($name,$isFormal,$ID));
+            $query = $db->prepare('update tag set name=?,isFormal=?,img=? where ID=?');
+            $query->execute(array($name,$isFormal,$img,$ID));
             return true;
         } catch(PDOException $e) {
             echo $e;
@@ -63,13 +64,14 @@ class tag {
      * @author C860
      * @param $name string 标签名
      * @param $isFormal int{0,1} 是否正式
+     * @param $img string 标签标识
      * @return boolean
      */
-    static function add($name,$isFormal) {
+    static function add($name,$isFormal,$img) {
         global $db;
         try {
-            $query = $db->prepare('insert into tag (name,isFormal)values(?,?)');
-            $query->execute(array($name,$isFormal));
+            $query = $db->prepare('insert into tag (name,isFormal,img)values(?,?,?)');
+            $query->execute(array($name,$isFormal,$img));
             return true;
         } catch(PDOException $e) {
             echo $e;

@@ -8,7 +8,7 @@
 
 #topArea{
 	height: 350px;
-	margin-bottom: 50px;
+	margin-bottom: 20px;
 	position: relative;
 }
 
@@ -21,6 +21,10 @@
 	height: 320px;
 	float: left;
 	margin-left: 20px;
+}
+.imgTag img {
+    width: 280px;
+    height: 320px;
 }
 .post-title {
 	padding: 15px 15px 10px;

@@ -18,8 +18,9 @@ if(isset($_POST['type'])) {
         if(isset($_POST['tag_id']) && is_numeric($_POST['tag_id'])
             && isset($_POST['name']) && !empty($_POST['name'])
             && isset($_POST['isFormal']) && is_numeric($_POST['isFormal'])
+            && isset($_POST['img']) && !empty($_POST['img'])
         ) {
-            if(tag::update($_POST['tag_id'],$_POST['name'],$_POST['isFormal'])) {
+            if(tag::update($_POST['tag_id'],$_POST['name'],$_POST['isFormal'],$_POST['img'])) {
                 sys::alert('修改成功！');
             }
             else {
@@ -32,8 +33,9 @@ if(isset($_POST['type'])) {
     else if($_POST['type']=='add') {
         if(isset($_POST['name']) && !empty($_POST['name'])
             && isset($_POST['isFormal']) && is_numeric($_POST['isFormal'])
+            && isset($_POST['img']) && !empty($_POST['img'])
         ) {
-            if(tag::add($_POST['name'],$_POST['isFormal'])) {
+            if(tag::add($_POST['name'],$_POST['isFormal'],$_POST['img'])) {
                 sys::alert('新增标签成功！');
             }
             else {

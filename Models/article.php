@@ -54,5 +54,27 @@ class article {
             return false;
         }
     }
+
+    /*
+     * getAll方法
+     * 获取符合条件的所有记录
+     * @author C860
+     * @param $tid int 标签ID
+     * @return array
+     */
+    static function getAll($tid=-1) {
+        global $db;
+        try {
+            if($tid==-1) {
+                $query = $db->prepare('select title,createTime,comment from article order by createTime desc');
+                $query->execute();
+                $rs = $query->fetchAll();
+                return $rs;
+            }
+        } catch(PDOException $e) {
+            echo $e;
+            return false;
+        }
+    }
 }
 

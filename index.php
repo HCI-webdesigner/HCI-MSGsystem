@@ -21,24 +21,16 @@ include_once('Controllers/index.php');
 				<span></span>
 			</div>
 			<ul id="menuList">
-				<li>
-					<a href="index.html">首页</a>
-				</li>
-				<li>
-					<a href="index.html">活动</a>
-				</li>
-				<li>
-					<a href="index.html">活动首页</a>
-				</li>
-				<li>
-					<a href="index.html">首页活动</a>
-				</li>
-				<li>
-					<a href="index.html">活动</a>
-				</li>
-				<li>
-					<a href="index.html">首页</a>
-				</li>
+                <li>
+                    <a href="index.php">首页</a>
+                </li>
+                <?php
+                foreach($menus as $item) {
+                    echo '<li>';
+                    echo '<a href="index.php?t='.$item['ID'].'">'.$item['name'].'</a>';
+                    echo '</li>';
+                }
+                ?>
 			</ul>
 		</div>
 	</div>
@@ -46,19 +38,26 @@ include_once('Controllers/index.php');
 		<div id="login"><a href="">登入</a>
 		</div>
 		<div id="container">
-			<div id="topArea">
+            <?php
+            if($index==1) {
+            ?>
+            <div id="topArea">
 				<div id="slidebox" class="slideBox">
 					<ul class="items">
-						<li><a href="#"><img src="public/images/1.jpg"></a></li>
-						<li><a href="#"><img src="public/images/2.jpg"></a></li>
-						<li><a href="#"><img src="public/images/3.jpg"></a></li>
-						<li><a href="#"><img src="public/images/4.jpg"></a></li>
+                        <?php
+                        for($i=1;$i<count($slider);++$i) {
+                            echo '<li><a href="'.$slider[$i]['link'].'" title="'.$slider[$i]['title'].'"><img src="'.$slider[$i]['img'].'"></a></li>';
+                        }
+                        ?>
 					</ul>
 				</div>
 				<div class="imgTag">
-					<a href="http://www.baidu.com"><img src="public/images/lanlan.png"></a>
+                    <a href="<?=$slider[0]['link'] ?>"><img src="<?=$slider[0]['img'] ?>"></a>
 				</div>
 			</div>
+            <?php
+            }
+            ?>
 			<div id="mainArea">
 				<ul id="boxList">
 					<li class="postboxUsual">
