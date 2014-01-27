@@ -66,7 +66,7 @@ class article {
         global $db;
         try {
             if($tid==-1) {
-                $query = $db->prepare('select title,createTime,comment from article order by createTime desc');
+                $query = $db->prepare('select destinct(A.ID),img,title,createTime,comment from article as A,tag as B,tag_relate_article as C where A.ID=C.article_id and B.ID=C.tag_id order by createTime desc');
                 $query->execute();
                 $rs = $query->fetchAll();
                 return $rs;
