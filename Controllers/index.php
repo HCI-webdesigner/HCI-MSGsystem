@@ -11,6 +11,14 @@ include_once('conf/config.php');
 include_once('Models/article.php');
 include_once('Models/tag.php');
 
+//获取当前页面
+if(!isset($_GET['p']) || !is_numeric($_GET['p'])) {
+    $curpage = 1;
+}
+else {
+    $curpage = $_GET['p'];
+}
+$pagecount = 1;
 $index = 0;
 //判断是否为首页显示
 if(!isset($_GET['t']) || !is_numeric($_GET['t'])) {
@@ -23,5 +31,8 @@ if(!isset($_GET['t']) || !is_numeric($_GET['t'])) {
 $menus = tag::getAllTags(1); 
 //文章列表
 if($index==1) {
-
+    $alist = article::getAll(9,$curpage,$pagecount);
+}
+else {
+    $alist = article::getAll(9,$curpage,$pagecount,$_GET['t']);
 }

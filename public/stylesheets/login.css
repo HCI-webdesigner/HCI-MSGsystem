@@ -107,12 +107,12 @@
 }
 
 .error{
-    background: #FF8282 url("../image/error.png") 185px 2px no-repeat;
+    background: #FF8282 url("../images/error.png") 185px 2px no-repeat;
     background-position: 185px 5px;
 }
 
 .correct{
-    background: #fff url("../image/correct.png") 185px 2px no-repeat;
+    background: #fff url("../images/correct.png") 185px 2px no-repeat;
     background-position: 185px 5px;
 }
 

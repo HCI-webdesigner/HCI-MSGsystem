@@ -35,8 +35,14 @@ include_once('Controllers/index.php');
 		</div>
 	</div>
 	<div id="mainBox">
-		<div id="login"><a href="">登入</a>
-		</div>
+        <?php
+        if(sys::hasLogged()) {
+        echo '<div class="userBar">欢迎你，'.$_SESSION['nickname'].'&nbsp;<a href="Controllers/logout.php" class="ctrlBtn">注销</a></div>';
+        }
+        else {
+            echo '<div class="userBar"><a href="login.php" class="ctrlBtn">登录</a><a href="register.php" class="ctrlBtn">注册</a></div>';
+        }
+        ?>
 		<div id="container">
             <?php
             if($index==1) {
@@ -60,106 +66,33 @@ include_once('Controllers/index.php');
             ?>
 			<div id="mainArea">
 				<ul id="boxList">
-					<li class="postboxUsual">
+                    <?php
+                    foreach($alist as $item) {
+                    ?>
+                    <li class="postboxUsual">
 						<div class="post-img" >
-							<a href="www.baidu.com"><img src="public/images/box1.jpg"></a>
+                            <a href="article.php?id=<?=$item['ID']?>"><img src="<? echo (tag::getTagImage($item['ID'])==false)?'public/images/topic_img/default.png':tag::getTagImage($item['ID']);?>"></a>
 						</div>
-						<a class="post-title" href="http://www.baidu.com">例会精彩</a>
+                        <a class="post-title" href="article.php?id=<?=$item['ID']?>"><?=$item['title']?></a>
 						<div class="post-extra">
-							<span class="col-left">2013-11-4</span>
+                            <span class="col-left"><?=$item['createTime']?></span>
 							<div class="col-right">
-								<a class="like" href="">19喜欢</a>
-								<a class="comment" href="">20评论</a>
+                                <a class="comment" href=""><?=$item['comment']?>评论</a>
 							</div>
 						</div>
 					</li>
-					<li class="postboxUsual">
-						<div class="post-img" >
-							<a href="www.baidu.com"><img src="public/images/box2.jpg"></a>
-						</div>
-						<a class="post-title" href="www.baidu.com">baidu.com</a>
-						<div class="post-extra">
-							<span class="col-left">2013-11-4</span>
-							<div class="col-right">
-								<a class="like" href="">19人喜欢</a>
-								<a class="comment" href="">20条评论</a>
-							</div>
-						</div>
-					</li>
-					<li class="postboxUsual">
-						<div class="post-img" >
-							<a href="www.baidu.com"><img src="public/images/box1.jpg"></a>
-						</div>
-						<a class="post-title" href="www.baidu.com">baidu.com</a>
-						<div class="post-extra">
-							<span class="col-left">2013-11-4</span>
-							<div class="col-right">
-								<a class="like" href="">19喜欢</a>
-								<a class="comment" href="">20评论</a>
-							</div>
-						</div>
-					</li>
-					<li class="postboxUsual">
-						<div class="post-img" >
-							<a href="www.baidu.com"><img src="public/images/box2.jpg"></a>
-						</div>
-						<a class="post-title" href="www.baidu.com">baidu.com</a>
-						<div class="post-extra">
-							<span class="col-left">2013-11-4</span>
-							<div class="col-right">
-								<a class="like" href="">19人喜欢</a>
-								<a class="comment" href="">20条评论</a>
-							</div>
-						</div>
-					</li>
-					<li class="postboxUsual">
-						<div class="post-img" >
-							<a href="www.baidu.com"><img src="public/images/box2.jpg"></a>
-						</div>
-						<a class="post-title" href="www.baidu.com">baidu.com</a>
-						<div class="post-extra">
-							<span class="col-left">2013-11-4</span>
-							<div class="col-right">
-								<a class="like" href="">19人喜欢</a>
-								<a class="comment" href="">20条评论</a>
-							</div>
-						</div>
-					</li>
-					<li class="postboxUsual">
-						<div class="post-img" >
-							<a href="www.baidu.com"><img src="public/images/box1.jpg"></a>
-						</div>
-						<a class="post-title" href="www.baidu.com">baidu.com</a>
-						<div class="post-extra">
-							<span class="col-left">2013-11-4</span>
-							<div class="col-right">
-								<a class="like" href="">19喜欢</a>
-								<a class="comment" href="">20评论</a>
-							</div>
-						</div>
-					</li>
-					<li class="postboxUsual">
-						<div class="post-img" >
-							<a href="www.baidu.com"><img src="public/images/box2.jpg"></a>
-						</div>
-						<a class="post-title" href="www.baidu.com">baidu.com</a>
-						<div class="post-extra">
-							<span class="col-left">2013-11-4</span>
-							<div class="col-right">
-								<a class="like" href="">19人喜欢</a>
-								<a class="comment" href="">20条评论</a>
-							</div>
-						</div>
-					</li>
+                    <?php
+                    }
+                    ?>
 				</ul>
 			</div>
 			<div class="pages">
 				<ul class="page-box">
-					<li class="page-item">1</li>
-					<li class="page-item">2</li>
-					<li class="page-item">3</li>
-					<li class="page-item">4</li>
-					<li class="page-item">下一页</li>
+                    <?php
+                    for($i=1;$i<=$pagecount;++$i) {
+                        echo '<li class="page-item">'.$i.'</li>';
+                    }
+                    ?>
 				</ul>
 			</div>
 		</div>

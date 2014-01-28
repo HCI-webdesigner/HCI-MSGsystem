@@ -97,5 +97,49 @@ class tag {
             return false;
         }
     }
+
+    /*
+     * getArticleTag方法
+     * 根据文章ID获取该文章的标签
+     * @author C860
+     * @param $AID int 文章的ID
+     * @return array|false
+     */
+    static function getArticleTag($AID) {
+        global $db;
+        try {
+            $query = $db->prepare('select * from tag as A,tag_relate_article as B where B.article_id=? and B.tag_id=A.ID');
+            $query->execute(array($AID));
+            $rs = $query->fetchAll();
+            return $rs;
+        } catch(PDOException $e) {
+            echo $e;
+            return false;
+        }
+    }
+
+    /*
+     * getTagImage方法
+     * 获取文章标签图片的地址
+     * @author C860
+     * @param $AID int 文章的ID
+     * @return string|false
+     */
+    static function getTagImage($AID) {
+        global $db;
+        try {
+            $query = $db->prepare('select * from tag as A,tag_relate_article as B where B.article_id=? and B.tag_id=A.ID and A.img is not null');
+            $query->execute(array($AID));
+            if($query->rowCount()>0) {
+                return $query->fetch()['img'];
+            }
+            else {
+                return false;
+            }
+        } catch(PDOException $e) {
+            echo $e;
+            return false;
+        }
+    }
 }
 

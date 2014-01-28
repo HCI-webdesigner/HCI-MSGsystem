@@ -129,14 +129,14 @@
 }
 
 .thinking{
-    background: #fff url("../image/think.gif") 185px 2px no-repeat;
+    background: #fff url("../images/think.gif") 185px 2px no-repeat;
     background-size: 22px 22px;
     background-position: 185px;
 }
 
 
 .error{
-    background: #FF8282 url("../image/error.png") 185px 2px no-repeat;
+    background: #FF8282 url("../images/error.png") 185px 2px no-repeat;
     background-position: 185px 5px;
 }
 .error::-webkit-input-placeholder { color:#000; }
@@ -144,7 +144,7 @@ input:-moz-placeholder { color:#000; }
 
 
 .correct{
-    background: #fff url("../image/correct.png") 185px 2px no-repeat;
+    background: #fff url("../images/correct.png") 185px 2px no-repeat;
     background-position: 185px 5px;
 }
 

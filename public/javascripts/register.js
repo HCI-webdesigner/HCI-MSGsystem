@@ -4,11 +4,6 @@ function init(){
 		//本页面对应栏，下标由0起始,首页为0
         initSlide(0);
 
-        jQuery(function($){
-	        $("#slidebox").slideBox({
-	           	delay : 5
-	    	});
-	    });
     document.getElementById("user").onblur = checkUser;
     document.getElementById("password1").onblur = checkPassword1;
     document.getElementById("password2").onblur = checkPassword2;
@@ -57,12 +52,12 @@ function checkPassword2(){
 function checkNickname(){//检查nickname是否唯一
     var nickname = document.getElementById("nickname");
     nickname.className = "thinking";
-    if(1){
+    if(nickname.value!=''){
         nickname.className = "correct";//如果nickname唯一
-        nicknameFlage = true;
+        nicknameFlag = true;
     }else {
         nickname.className = "error";//如果nickname不唯一
-        nicknameFlage = false;
+        nicknameFlag = false;
     }
     checkFormStatus();
 }

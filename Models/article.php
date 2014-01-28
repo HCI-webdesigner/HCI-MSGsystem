@@ -57,17 +57,42 @@ class article {
 
     /*
      * getAll方法
-     * 获取符合条件的所有记录
+     * 获取符合条件的所有记录(分页)
      * @author C860
+     * @param $perpage int 每页显示条数
+     * @param $curpage int 当前所在页码
+     * @param &$pagecount int 页面总数（更改值）
      * @param $tid int 标签ID
      * @return array
      */
-    static function getAll($tid=-1) {
+    static function getAll($perpage,$curpage,&$pagecount,$tid=-1) {
         global $db;
         try {
             if($tid==-1) {
-                $query = $db->prepare('select destinct(A.ID),img,title,createTime,comment from article as A,tag as B,tag_relate_article as C where A.ID=C.article_id and B.ID=C.tag_id order by createTime desc');
+                $query = $db->prepare('select ID,title,createTime,comment from article order by createTime desc');
                 $query->execute();
+                //获取记录总数
+                $rscount = $query->rowCount();
+                //计算总页数
+                $pagecount = ceil($rscount/$perpage);
+                //计算当前页的第一条记录的位置
+                $pos = ($curpage-1)*$perpage;
+                $query = $db->prepare('select ID,title,createTime,comment from article order by createTime desc limit ?,?');
+                $query->execute(array($pos,$pos+$perpage));
+                $rs = $query->fetchAll();
+                return $rs;
+            }
+            else {
+                $query = $db->prepare('select ID,title,createTime,comment from article as A,tag_relate_article as B where B.tag_id=? and B.article_id=A.ID');
+                $query->execute(array($tid));
+                //获取记录总数
+                $rscount = $query->rowCount();
+                //计算总页数
+                $pagecount = ceil($rscount/$perpage);
+                //计算当前页的第一条记录的位置
+                $pos = ($curpage-1)*$perpage;
+                $query = $db->prepare('select ID,title,createTime,comment from article as A,tag_relate_article as B where B.tag_id=? and B.article_id=A.ID limit ?,?');
+                $query->execute(array($tid,$pos,$pos+$perpage));
                 $rs = $query->fetchAll();
                 return $rs;
             }
