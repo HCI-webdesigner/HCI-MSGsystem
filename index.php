@@ -5,35 +5,14 @@ include_once('Controllers/index.php');
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>HCI信息展示平台</title>
     <link rel="stylesheet" href="public/stylesheets/global.css">
     <link rel="stylesheet" href="public/stylesheets/index.css">
     <link rel="stylesheet" href="public/stylesheets/slideBox.css">
 
 </head>
 <body>
-	<div id="nav">
-		<a href="index.html" title="hci活动首页">
-			<img width="240" height="100" src="public/images/box4.png"id="imgIndex">
-		</a>
-		<div class="menu">
-			<div id="menuLabel" style="display:block; ">
-				<span></span>
-			</div>
-			<ul id="menuList">
-                <li>
-                    <a href="index.php">首页</a>
-                </li>
-                <?php
-                foreach($menus as $item) {
-                    echo '<li>';
-                    echo '<a href="index.php?t='.$item['ID'].'">'.$item['name'].'</a>';
-                    echo '</li>';
-                }
-                ?>
-			</ul>
-		</div>
-	</div>
+    <?php include_once('menu.php'); ?>
 	<div id="mainBox">
         <?php
         if(sys::hasLogged()) {

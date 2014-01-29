@@ -16,36 +16,7 @@ if(sys::hasLogged()) {
 	<script type="text/javascript" src="public/javascripts/register.js"></script>
 </head>
 <body>
-	<div id="nav">
-		<a href="index.html" title="hci活动首页">
-			<img width="240" height="100" src="public/images/box4.png"id="imgIndex">
-		</a>
-		<div class="menu">
-			<div id="menuLabel" style="display:block; ">
-				<span></span>
-			</div>
-			<ul id="menuList">
-				<li>
-					<a href="index.html">首页</a>
-				</li>
-				<li>
-					<a href="index.html">活动</a>
-				</li>
-				<li>
-					<a href="index.html">活动首页</a>
-				</li>
-				<li>
-					<a href="index.html">首页活动</a>
-				</li>
-				<li>
-					<a href="index.html">活动</a>
-				</li>
-				<li>
-					<a href="index.html">首页</a>
-				</li>
-			</ul>
-		</div>
-	</div>
+    <?php include_once('menu.php'); ?>
     <div id="mainBox">
 	    <div id="container">
             <form action="Controllers/register.php" method="post">

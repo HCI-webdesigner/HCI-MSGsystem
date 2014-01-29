@@ -1,44 +1,17 @@
+<?php
+include_once('conf/config.php');
+?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta charset="UTF-8">
 	<title>登录</title>
-	<link rel="stylesheet" type="text/css" href="public/stylesheets/global.css">
-	<link rel="stylesheet" type="text/css" href="public/stylesheets/login.css">
-	<script type="text/javascript" src="public/javascripts/navSlide.js"></script>
-    <script type="text/javascript" src="public/javascripts/login.js"></script>
-   </head>
+	<link rel="stylesheet" href="public/stylesheets/global.css">
+	<link rel="stylesheet" href="public/stylesheets/login.css">
+	
+</head>
 <body>
-	<div id="nav">
-		<a href="index.html" title="hci活动首页">
-			<img width="240" height="100" src="public/images/box4.png"id="imgIndex">
-		</a>
-		<div class="menu">
-			<div id="menuLabel" style="display:block; ">
-				<span></span>
-			</div>
-			<ul id="menuList">
-				<li>
-					<a href="index.html">首页</a>
-				</li>
-				<li>
-					<a href="index.html">活动</a>
-				</li>
-				<li>
-					<a href="index.html">活动首页</a>
-				</li>
-				<li>
-					<a href="index.html">首页活动</a>
-				</li>
-				<li>
-					<a href="index.html">活动</a>
-				</li>
-				<li>
-					<a href="index.html">首页</a>
-				</li>
-			</ul>
-		</div>
-	</div>
+    <?php include_once('menu.php'); ?>
     <div id="mainBox">
         <div id="container">
             <form action="Controllers/checkLog.php" method="post">
@@ -74,6 +47,8 @@
 	</div>
     <div id="goTopBtn" class="back-to-top">
 		<a id="J_BackToTop" href="javascript:void(0)"></a>
-	</div>
+    </div>
+    <script type="text/javascript" src="public/javascripts/navSlide.js"></script>
+    <script type="text/javascript" src="public/javascripts/login.js"></script>
 </body>
 </html>

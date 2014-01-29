@@ -27,8 +27,6 @@ if(!isset($_GET['t']) || !is_numeric($_GET['t'])) {
     include_once('Models/slider.php');
     $slider = slider::getAll();
 }
-//左侧菜单栏
-$menus = tag::getAllTags(1); 
 //文章列表
 if($index==1) {
     $alist = article::getAll(9,$curpage,$pagecount);
