@@ -50,7 +50,7 @@ include_once('Controllers/index.php');
                     ?>
                     <li class="postboxUsual">
 						<div class="post-img" >
-                            <a href="article.php?id=<?=$item['ID']?>"><img src="<? echo (tag::getTagImage($item['ID'])==false)?'public/images/topic_img/default.png':tag::getTagImage($item['ID']);?>"></a>
+                            <a href="article.php?id=<?=$item['ID']?>"><img src="<?php echo (tag::getTagImage($item['ID'])==false)?'public/images/topic_img/default.png':tag::getTagImage($item['ID']);?>"></a>
 						</div>
                         <a class="post-title" href="article.php?id=<?=$item['ID']?>"><?=$item['title']?></a>
 						<div class="post-extra">

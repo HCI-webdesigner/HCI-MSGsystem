@@ -48,7 +48,7 @@ $sliders = getAll()?getAll():[];
                 <form action="../Controllers/back_sliderControl.php" method="post">
                     <input type="hidden" name="type" value="modify">
                     <input type="hidden" name="ID" value="<?=$row['ID'] ?>">
-                    <td><input type="text" name="height" size="3" value="<?=$row['height'] ?>"></td>
+                    <td><input type="text" name="weight" size="3" value="<?=$row['weight'] ?>"></td>
                     <td><input type="text" name="title" value="<?=$row['title'] ?>"></td>
                     <td><input type="text" name="link" value="<?=$row['link'] ?>"></td>
                     <td><input type="text" name="img" value="<?=$row['img'] ?>"></td>
@@ -63,7 +63,7 @@ $sliders = getAll()?getAll():[];
             <tr>
                 <form action="../Controllers/back_sliderControl.php" method="post">
                     <input type="hidden" name="type" value="add">
-                    <td><input type="text" name="height" size="3"></td>
+                    <td><input type="text" name="weight" size="3"></td>
                     <td><input type="text" name="title"></td>
                     <td><input type="text" name="link"></td>
                     <td><input type="text" name="img"></td>

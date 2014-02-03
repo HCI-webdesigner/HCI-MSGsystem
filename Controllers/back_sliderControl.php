@@ -26,12 +26,12 @@ function getAll() {
 //检验数据合法性
 if(isset($_POST['type']) && !empty($_POST['type'])) {
     if($_POST['type']=='add') {
-        if(isset($_POST['height']) && is_numeric($_POST['height'])
+        if(isset($_POST['weight']) && is_numeric($_POST['weight'])
             && isset($_POST['title']) && !empty($_POST['title'])
             && isset($_POST['link']) && !empty($_POST['link'])
             && isset($_POST['img']) && !empty($_POST['img'])
         ) {
-            if(slider::add($_POST['height'],$_POST['link'],$_POST['title'],$_POST['img'])) {
+            if(slider::add($_POST['weight'],$_POST['link'],$_POST['title'],$_POST['img'])) {
                 sys::alert('添加成功！');
             }
             else {
@@ -41,13 +41,13 @@ if(isset($_POST['type']) && !empty($_POST['type'])) {
         }
     }
     else if($_POST['type']=='modify') {
-        if(isset($_POST['height']) && is_numeric($_POST['height'])
+        if(isset($_POST['weight']) && is_numeric($_POST['weight'])
             && isset($_POST['title']) && !empty($_POST['title'])
             && isset($_POST['link']) && !empty($_POST['link'])
             && isset($_POST['img']) && !empty($_POST['img'])
             && isset($_POST['ID']) && is_numeric($_POST['ID'])
         ) {
-            if(slider::update($_POST['ID'],$_POST['height'],$_POST['link'],$_POST['title'],$_POST['img'])) {
+            if(slider::update($_POST['ID'],$_POST['weight'],$_POST['link'],$_POST['title'],$_POST['img'])) {
                 sys::alert('修改成功！');
             }
             else {
