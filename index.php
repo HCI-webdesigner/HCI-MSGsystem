@@ -16,7 +16,7 @@ include_once('Controllers/index.php');
 	<div id="mainBox">
         <?php
         if(sys::hasLogged()) {
-        echo '<div class="userBar">欢迎你，'.$_SESSION['nickname'].'&nbsp;<a href="Controllers/logout.php" class="ctrlBtn">注销</a></div>';
+        echo '<div class="userBar">欢迎你，<i>'.$_SESSION['nickname'].'</i>&nbsp;<a href="Controllers/logout.php" class="ctrlBtn">注销</a></div>';
         }
         else {
             echo '<div class="userBar"><a href="login.php" class="ctrlBtn">登录</a><a href="register.php" class="ctrlBtn">注册</a></div>';
