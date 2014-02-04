@@ -1,5 +1,6 @@
 <?php
 include_once('conf/config.php');
+include_once('Controllers/newArticle.php');
 sys::needLog('login.php');
 ?>
 <!DOCTYPE html>
@@ -52,7 +53,7 @@ sys::needLog('login.php');
 	</div>
 	<div id="mainBox">
 		<div id="container">
-			<form class="editor-content" action="" method="">
+			<form class="editor-content" action="Controllers/newArticle.php" method="post">
 				<div class="editor-header">
 					<span class="line"></span>
 					<h2 class="editor-title">&nbsp;发表文章</h2>
@@ -66,6 +67,7 @@ sys::needLog('login.php');
 						<button class="add-btn" type="button">添加</button>
 					</div>
 					<ul id="test" class="tags-list">
+                        <p>热门标签：</p>
 						<li class="tags-list-item">javascript</li>
 						<li class="tags-list-item">css</li>
 						<li class="tags-list-item">html</li>
