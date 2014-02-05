@@ -63,25 +63,26 @@ sys::needLog('login.php');
 				<div class="tags-content">
 					<h2 class="tags-title">添加标签</h2>
 					<div>
-						<input class="tag" name="tags" type="text" />
+						<input class="tag" list="taglist" name="addtags" type="text" />
+                        <datalist id="taglist">
+                            <?php
+                            foreach($taglist as $item) {
+                                echo '<option value="'.$item['name'].'">';
+                            }
+                            ?>
+                        </datalist>
 						<button class="add-btn" type="button">添加</button>
 					</div>
 					<ul id="test" class="tags-list">
                         <p>热门标签：</p>
-						<li class="tags-list-item">javascript</li>
-						<li class="tags-list-item">css</li>
-						<li class="tags-list-item">html</li>
-						<li class="tags-list-item">php</li>
-						<li class="tags-list-item">javascript</li>
-						<li class="tags-list-item">css</li>
-						<li class="tags-list-item">html</li>
-						<li class="tags-list-item">php</li>
-						<li class="tags-list-item">css</li>
-						<li class="tags-list-item">html</li>
-						<li class="tags-list-item">php</li>
-						<li class="tags-list-item">php</li>
-						<li class="tags-list-item">javascript</li>
-						<li class="tags-list-item">css</li>
+                        <?php
+                        foreach($hotTags as $tag) {
+                        ?>
+                        <li class="tags-list-item"><?=$tag['name'] ?></li>
+                        <?php
+                        }
+                        ?>
+						
 					</ul>
 					<button class="submit-btn" type="button">提交</button>
 				</div>

@@ -36,3 +36,9 @@ if(isset($_POST['title']) && !empty($_POST['title'])
     }
 
 }
+else {
+    //引入相关模型类
+    include_once('Models/tag.php');
+    $hotTags = tag::getHotTags(); 
+    $taglist = tag::getAllTags();
+}

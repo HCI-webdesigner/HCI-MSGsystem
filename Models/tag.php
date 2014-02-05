@@ -141,5 +141,24 @@ class tag {
             return false;
         }
     }
+
+    /*
+     * getHotTags方法
+     * 获取热门标签列表
+     * @author C860
+     * @return array
+     */
+    static function getHotTags() {
+        global $db;
+        try {
+            $query = $db->prepare('select count(tag_id) as count,name,ID from tag,tag_relate_article group by name order by count limit 0,15');
+            $query->execute();
+            $rs = $query->fetchAll();
+            return $rs;
+        } catch(PDOException $e) {
+            echo $e;
+            return false;
+        }
+    }
 }
 
