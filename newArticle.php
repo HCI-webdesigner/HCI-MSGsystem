@@ -10,15 +10,12 @@ sys::needLog('login.php');
     <title></title>
     <link rel="stylesheet" type="text/css" href="public/stylesheets/global.css"/>
 	<link rel="stylesheet" type="text/css" href="public/stylesheets/issue.css"/>
+    <script type="text/javascript" src="public/javascripts/jquery-1.10.2.js"></script>
 	<script type="text/javascript" src="public/javascripts/navSlide.js"></script>
 	<script type="text/javascript" src="public/ueditor/ueditor.config.js"></script>
 	<script type="text/javascript" src="public/ueditor/ueditor.all.js"></script>
-	<script type="text/javascript">
-	window.onload = function(){
-		//本页面对应栏，下标由0起始,首页为0
-        initSlide(0);
-	};
-	</script>
+    <script type="text/javascript" src="public/javascripts/key-value.js"></script>
+	
 </head>
 <body>
 	<div id="nav">
@@ -60,19 +57,13 @@ sys::needLog('login.php');
 					<input class="issue-title" type="text" name="title">
 				</div>
 				<textarea name="content" id="editor" cols="30" rows="10"></textarea>
+                <input type="hidden" name="tags" id="formTags">
 				<div class="tags-content">
 					<h2 class="tags-title">添加标签</h2>
-					<div>
-						<input class="tag" list="taglist" name="addtags" type="text" />
-                        <datalist id="taglist">
-                            <?php
-                            foreach($taglist as $item) {
-                                echo '<option value="'.$item['name'].'">';
-                            }
-                            ?>
-                        </datalist>
-						<button class="add-btn" type="button">添加</button>
-					</div>
+                    <ul class="tags-list">
+                        <p id="nowTags">当前标签：</p>
+                    </ul>
+					
 					<ul id="test" class="tags-list">
                         <p>热门标签：</p>
                         <?php
@@ -83,7 +74,18 @@ sys::needLog('login.php');
                         }
                         ?>
 						
-					</ul>
+                    </ul>
+                    <div style="margin-top: 20px;">
+						<input id="addTagsInput" class="tag" list="taglist" name="addTags" type="text" />
+                        <datalist id="taglist">
+                            <?php
+                            foreach($taglist as $item) {
+                                echo '<option value="'.$item['name'].'">';
+                            }
+                            ?>
+                        </datalist>
+						<button id="addTags" class="add-btn" type="button">添加</button>
+					</div>
 					<button class="submit-btn" type="button">提交</button>
 				</div>
 			</form>
@@ -103,6 +105,36 @@ sys::needLog('login.php');
 	<script type="text/javascript">
 		var editor = new UE.ui.Editor();
 		editor.render('editor');
+    </script>
+    <script type="text/javascript">
+	window.onload = function(){
+		//本页面对应栏，下标由0起始,首页为0
+        initSlide(0);
+        //建立标签哈希表
+        var tags = new hashTable();
+        <?php
+            foreach($taglist as $item) {
+                echo 'tags.put("'.$item['name'].'","'.$item['ID'].'");';
+            }
+        ?>
+        $('#addTags').bind('click',function() {
+            var val = $('#addTagsInput').val();
+            var id = tags.get(val);
+            if(id==-1) {
+                alert('暂时没有这个标签');
+                $('#addTagsInput').val('').focus();
+            }
+            else {
+                $('#nowTags').after('<li class="tags-list-item">'+val+'</li>');
+                if(!$('#formTags').val()) {
+                    $('#formTags').val(id);
+                }
+                else {
+                    $('#formTags').val($('#formTags').val()+'|'+id);
+                }
+            }
+        });
+	};
 	</script>
 </body>
 </html>
