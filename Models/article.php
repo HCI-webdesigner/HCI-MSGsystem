@@ -101,5 +101,29 @@ class article {
             return false;
         }
     }
+
+    /*
+     * getArticle方法
+     * 根据文章ID获取文章信息
+     * @author C860
+     * @param $ID 文章ID
+     * @return array|false
+     */
+    static function getArticle($ID) {
+        global $db;
+        try {
+            $query = $db->prepare('select * from article where ID=?');
+            $query->execute(array($ID));
+            if($query->rowCount()>0) {
+                return $query->fetch();
+            }
+            else {
+                return false;
+            }
+        } catch(PDOException $e) {
+            echo $e;
+            return false;
+        }
+    }
 }
 

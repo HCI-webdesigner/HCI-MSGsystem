@@ -18,36 +18,7 @@ sys::needLog('login.php');
 	
 </head>
 <body>
-	<div id="nav">
-		<a href="index.html" title="hci活动首页">
-			<img width="240" height="100" src="public/images/box4.png"id="imgIndex">
-		</a>
-		<div class="menu">
-			<div id="menuLabel" style="display:block; ">
-				<span></span>
-			</div>
-			<ul id="menuList">
-				<li>
-					<a href="index.html">首页</a>
-				</li>
-				<li>
-					<a href="index.html">活动</a>
-				</li>
-				<li>
-					<a href="index.html">活动首页</a>
-				</li>
-				<li>
-					<a href="index.html">首页活动</a>
-				</li>
-				<li>
-					<a href="index.html">活动</a>
-				</li>
-				<li>
-					<a href="index.html">首页</a>
-				</li>
-			</ul>
-		</div>
-	</div>
+    <?php include_once('menu.php') ?>
 	<div id="mainBox">
 		<div id="container">
 			<form class="editor-content" action="Controllers/newArticle.php" method="post">
@@ -63,18 +34,6 @@ sys::needLog('login.php');
                     <ul class="tags-list">
                         <p id="nowTags">当前标签：</p>
                     </ul>
-					
-					<ul id="test" class="tags-list">
-                        <p>热门标签：</p>
-                        <?php
-                        foreach($hotTags as $tag) {
-                        ?>
-                        <li class="tags-list-item"><?=$tag['name'] ?></li>
-                        <?php
-                        }
-                        ?>
-						
-                    </ul>
                     <div style="margin-top: 20px;">
 						<input id="addTagsInput" class="tag" list="taglist" name="addTags" type="text" />
                         <datalist id="taglist">
@@ -86,7 +45,7 @@ sys::needLog('login.php');
                         </datalist>
 						<button id="addTags" class="add-btn" type="button">添加</button>
 					</div>
-					<button class="submit-btn" type="button">提交</button>
+					<button class="submit-btn" type="submit">提交</button>
 				</div>
 			</form>
 		</div>
@@ -132,6 +91,7 @@ sys::needLog('login.php');
                 else {
                     $('#formTags').val($('#formTags').val()+'|'+id);
                 }
+                $('#addTagsInput').val('').focus();
             }
         });
 	};
