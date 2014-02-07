@@ -31,8 +31,8 @@ sys::needLog('login.php');
                 <input type="hidden" name="tags" id="formTags">
 				<div class="tags-content">
 					<h2 class="tags-title">添加标签</h2>
-                    <ul class="tags-list">
-                        <p id="nowTags">当前标签：</p>
+                    <ul id="curTags" class="tags-list">
+                        <p id="nowTags">当前标签&nbsp;&nbsp;&nbsp;<a href="javascript:void(0);" id="cleanBtn">【清除】</a></p>
                     </ul>
                     <div style="margin-top: 20px;">
 						<input id="addTagsInput" class="tag" list="taglist" name="addTags" type="text" />
@@ -93,6 +93,10 @@ sys::needLog('login.php');
                 }
                 $('#addTagsInput').val('').focus();
             }
+        });
+        $('#cleanBtn').bind('click',function() {
+            $('#formTags').val('');
+            $('#curTags').html('<p id="nowTags">当前标签&nbsp;&nbsp;&nbsp;<a href="javascript:void(0);" id="cleanBtn">【清除】</a></p>');
         });
 	};
 	</script>
