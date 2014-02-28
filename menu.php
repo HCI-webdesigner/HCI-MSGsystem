@@ -20,6 +20,9 @@ include_once('Controllers/menu.php');
                     echo '</li>';
                 }
                 ?>
+                <li>
+                    <a href="tagsShow.php">更多</a>
+                </li>
 			</ul>
 		</div>
 	</div>
