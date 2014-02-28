@@ -46,6 +46,9 @@ include_once('Controllers/index.php');
 			<div id="mainArea">
 				<ul id="boxList">
                     <?php
+                    if(count($alist)<=0) {
+                        echo '暂时木有文章耶！';
+                    }
                     foreach($alist as $item) {
                     ?>
                     <li class="postboxUsual">
