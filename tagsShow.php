@@ -31,7 +31,7 @@ $tagsList = sortTags($tags);
 		        	if(count($tagsList[$keys[$i]])>0) {
 		            	echo "<div class='tag-tree'><h3>".$keys[$i]."</h3>";
 		            	for($j=0;$j<count($tagsList[$keys[$i]]);$j++) {
-		            		echo "<ul class='tag-list'><li><a href=''>".$tagsList[$keys[$i]][$j]['name']."</a></li>";
+                            echo "<ul class='tag-list'><li><a href='index.php?t=".$tagsList[$keys[$i]][$j]['ID']."'>".$tagsList[$keys[$i]][$j]['name']."</a></li>";
 		            	}
 		            	echo '</div>';
 		        	}
