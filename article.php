@@ -24,10 +24,16 @@ include_once('Controllers/article.php');
 			<div id="content">
 				<div class="entry-header clearfix">
 					<div class="title-author-time-tags">
-                        <h1 class="entry-title"><?=$article['title'] ?></h1>
+                    <h1 class="entry-title"><?=$article['title'] ?></h1>
+                        <?php
+                        if(sys::hasLogged() && $_SESSION['userId']==$article['user_id']) {
+                            echo '<a href="javascript:if(confirm(\'是否删除此文章？\')) location.href=\'Controllers/removeArticle.php?id='.$article['ID'].'\';" class="ctrlBtn">删除</a>';
+                        }
+                        ?>
+                        
 						<p class="author-time">
 							<span>发布者：</span>
-                            <a href="" rel="author"><?=$author ?></a>
+                            <a href="user.php?id=<?=$article['user_id'] ?>" rel="author"><?=$author ?></a>
 							|
                             <span>时间：</span> <em><?=$article['createTime'] ?></em>
 						</p>
