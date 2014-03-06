@@ -1,10 +1,10 @@
 <?php
 class user_basic {
+
     /*
      * 构造函数
      */
     function __construct() {
-
     }
 
     /*
@@ -17,9 +17,10 @@ class user_basic {
      */
     static function add($user,$pwd) {
         global $db;
+        global $salt;
         try {
             $query = $db->prepare('insert into user_basic (user,password)values(?,?)');
-            $query->execute(array($user,$pwd));
+            $query->execute(array($user,md5($pwd+$salt)));
             return true;
         } catch(PDOException $e) {
             echo $e;
@@ -63,9 +64,10 @@ class user_basic {
      */
     static function check($user,$pwd,$isAdmin) {
         global $db;
+        global $salt;
         try {
             $query = $db->prepare('select * from user_basic where user=? and password=? and isAdmin=?');
-            $query->execute(array($user,$pwd,$isAdmin));
+            $query->execute(array($user,md5($pwd+$salt),$isAdmin));
             if(count($query->fetchAll())>0) {
                 $query = $db->prepare('update user_basic set lastLogTime=? where user=?');
                 $query->execute(array(date('Y-m-d H:i:s'),$user));
@@ -165,9 +167,10 @@ class user_basic {
      */
     static function changePassword($ID,$password) {
         global $db;
+        global $salt;
         try {
             $query = $db->prepare('update user_basic set password=? where ID=?');
-            $query->execute(array($password,$ID));
+            $query->execute(array(md5($password+$salt),$ID));
             return true;
         } catch(PDOException $e) {
             echo $e;

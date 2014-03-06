@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2014 年 03 月 05 日 23:08
+-- 生成日期: 2014 年 03 月 06 日 10:34
 -- 服务器版本: 5.5.35
 -- PHP 版本: 5.5.9-1+sury.org~precise+1
 
@@ -153,16 +153,17 @@ CREATE TABLE IF NOT EXISTS `user_basic` (
   `lastLogTime` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`ID`),
   UNIQUE KEY `user` (`user`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=18 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=19 ;
 
 --
 -- 转存表中的数据 `user_basic`
 --
 
 INSERT INTO `user_basic` (`ID`, `user`, `password`, `isAdmin`, `lastLogTime`) VALUES
-(13, 'test@qq.com', 'test', 1, '2014-02-28 13:11:51'),
-(16, 'test2@qq.com', 'test2', 0, '2014-02-03 20:03:22'),
-(17, 'test', 'test', 0, '2014-02-28 12:27:58');
+(13, 'test@qq.com', 'ed3d2c21991e3bef5e069713af9fa6ca', 1, '2014-02-28 13:11:51'),
+(16, 'test2@qq.com', 'cfcd208495d565ef66e7dff9f98764da', 0, '2014-02-03 20:03:22'),
+(17, 'test', 'ed3d2c21991e3bef5e069713af9fa6ca', 0, '2014-03-06 10:28:27'),
+(18, 'test3@qq.com', 'ed3d2c21991e3bef5e069713af9fa6ca', 0, '2014-03-06 10:34:12');
 
 -- --------------------------------------------------------
 
@@ -187,7 +188,8 @@ CREATE TABLE IF NOT EXISTS `user_info` (
 INSERT INTO `user_info` (`user_id`, `nickname`, `popularity`, `registerTime`, `signature`, `article_count`) VALUES
 (13, 'test', 5, '2014-01-12 19:27:08', 'test', 1),
 (16, 'test2', 0, '2014-01-18 22:24:11', 'test2', 0),
-(17, 'c860', 10, '2014-02-03 20:03:22', NULL, 2);
+(17, 'c860', 10, '2014-02-03 20:03:22', NULL, 2),
+(18, 'test3', 0, '2014-03-06 10:29:02', '', 0);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

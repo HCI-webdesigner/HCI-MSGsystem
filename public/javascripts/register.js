@@ -74,5 +74,8 @@ function checkFormStatus(){
 }
 
 function registerUser(){//提交form
-    
+    var password1 = document.getElementById("password1");
+    var password2 = document.getElementById("password2");
+    password1.value = hex_md5(password1.value);
+    password2.value = hex_md5(password2.value);
 }

@@ -13,6 +13,7 @@ if(sys::hasLogged()) {
 	<link rel="stylesheet" type="text/css" href="public/stylesheets/register.css">
     <script type="text/javascript" src="public/javascripts/jquery-1.10.2.js"></script>
     <script type="text/javascript" src="public/javascripts/navSlide.js"></script>
+    <script type="text/javascript" src="public/javascripts/md5-min.js"></script>
 	<script type="text/javascript" src="public/javascripts/register.js"></script>
 </head>
 <body>

@@ -8,6 +8,7 @@ include_once('conf/config.php');
 	<title>登录</title>
 	<link rel="stylesheet" href="public/stylesheets/global.css">
 	<link rel="stylesheet" href="public/stylesheets/login.css">
+    <script type="text/javascript" src="public/javascripts/md5-min.js"></script>
 	
 </head>
 <body>

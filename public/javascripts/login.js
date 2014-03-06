@@ -22,5 +22,6 @@ function checkUser(){//检查email的格式是否正确
 }
 
 function registerUser(){
-    
+    var pwd = document.getElementById('password');
+    pwd.value = hex_md5(pwd.value);
 }

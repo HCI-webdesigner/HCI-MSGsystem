@@ -22,6 +22,9 @@ $db_user = 'root';
 $db_pwd = 'root';
 $db_name = 'hcimsg';
 
+//MD5盐
+$salt = 'hcisalt';
+
 try {
     $db = new PDO("mysql:host=$db_url;port=$db_port;dbname=$db_name",$db_user,$db_pwd);
     //禁用仿真效果
