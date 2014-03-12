@@ -63,7 +63,7 @@
 							<span><?=$count ?></span>
 						</div>
 						<div class="item-content">
-							<a href=""><div class="article-title"><?=$row['title'] ?></div></a>
+                            <a href="article.php?id=<?=$row['ID'] ?>"><div class="article-title"><?=$row['title'] ?></div></a>
 							<a class="article-content" href=""><?=$row['content'] ?></a>
 						</div>
 					</article>

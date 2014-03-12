@@ -21,11 +21,11 @@ sys::needLog('login.php');
     <?php include_once('menu.php') ?>
 	<div id="mainBox">
 		<div id="container">
-			<form class="editor-content" action="Controllers/newArticle.php" method="post">
+			<form id="newAFrom" onsubmit="return chkform()" class="editor-content" action="Controllers/newArticle.php" method="post">
 				<div class="editor-header">
 					<span class="line"></span>
 					<h2 class="editor-title">&nbsp;发表文章</h2>
-					<input class="issue-title" type="text" name="title">
+					<input class="issue-title" type="text" name="title" id="title">
 				</div>
 				<textarea name="content" id="editor" cols="30" rows="10"></textarea>
                 <input type="hidden" name="tags" id="formTags">
@@ -98,7 +98,17 @@ sys::needLog('login.php');
             $('#formTags').val('');
             $('#curTags').html('<p id="nowTags">当前标签&nbsp;&nbsp;&nbsp;<a href="javascript:void(0);" id="cleanBtn">【清除】</a></p>');
         });
-	};
+        
+    };
+    function chkform(evt) {
+        if($('#title').val()=='' || $('#editor').val()=='' || $('#formTags').val()=='') {
+            alert('请完善表单信息！');
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
 	</script>
 </body>
 </html>
