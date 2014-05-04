@@ -19,7 +19,7 @@ define('SYS_POWER','HCI人机交互中心');
 $db_url = '127.0.0.1';
 $db_port = '3306';
 $db_user = 'root';
-$db_pwd = 'root';
+$db_pwd = 'kingda';
 $db_name = 'hcimsg';
 
 //MD5盐
